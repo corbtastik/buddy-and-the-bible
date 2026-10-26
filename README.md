@@ -125,11 +125,13 @@ external dependency; Apple devices are unaffected either way.
 
 `references/` holds the original iMessage screenshots the devos were
 transcribed from, kept as provenance so any transcription can be checked
-against the source.
+against the source. The loose files at its root are April--May 2026;
+`references/june-2026/` holds that month.
 
 Dates: the screenshots show a weekday and date but no year ("Wed, Apr 29 at
-6:37 AM"). All 22 weekday/date pairs match 2026 exactly, which the author
-confirmed. The 2026-10-19 devo came from the original artifact export, which
+6:37 AM"). Every weekday/date pair matches 2026 exactly, which the author
+confirmed. Both batches run weekdays only -- Apr 29 to May 29 (22 devos, with
+May 22 missing) and all 22 weekdays of June. The 2026-10-19 devo came from the original artifact export, which
 showed only "Monday 9:08 AM" -- iOS renders a bare weekday only within the
 past week, and the export is dated 2026-10-25, so the preceding Monday is
 2026-10-19.
@@ -140,8 +142,9 @@ past week, and the export is dated 2026-10-25, so the preceding Monday is
   reproduced faithfully rather than silently corrected:
   `Hebrews 5:8-9 "though He was a Son, ye] He learned"`,
   `1 Peter 5:5 "submit yourselves to you] elders"`,
-  `Romans 5:8` names "Mr. Mitchell" for George Wilson, and `Mark 12:30-31`
-  has "neverhave". Fix them in the Markdown if you would rather they read
-  clean.
+  `Romans 5:8` names "Mr. Mitchell" for George Wilson, `Mark 12:30-31`
+  has "neverhave", and the 2026-06-12 devo cites `Hebrews 12:15-16` for what
+  is actually Hebrews 13:15-16. Fix them in the Markdown if you would rather
+  they read clean.
 - There is no search, tag or scripture index yet.
 - The `scripture` front-matter field is captured but not displayed.
