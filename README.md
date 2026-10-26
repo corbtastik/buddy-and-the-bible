@@ -145,7 +145,8 @@ Pages or GitHub Pages would work just as well.
 `references/` holds the original iMessage screenshots the devos were
 transcribed from, kept as provenance so any transcription can be checked
 against the source. One folder per month, named for the month it covers:
-`references/jan-2026/`, `references/feb-2026/`, `references/apr-may-2026/`, `references/june-2026/`,
+`references/jan-2026/`, `references/feb-2026/`, `references/mar-2026/`,
+`references/apr-may-2026/`, `references/june-2026/`,
 `references/july-2026/`, `references/august-2026/`,
 `references/sept-2026/`, `references/oct-2026/`.
 
@@ -327,6 +328,72 @@ The only complete month so far: every February weekday has a devo.
   `a-blessing-and-a-responsibility`), Hebrews 11:6 (2026-02-25 against
   January's `diligently-seek-him`) and Psalm 39 (2026-02-16 against
   2026-02-04).
+
+---
+
+#### March 2026 — 23 devos — `references/mar-2026/`
+
+Two firsts: a message sent on a Saturday, and a message from someone other
+than Buddy.
+
+*Assumptions*
+
+- **Filename order is weekday order** for the 22 `Untitled` files, checked
+  against each header. `Mon-Mar-9th-924AM.jpg` is named for its date because
+  it was not the first message that day; the name was taken as given and
+  Mar 9 is a Monday, which checks out.
+- **The year is absent** from the screenshots; taken as 2026 from the folder
+  name and consistent with every date.
+
+*Coverage*
+
+- Mar 2 -- Mar 31. 21 of March's 22 weekdays have a devo.
+- **No devo on Mar 27 (Fri)** -- and he says why: the Mar 28 devo ends "I
+  apologize for not getting this out yesterday. b".
+- **Mar 28 is a Saturday**, the first non-weekday in the archive, and it
+  carries two messages: his late devo at 6:46 AM and Brad's prayer at
+  11:45 AM.
+- Mar 9's earlier message is not in the folder, so the 9:24 AM one is that
+  day's devo.
+
+*Corrections applied*
+
+- Lost spaces restored, per the practice begun with January.
+- Numbered-book references spaced, as in earlier batches.
+- None to his wording.
+
+*Left as written — worth a look*
+
+- 2026-03-16 has "not a leader in the since that" (*sense*) and "the quite
+  unassuming person" (*quiet*).
+- 2026-03-25 has "He wants or minds to be blinded" (*our*).
+- 2026-03-30 has "nor act in bad taste" mid-sentence where the sense wants
+  *nor would she act*.
+- 2026-03-31 has "whether we are the heated properly".
+- Brad's prayer has "to be humble like like Him" -- his words, left alone.
+
+*Notes*
+
+- **2026-03-28 carries a prayer written by Brad Payne, Buddy's son.** The
+  screenshot's sender label reads "Brad Payne", so it is a separate page
+  with `author: Brad Payne` rather than a second bubble on Buddy's devo --
+  different senders cannot share a bubble group. It is the only devo in the
+  archive not written by Buddy.
+- **The avatar now depends on the author.** Showing Buddy's photo on Brad's
+  prayer would be wrong, and there is no photo of Brad, so a devo whose
+  `author` differs from `site.author` gets a neutral SF Symbols
+  person.crop.circle.fill instead, in the thread and in the list. Buddy's
+  own devos are unchanged. Drop a photo in and swap the `{% if %}` in
+  `devo.njk` and `index.njk` if one turns up.
+- 2026-03-16 is a remembrance of an unnamed man -- "He was a quiet man" --
+  and reads as written for someone in particular.
+- 2026-03-03 is his prayer for his children and grandchildren; 2026-03-24
+  recalls them climbing into his lap; 2026-03-30 tells a story about Brad's
+  high-school football and Joy speaking up at a pep rally. Kept, per the
+  policy on his own remarks.
+- Several passages rework earlier devos and are slugged for their own
+  illustration: Matthew 7:13-14, Matthew 18:6-9, Romans 12:1, James 4:7-10,
+  Romans 10:17 and 1 Corinthians 13:11.
 
 ---
 

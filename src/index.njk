@@ -48,7 +48,16 @@ eleventyExcludeFromCollections: true
         data-date="{{ devo.date | isoDate }}"
         data-text="{{ devo.data.title | searchText(devo.data.scripture, devo.data.summary, devo.templateContent) }}">
       <a class="row-link" href="{{ devo.url }}">
+        {%- set who = devo.data.author if devo.data.author else site.author %}
+        {%- if who == site.author %}
         <img class="row-avatar" alt="" src="/assets/img/buddy.png" width="52" height="52">
+        {%- else %}
+        <svg class="row-avatar avatar-other" viewBox="0 0 32 32" role="img" aria-label="{{ who }}">
+          <circle cx="16" cy="16" r="16" fill="currentColor" opacity=".22"/>
+          <circle cx="16" cy="12.6" r="5" fill="currentColor" opacity=".75"/>
+          <path d="M5.6 28.2a10.8 10.8 0 0 1 20.8 0A16 16 0 0 1 5.6 28.2Z" fill="currentColor" opacity=".75"/>
+        </svg>
+        {%- endif %}
         <span class="row-body">
           <span class="row-top">
             <span class="row-title">{{ devo.data.title }}</span>

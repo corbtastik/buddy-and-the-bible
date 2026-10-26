@@ -158,6 +158,8 @@ a{color:inherit;text-decoration:none}
 
 .tail{position:absolute;z-index:0;left:0;bottom:-6.4px;width:22px;height:25px;display:block}
 .avatar{position:absolute;left:-39px;bottom:-6.3px;width:32px;height:32px;display:block;border-radius:50%}
+/* Stand-in for a sender we have no photo of. */
+.avatar-other{color:var(--meta);background:var(--bubble);overflow:hidden}
 
 /* ---------- prev / next ---------- */
 .pager{display:flex;flex-direction:column;gap:8px;margin:34px 0 0 43px;width:min(310px,calc(100% - 43px))}
