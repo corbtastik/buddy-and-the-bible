@@ -146,7 +146,8 @@ Pages or GitHub Pages would work just as well.
 transcribed from, kept as provenance so any transcription can be checked
 against the source. One folder per month, named for the month it covers:
 `references/apr-may-2026/`, `references/june-2026/`,
-`references/july-2026/`, `references/august-2026/`.
+`references/july-2026/`, `references/august-2026/`,
+`references/sept-2026/`.
 
 He does not send a devo every weekday, so gaps in a month are normal. Each
 entry below lists the days with none, so a gap is visibly accounted for
@@ -385,6 +386,62 @@ Examples already in the archive:
   Likewise Romans 12:1 on 2026-08-11 and Romans 12:1-2 on 2026-08-26.
 - The folder arrived nested as `references/july-2026/august-2026/` and was
   moved up beside the others. July's 21 screenshots were untouched.
+
+---
+
+#### September 2026 — 20 devos — `references/sept-2026/`
+
+*Assumptions*
+
+- **Filename order is weekday order**, checked the same way: every file's
+  weekday and send time read back off its own screenshot header, all 20
+  matched. The sequence breaks twice here -- after Sep 3 and after Sep 11 --
+  so positional guessing would have mis-dated most of the month.
+- **The year is absent** from the screenshots; taken as 2026 from the folder
+  name and consistent with all 20 weekdays.
+
+*Coverage*
+
+- Sep 1 -- Sep 30. September 2026 has 22 weekdays and there are 20 devos.
+- **No devo on Sep 4 (Fri) or Sep 14 (Mon).**
+
+*Corrections applied*
+
+- Numbered-book references spaced, as in earlier batches.
+- None to his wording.
+
+*Left as written — worth a look*
+
+- **2026-09-22 cites `Psalm 119:150` for what is Psalm 119:105** ("Your word
+  is a lamp to my feet"). The substantive one this month.
+- 2026-09-01 quotes James 3:5-6 as "the tongue is]a fire" -- the same stray
+  bracket seen in the April--May batch -- and has "Our criticismcan destroy".
+- 2026-09-21 quotes Psalm 27:1 as "HE LORD is my light" (*THE*).
+- 2026-09-29 has "The law of you mouth" (*your*) and "more that gold"
+  (*than*), both inside the Psalm 119 quotation, plus "Archaeologist, found
+  and dug an ancient city".
+- 2026-09-30 has "BUSreligion" run together and "were people only talk"
+  (*where*).
+- 2026-09-02 has "Somethings prevent hearing" (*Some things*).
+- 2026-09-08 has "the new nature Christians have are recreated into".
+- 2026-09-16 has "if we want it's benefits" (*its*).
+- 2026-09-28 has "motivate his readers remain faithful" (*to remain*).
+
+*Notes*
+
+- Two open with prose rather than scripture, as 2026-07-25 and 2026-08-26
+  did: 2026-09-10 (which then lists the three New Testament uses of the noun
+  *Christian*, set as a list with its scripture between) and 2026-09-15.
+- 2026-09-21 is Proverbs 3:5-6, which 2026-06-11 already took as
+  `lean-not-on-your-own-understanding`, so it is slugged
+  `fundamental-attitudes`. Likewise James 1 recurs on 2026-09-02, 09-18 and
+  09-30, and Hebrews 6:4-6 on 2026-08-25 and 2026-09-28; each is slugged
+  for its own illustration.
+- 2026-09-02 names his "Papaw Williams" -- kept, per the policy on his own
+  remarks.
+- The folder arrived nested as `references/august-2026/sept-2026/`, the same
+  way August did, and was moved up beside the others. August's 20
+  screenshots were untouched.
 
 ## Known gaps
 
