@@ -146,11 +146,15 @@ Pages or GitHub Pages would work just as well.
 transcribed from, kept as provenance so any transcription can be checked
 against the source. One folder per month, named for the month it covers:
 `references/apr-may-2026/`, `references/june-2026/`,
-`references/july-2026/`.
+`references/july-2026/`, `references/august-2026/`.
 
 He does not send a devo every weekday, so gaps in a month are normal. Each
 entry below lists the days with none, so a gap is visibly accounted for
 rather than looking like a transcription that got dropped.
+
+Nor are they always sent in the morning. `time` records whatever the
+screenshot says, afternoon included, so an odd hour is the source speaking
+and not a typo.
 
 ### Transcription log
 
@@ -311,6 +315,61 @@ breaks) is ours. Anything beyond that is a correction and belongs under
   smaller than earlier batches. That affects the screenshots only -- the
   bubble renders at a fixed 17px like every other devo, so nothing about the
   site's type changed.
+
+---
+
+#### August 2026 — 20 devos — `references/august-2026/`
+
+*Assumptions*
+
+- **Filename order is weekday order**, as before, and checked the same way:
+  every file's weekday and send time read back off its own screenshot header,
+  all 20 matched. The sequence holds through Aug 26 and then skips, so a
+  positional guess would have mis-dated the last two.
+- **The year is absent** from the screenshots; taken as 2026 from the folder
+  name and consistent with all 20 weekdays.
+
+*Coverage*
+
+- Aug 3 -- Aug 31. August 2026 has 21 weekdays and there are 20 devos.
+- **No devo on Aug 27 (Thu).**
+- Two were sent in the afternoon rather than the morning: Aug 5 at 2:08 PM
+  and Aug 31 at 1:31 PM. Recorded as sent.
+
+*Corrections applied*
+
+- Numbered-book references spaced, as in earlier batches.
+- None to his wording.
+
+*Left as written — worth a look*
+
+- **2026-08-12 cites `Matthew 19:41-44` for what is Luke 19:41-44.** The
+  substantive one this month.
+- 2026-08-13 has "could have done that will 400 mighty warriors" (*with*),
+  "turn around and returned" (*turned*), and a sentence that reads "Do
+  'shed blood' in anger and avenge yourself" where the sense needs *Don't*.
+- 2026-08-14 spells the character both "Preachr Pile" and "Preacher Pile",
+  has "Too which" (*To*), and "in matter of personal character" (*matters*).
+- 2026-08-25 has "Sunday eveningand" run together and "our conscientious"
+  (*conscience*).
+- 2026-08-28 has "first ever day" (*every day*) and "the principle"
+  (*principal*).
+- 2026-08-10 has "If they did not to become sluggish or lazy!"
+- 2026-08-07 runs two sentences together: "no one will live sinlessly It is
+  because of our weakness".
+- 2026-08-26 has "is they miss out on the good and wonderful blessings".
+
+*Notes*
+
+- 2026-08-26 opens with a hymn rather than scripture, as 2026-07-25 did;
+  the two verses are set as a quotation.
+- 2026-08-31 begins "I apologize for the late posting. b." -- his own note,
+  kept as the first line since he sent it that way.
+- 2026-08-05 is Luke 14:25-27, close to 2026-07-06's Luke 14:25-26, so it is
+  slugged `the-cost-of-discipleship` against that one's `all-in-all`.
+  Likewise Romans 12:1 on 2026-08-11 and Romans 12:1-2 on 2026-08-26.
+- The folder arrived nested as `references/july-2026/august-2026/` and was
+  moved up beside the others. July's 21 screenshots were untouched.
 
 ## Known gaps
 
