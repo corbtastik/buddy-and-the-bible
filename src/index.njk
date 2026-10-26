@@ -12,33 +12,28 @@ eleventyExcludeFromCollections: true
     {% include "theme-toggle.njk" %}
   </header>
 
-  {# Activity graph. Hidden until activity.js runs, since clicking a day only
-     does something with JavaScript; the list below is the real content. #}
+  {# Activity graph: a row per month, a column per day of the month, so it
+     fits the column at any width without scrolling. Hidden until the script
+     runs, since clicking a day only does something with JavaScript. #}
   <figure class="activity" id="activity" hidden>
-    <figcaption class="activity-cap">
-      {{ activity.total }} devos on {{ activity.days }} days
-    </figcaption>
-    <div class="activity-scroll">
-      <div class="activity-grid" role="group" aria-label="Devos by day. Select a day to jump to it.">
-        <div class="activity-months" aria-hidden="true">
-          {%- for w in activity.weeks %}<span class="activity-month">{{ w.month }}</span>{% endfor %}
-        </div>
-        <div class="activity-dows" aria-hidden="true"><span>Mon</span><span>Wed</span><span>Fri</span></div>
-        <div class="activity-weeks">
-          {%- for w in activity.weeks %}
-          <div class="activity-week">
-            {%- for d in w.days %}
-            {%- if d.count %}
-            <button type="button" class="day" data-level="{{ d.level }}" data-day="{{ d.iso }}"
-                    title="{{ d.label }}" aria-label="{{ d.label }}"></button>
-            {%- else %}
-            <span class="day" data-level="0" title="{{ d.label }}"></span>
-            {%- endif %}
-            {%- endfor %}
-          </div>
+    <figcaption class="activity-cap">{{ activity.total }} devos on {{ activity.days }} days</figcaption>
+    <div class="activity-months" role="group"
+         aria-label="Devos by day. Select a day to jump to it.">
+      {%- for m in activity.months %}
+      <div class="amonth">
+        <span class="amonth-name" aria-hidden="true">{{ m.name }}</span>
+        <div class="amonth-days" style="--cols:{{ activity.maxDays }}">
+          {%- for d in m.days %}
+          {%- if d.count %}
+          <button type="button" class="day" data-level="{{ d.level }}" data-day="{{ d.iso }}"
+                  title="{{ d.label }}" aria-label="{{ d.label }}"></button>
+          {%- else %}
+          <span class="day{% if d.weekend %} day-weekend{% endif %}" data-level="0" title="{{ d.label }}"></span>
+          {%- endif %}
           {%- endfor %}
         </div>
       </div>
+      {%- endfor %}
     </div>
     <div class="activity-key" aria-hidden="true">
       <span>Less</span>

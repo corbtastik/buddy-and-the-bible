@@ -221,10 +221,6 @@
   if (activity) {
     activity.hidden = false;
 
-    // Most recent weeks first, as the calendar reads right to left in time.
-    var scroller = activity.querySelector(".activity-scroll");
-    if (scroller) scroller.scrollLeft = scroller.scrollWidth;
-
     activity.addEventListener("click", function (e) {
       var cell = e.target.closest ? e.target.closest(".day[data-day]") : null;
       if (!cell) return;

@@ -97,10 +97,20 @@ past roughly 300 devos it would be worth moving it to a separate fetched
 
 ## Activity graph
 
-The home page opens with a GitHub-style calendar of the days he sent a devo,
-43 weeks from the first to the last. Selecting a day clears any active filter
-and scrolls the list to that day, flashing the row so the eye lands in the
-right place. Empty days are not interactive.
+The home page opens with a calendar of the days he sent a devo: a row per
+month, a column per day of the month. Selecting a day clears any active
+filter and scrolls the list to that day, flashing the row so the eye lands
+in the right place. Empty days are not interactive.
+
+The first version copied GitHub's layout -- a column per week across the
+year. That shape assumes a wide page: 43 columns did not fit this site's
+408px list column, so it needed horizontal scrolling and the day labels had
+to be pinned as the grid slid under them. Months-as-rows is at most 31
+columns, so `grid-template-columns: repeat(31, 1fr)` makes it fit the column
+by construction at any width. The squares come out the same 10px either way;
+what changes is that nothing scrolls and the whole range is visible at once.
+Weekends sit a shade lighter than other empty days, which turns his
+weekday rhythm into a diagonal as the weekend drifts through the month.
 
 The shading is a sequential one-hue ramp -- stronger blue means more devos
 that day. Only three days carry two, so there are two filled steps. The
