@@ -145,7 +145,7 @@ Pages or GitHub Pages would work just as well.
 `references/` holds the original iMessage screenshots the devos were
 transcribed from, kept as provenance so any transcription can be checked
 against the source. One folder per month, named for the month it covers:
-`references/jan-2026/`, `references/apr-may-2026/`, `references/june-2026/`,
+`references/jan-2026/`, `references/feb-2026/`, `references/apr-may-2026/`, `references/june-2026/`,
 `references/july-2026/`, `references/august-2026/`,
 `references/sept-2026/`, `references/oct-2026/`.
 
@@ -263,6 +263,70 @@ page.
   illustration: Matthew 7:13-14 (2026-01-09 `coasting`), Romans 10:17
   (2026-01-14), Philippians 1:27 (2026-01-01), Hebrews 11:6 (2026-01-02)
   and Matthew 18:6-9 (2026-01-28).
+
+---
+
+#### February 2026 — 20 devos — `references/feb-2026/`
+
+The only complete month so far: every February weekday has a devo.
+
+*Assumptions*
+
+- **Filename order is weekday order** for the 19 `Untitled` files, checked
+  as always against each header. One file is named for its date instead --
+  `Fri-Feb-20th-1010AM.jpg` -- because it was not the first message that day
+  and so carries no date header of its own. Its name was taken as given and
+  is consistent with Feb 20 being a Friday.
+- **The year is absent** from the screenshots; taken as 2026 from the folder
+  name and consistent with all 20 weekdays.
+
+*Coverage*
+
+- Feb 2 -- Feb 27, all 20 weekdays. No gaps.
+- Feb 20's **first** message of the day is not in the folder; only the
+  10:10 AM one was captured, so that is the Feb 20 devo.
+
+*Corrections applied*
+
+- Lost spaces restored, per the practice begun with January
+  ("received strengthto conceive", "He is the Rock" and similar).
+- Numbered-book references spaced, as in earlier batches.
+- None to his wording.
+
+*Left as written — worth a look*
+
+- **Four citations point at the wrong passage.** 2026-02-06 cites
+  `1 John 1:10` for what is 1 John 1:9; 2026-02-16 cites
+  `Ephesians 3:15-16` for Ephesians 5:15-16; 2026-02-24 cites
+  `Matthew 21:26` for Matthew 21:22; and 2026-02-17 runs Ephesians 4:17-18
+  on after the Hebrews 5:12-14 quotation under the one reference.
+- 2026-02-02 and 02-03 quote Romans 1:16 as "I not ashamed" (*I am not*).
+- 2026-02-05 has "Wisdom is better that weapons of war" (*than*) and
+  "bad companions corrupts good morals" (*corrupt*).
+- 2026-02-13 has "walked up to the gentleman and to him that he was wasting
+  his time" (*and told him*), and "the loss of a dear loved ones".
+- 2026-02-24 has "what god expects it to be" (lowercase).
+
+*Notes*
+
+- **He sent the same devo twice.** 2026-02-02 at 7:28 AM and 2026-02-03 at
+  6:10 AM are the Hebrews 11:11 devo, word for word. Two separate messages
+  with their own headers, so both are kept and both carry the title
+  "Strength Through Faith"; the second is slugged
+  `strength-through-faith-resent`. They will sit next to each other in the
+  list. Say the word if you would rather only one were published.
+- 2026-02-10 ends with a short anonymous poem, set with hard line breaks
+  like January's.
+- 2026-02-04 is about his father and the Psalm he quoted in every prayer
+  until his memory went; 2026-02-13 tells how Joy's parents met, and
+  2026-02-05 mentions Joy's cinnamon rolls. Kept, per the policy on his own
+  remarks.
+- Several passages rework earlier devos and are slugged for their own
+  illustration: Isaiah 59:1-2 (2026-02-11 against July's
+  `sin-is-not-gods-fault`), the prayer devo (2026-02-24 against January's
+  `a-blessing-and-a-responsibility`), Hebrews 11:6 (2026-02-25 against
+  January's `diligently-seek-him`) and Psalm 39 (2026-02-16 against
+  2026-02-04).
 
 ---
 
