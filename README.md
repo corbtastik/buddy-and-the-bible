@@ -179,6 +179,21 @@ reproduced as written. Formatting (scripture into blockquotes, paragraph
 breaks) is ours. Anything beyond that is a correction and belongs under
 *Corrections* below, never applied silently.
 
+**His own remarks stay in.** Asides, credits, apologies and sign-offs are
+part of the message he sent, not stray text to tidy away, and they are
+often the most personal thing in a devo. Keep them where he put them.
+Examples already in the archive:
+
+- `I apologize for the late posting. b.` opening 2026-08-31
+- `(Thanks Brad)` closing 2026-05-12, and `(copied)` on 2026-04-30,
+  2026-07-17 and 2026-08-20, marking what he quoted from elsewhere
+- `BTW it's an open book test.` ending 2026-08-06
+- Named sources: `Brother Matt shared this quote with me` (2026-06-23),
+  `Joy once told me a story of her grandmother` (2026-07-31),
+  `Someone told me that this wasn't very comforting` (2026-08-10)
+- Whole passages written by someone else, set as a quotation with the
+  attribution he gave: his son Brad's story on 2026-06-15
+
 ---
 
 #### April--May 2026 — 22 devos — `references/apr-may-2026/`
