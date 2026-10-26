@@ -1,0 +1,29 @@
+---
+layout: base.njk
+bodyClass: inbox
+title: Morning Devo
+eleventyExcludeFromCollections: true
+---
+<main class="screen screen-list">
+  <header class="list-head">
+    <h1>{{ site.title }}</h1>
+    <p class="list-sub">{{ collections.devos | length }} devo{{ "" if collections.devos | length == 1 else "s" }} from {{ site.author }}</p>
+  </header>
+
+  <ul class="rows">
+    {% for devo in collections.devos %}
+    <li class="row">
+      <a class="row-link" href="{{ devo.url }}">
+        <img class="row-avatar" alt="" src="/assets/img/buddy.png" width="52" height="52">
+        <span class="row-body">
+          <span class="row-top">
+            <span class="row-title">{{ devo.data.title }}</span>
+            <span class="row-date">{{ devo.date | shortDate }}<svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M1.2 1 6 6l-4.8 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </span>
+          <span class="row-preview">{{ devo.templateContent | preview }}</span>
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</main>

@@ -1,0 +1,16 @@
+{
+  "name": "morning-dev",
+  "version": "0.1.0",
+  "description": "Morning Devos by Buddy Payne",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

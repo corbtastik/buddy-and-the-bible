@@ -1,0 +1,117 @@
+/* Morning Devo — an iOS Messages thread at 440pt (iPhone Pro Max), centered on
+   wider screens. Thread styles are carried over from the original design file;
+   the conversation-list styles extend the same system. */
+
+:root{
+  --bg:#000; --bubble:#262629; --text:#fff; --meta:#838389; --name:#8c8c92;
+  --glass:rgba(30,30,32,.78); --glass-edge:rgba(255,255,255,.13); --ph:#68686d;
+  --sep:rgba(255,255,255,.10); --accent:#0a84ff;
+  --sf:-apple-system,"SF Pro Text",BlinkMacSystemFont,system-ui,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark; background:var(--bg);
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+
+html,body{background:var(--bg);color:var(--text)}
+body{
+  margin:0;font-family:var(--sf);-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+img{max-width:100%}
+button{all:unset;cursor:pointer}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+.screen{max-width:408px;margin:0 auto;position:relative;
+  padding-top:99px;padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+
+/* ---------- top bar (thread) ---------- */
+.top{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:5;height:150px;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(0,0,0,.92) 0,rgba(0,0,0,.8) 55%,rgba(0,0,0,0) 100%)}
+.top-in{position:relative;max-width:440px;margin:0 auto;height:100%;
+  padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.back{position:absolute;left:20.5px;top:0;width:43.4px;height:43.4px;border-radius:50%;
+  background:var(--glass);border:1px solid var(--glass-edge);display:grid;place-items:center;
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);pointer-events:auto}
+.cluster{position:absolute;left:50%;top:0;width:60px;height:60px;margin-left:-30px;display:block}
+.pill{position:absolute;left:50%;top:55px;transform:translateX(-50%);height:31.7px;padding:0 13px 0 14px;
+  border-radius:16px;background:var(--glass);border:1px solid var(--glass-edge);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  display:flex;align-items:center;gap:5px;font-size:17px;font-weight:600;letter-spacing:-.2px;
+  white-space:nowrap;color:var(--text)}
+.pill svg{opacity:.45}
+
+/* ---------- thread ---------- */
+.stamp{margin:0;text-align:center;font-size:12px;line-height:16px;color:var(--meta);font-variant-numeric:tabular-nums}
+.stamp b{font-weight:600}
+.stamp .clock{margin-left:.15em}
+.from{margin:4px 0 0 58px;font-size:12px;line-height:16px;color:var(--name)}
+
+.msg{position:relative;margin:3px 0 0 43px;width:min(310px,calc(100% - 43px))}
+.bubble{background:var(--bubble);border-radius:18px;padding:10.3px 14px 10.3px 14.3px;
+  font-size:17px;line-height:22px;letter-spacing:-.4px;color:var(--text);overflow-wrap:anywhere}
+.bubble > :first-child{margin-top:0}
+.bubble > :last-child{margin-bottom:0}
+.bubble p{margin:0 0 20px}
+.bubble ul,.bubble ol{margin:0 0 20px;padding-left:1.15em}
+.bubble li{margin:0 0 4px}
+.bubble li::marker{color:var(--meta)}
+.bubble strong{font-weight:600}
+.bubble em{font-style:italic}
+.bubble a{color:#54a8ff;text-decoration:underline;text-underline-offset:2px}
+/* Scripture quoted inside a text. */
+.bubble blockquote{margin:0 0 20px;padding-left:11px;border-left:2px solid rgba(255,255,255,.22);color:#e6e6ea}
+.bubble h2,.bubble h3{margin:0 0 6px;font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.4px}
+
+.tail{position:absolute;left:0;bottom:-6.4px;width:22px;height:25px;display:block}
+.avatar{position:absolute;left:-39px;bottom:-6.3px;width:32px;height:32px;display:block;border-radius:50%}
+
+/* ---------- prev / next ---------- */
+.pager{display:flex;flex-direction:column;gap:8px;margin:34px 0 0 43px;width:min(310px,calc(100% - 43px))}
+.pager-link{font-size:13px;line-height:18px;color:var(--meta);padding:9px 13px;border-radius:14px;
+  border:1px solid var(--glass-edge);background:rgba(255,255,255,.035)}
+.pager-link:hover{color:var(--text);background:rgba(255,255,255,.07)}
+.pager-newer{text-align:right}
+
+/* ---------- composer dock ---------- */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:5;
+  padding-bottom:max(14px,calc(env(safe-area-inset-bottom,0px) - 5px));
+  background:linear-gradient(to top,rgba(0,0,0,.95) 40%,rgba(0,0,0,0))}
+.dock-in{position:relative;max-width:440px;margin:0 auto;height:56px;
+  padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.plus{position:absolute;left:28.5px;bottom:0;width:39.3px;height:39.3px;border-radius:50%;
+  background:var(--glass);border:1px solid var(--glass-edge);display:grid;place-items:center}
+.field{position:absolute;left:80px;right:28.3px;bottom:0;height:39.7px;border-radius:20px;
+  border:1px solid var(--glass-edge);background:rgba(18,18,20,.7);display:flex;align-items:center;
+  padding:0 12px 0 15.5px;font-size:17px;letter-spacing:-.4px;color:var(--ph)}
+.field span{flex:1;white-space:nowrap;overflow:hidden}
+
+/* ---------- conversation list (home) ---------- */
+.screen-list{padding-top:18px;padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))}
+.list-head{padding:22px 4px 14px}
+.list-head h1{margin:0;font-size:34px;line-height:41px;font-weight:700;letter-spacing:-.9px}
+.list-sub{margin:3px 0 0;font-size:15px;line-height:20px;color:var(--meta)}
+
+.rows{list-style:none;margin:0;padding:0}
+.row + .row{border-top:1px solid var(--sep)}
+.row-link{display:flex;gap:12px;align-items:flex-start;padding:11px 4px 12px;border-radius:12px}
+.row-link:hover{background:rgba(255,255,255,.05)}
+.row-avatar{flex:0 0 52px;width:52px;height:52px;border-radius:50%;display:block}
+.row-body{flex:1;min-width:0}
+.row-top{display:flex;align-items:baseline;gap:8px}
+.row-title{flex:1;min-width:0;font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.4px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row-date{flex:none;display:flex;align-items:center;gap:4px;font-size:15px;line-height:22px;
+  color:var(--meta);font-variant-numeric:tabular-nums}
+.row-date svg{opacity:.55}
+.row-preview{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;margin-top:1px;font-size:15px;line-height:20px;letter-spacing:-.2px;color:var(--meta)}
+
+@media (prefers-reduced-motion:no-preference){
+  .row-link,.pager-link{transition:background-color .12s ease,color .12s ease}
+}

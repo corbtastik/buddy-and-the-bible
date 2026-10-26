@@ -1,0 +1,47 @@
+---
+layout: base.njk
+bodyClass: thread
+---
+<div class="top"><div class="top-in">
+  <a class="back" href="/" aria-label="All devos">
+    <svg width="13" height="22" viewBox="0 0 13 22" fill="none" aria-hidden="true"><path d="M11 2 2 11l9 9" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <img class="cluster" alt="" src="/assets/img/cluster.png" width="60" height="60">
+  <div class="pill">{{ site.title }}<svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M1.2 1 6 6l-4.8 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+</div></div>
+
+<main class="screen">
+  <h1 class="sr-only">{{ title }}</h1>
+
+  <p class="stamp">
+    <time datetime="{{ page.date | isoDate }}"><b>{{ page.date | longDate }}</b></time>
+    {%- if time %} <span class="clock">{{ time }}</span>{% endif %}
+  </p>
+  <p class="from">{{ author if author else site.author }}</p>
+
+  {% set chunks = content | bubbles %}
+  {% for chunk in chunks %}
+  <div class="msg{% if loop.last %} msg-last{% endif %}">
+    <div class="bubble">{{ chunk | safe }}</div>
+    {% if loop.last %}
+    <svg class="tail" viewBox="0 -18.6 22 25" aria-hidden="true"><path d="M0-18.6V-6.5C0-1.2 2.6 3 8.6 6.2 7 4.5 6.4 3.2 6.6 1.9 10.6 4.4 15.6 2.2 21.8 0V-18.6Z" fill="var(--bubble)"/></svg>
+    <img class="avatar" alt="{{ author if author else site.author }}" src="/assets/img/buddy.png" width="32" height="32">
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  <nav class="pager" aria-label="More devos">
+    {% set prev = collections.devos | getPreviousCollectionItem %}
+    {% set next = collections.devos | getNextCollectionItem %}
+    {# The collection is newest-first, so "next" in list order is the older devo. #}
+    {% if next %}<a class="pager-link" href="{{ next.url }}" rel="prev">&larr; {{ next.data.title }}</a>{% endif %}
+    {% if prev %}<a class="pager-link pager-newer" href="{{ prev.url }}" rel="next">{{ prev.data.title }} &rarr;</a>{% endif %}
+  </nav>
+</main>
+
+<div class="dock"><div class="dock-in">
+  <div class="plus" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 17 17"><path d="M8.5 1v15M1 8.5h15" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+  <div class="field" aria-hidden="true"><span>Text Message &bull; SMS</span>
+    <svg width="14" height="22" viewBox="0 0 14 22" fill="none"><rect x="3.2" y="1" width="7.6" height="13" rx="3.8" stroke="#6e6e73" stroke-width="1.7"/><path d="M1 10.5a6 6 0 0 0 12 0M7 16.6V21" stroke="#6e6e73" stroke-width="1.7" stroke-linecap="round"/></svg>
+  </div>
+</div></div>
