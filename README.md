@@ -44,6 +44,8 @@ last bubble gets the tail and avatar.
 ```
 src/
   index.njk            conversation list (home)
+  scripture.njk        the scripture index at /scripture/
+  _data/scripture.js   builds that index from the devo Markdown
   _data/site.json      title, author, description, url
   _includes/
     base.njk           <head>, meta and social tags
@@ -56,6 +58,7 @@ src/
   devos/
     devos.json         layout, tag and permalink for every devo
     *.md               one file per devo
+lib/scripture.js       reference parsing, shared by the linker and the index
 docs/TEMPLATE.md       starting point for a new devo
 references/            source screenshots, by month (see the log below)
 archive/               the original design export
@@ -90,6 +93,34 @@ is the page itself -- no extra request, and the list still renders unfiltered
 with JavaScript off. At 45 devos that index is about 64 KB of a 104 KB page;
 past roughly 300 devos it would be worth moving it to a separate fetched
 `search.json`.
+
+## Scripture
+
+Every reference on a devo page links to that passage on BibleGateway in
+NKJV, the translation he quotes. Nothing is marked up by hand: a build-time
+transform in `eleventy.config.js` finds references in the rendered HTML,
+skipping anything already inside a link, a script or a style. A second
+transform gives every off-site link `target="_blank"` and `rel="noopener"`.
+
+His text is never changed. Where his wording and the URL have to differ the
+link text keeps what he wrote and only the URL is normalised -- `Lk.` to
+Luke, `Psalm` to Psalms, and his `ff` or trailing verse letters dropped,
+since BibleGateway cannot parse them.
+
+Two kinds of reference are deliberately left as plain text rather than
+guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
+and `Psalms 119: (18)`, whose shape is too irregular to parse.
+
+`/scripture/` lists all 345 references in canonical order, Genesis to
+Revelation, each linking to the devo that quotes it -- or to each of them,
+for the 40 verses cited more than once. It is linked from the home page
+only. The page is built by `src/_data/scripture.js`, which reads the
+Markdown directly rather than going through collections so it does not
+depend on every devo having rendered first.
+
+Both the linker and the index import their parsing rules from
+`lib/scripture.js`. That is the whole reason the file exists: if they
+drifted, the index would list verses the pages do not link, or the reverse.
 
 ## Light and dark
 

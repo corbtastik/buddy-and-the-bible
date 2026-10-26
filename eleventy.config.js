@@ -1,3 +1,5 @@
+import { newRefRegex, bookFor, bibleGatewayUrl } from "./lib/scripture.js";
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");
@@ -69,72 +71,15 @@ export default function (eleventyConfig) {
    *      the translation he quotes), and
    *   2. give every external link target=_blank and rel=noopener.
    *
-   * Doing this at build time rather than in the Markdown keeps his files
-   * plain text, so the next month's devos get linked without extra work. */
-
-  const BOOKS = {};
-  const addBook = (canonical, ...aliases) => {
-    [canonical, ...aliases].forEach((a) => {
-      BOOKS[a.toLowerCase().replace(/[\s.]/g, "")] = canonical;
-    });
-  };
-  // Only books that actually appear, plus the abbreviations he uses.
-  addBook("Genesis", "Gen");            addBook("Exodus", "Ex", "Exod");
-  addBook("Leviticus", "Lev");          addBook("Numbers", "Num");
-  addBook("Deuteronomy", "Deut");       addBook("Joshua", "Josh");
-  addBook("Judges", "Judg");            addBook("Ruth");
-  addBook("1 Samuel", "1Sam");          addBook("2 Samuel", "2Sam");
-  addBook("1 Kings", "1Kgs");           addBook("2 Kings", "2Kgs");
-  addBook("1 Chronicles", "1Chr");      addBook("2 Chronicles", "2Chr");
-  addBook("Ezra");                      addBook("Nehemiah", "Neh");
-  addBook("Esther", "Esth");            addBook("Job");
-  addBook("Psalms", "Psalm", "Psa", "Ps");
-  addBook("Proverbs", "Prov");          addBook("Ecclesiastes", "Eccl", "Eccles");
-  addBook("Isaiah", "Isa");             addBook("Jeremiah", "Jer");
-  addBook("Ezekiel", "Ezek");           addBook("Daniel", "Dan");
-  addBook("Hosea", "Hos");              addBook("Joel");
-  addBook("Amos");                      addBook("Jonah");
-  addBook("Micah", "Mic");              addBook("Habakkuk", "Hab");
-  addBook("Zechariah", "Zech");         addBook("Malachi", "Mal");
-  addBook("Matthew", "Matt", "Mt");     addBook("Mark", "Mk");
-  addBook("Luke", "Lk");                addBook("John", "Jn");
-  addBook("Acts");                      addBook("Romans", "Rom");
-  addBook("1 Corinthians", "1Cor");     addBook("2 Corinthians", "2Cor");
-  addBook("Galatians", "Gal");          addBook("Ephesians", "Eph");
-  addBook("Philippians", "Phil");       addBook("Colossians", "Col");
-  addBook("1 Thessalonians", "1Thess"); addBook("2 Thessalonians", "2Thess");
-  addBook("1 Timothy", "1Tim");         addBook("2 Timothy", "2Tim");
-  addBook("Titus");                     addBook("Philemon", "Phlm");
-  addBook("Hebrews", "Heb");            addBook("James", "Jas");
-  addBook("1 Peter", "1Pet");           addBook("2 Peter", "2Pet");
-  addBook("1 John", "1Jn");             addBook("2 John", "2Jn");
-  addBook("3 John", "3Jn");             addBook("Jude");
-  addBook("Revelation", "Rev");
-
-  // Book, then chapter:verse, optionally a range, optionally his "ff" or a
-  // verse letter. A bare "Peter 1:6-7" has no book number and so no entry in
-  // BOOKS -- it stays plain text rather than guessing between 1 and 2 Peter.
-  const REF = new RegExp(
-    "\\b((?:[1-3]\\s*)?[A-Z][a-z]+\\.?)\\s*(\\d{1,3}):(\\d{1,3})" +
-      "(?:\\s*[-\u2013]\\s*(\\d{1,3}))?(?:ff\\b|[ab]\\b)?",
-    "g"
-  );
-
-  const bgUrl = (book, ch, v1, v2) => {
-    const passage = `${book} ${ch}:${v1}${v2 ? "-" + v2 : ""}`;
-    return (
-      "https://www.biblegateway.com/passage/?search=" +
-      encodeURIComponent(passage) +
-      "&amp;version=NKJV"
-    );
-  };
+   * The parsing rules live in lib/scripture.js, shared with the scripture
+   * index, so the page that lists a verse and the page that links it can
+   * never disagree about what counts as a reference. */
 
   function linkRefsInText(text) {
-    return text.replace(REF, (whole, rawBook, ch, v1, v2) => {
-      const key = rawBook.toLowerCase().replace(/[\s.]/g, "");
-      const book = BOOKS[key];
+    return text.replace(newRefRegex(), (whole, rawBook, ch, v1, v2) => {
+      const book = bookFor(rawBook);
       if (!book) return whole; // unknown book: leave his text alone
-      return `<a href="${bgUrl(book, ch, v1, v2)}">${whole}</a>`;
+      return `<a href="${bibleGatewayUrl(book, ch, v1, v2)}">${whole}</a>`;
     });
   }
 
