@@ -59,7 +59,7 @@ src/
 docs/TEMPLATE.md       starting point for a new devo
 references/            source screenshots, by month (see the log below)
 archive/               the original design export
-firebase.json          hosting config, pinned to the morning-devos site
+firebase.json          hosting config, pinned to the buddy-and-the-bible site
 ```
 
 ## Searching the list
@@ -121,19 +121,23 @@ external dependency; Apple devices are unaffected either way.
 
 ## Deploying
 
-Live at <https://morning-devos.web.app>, a Firebase Hosting site inside the
-`corbs-cloud` project. After adding devos:
+Live at <https://buddy-and-the-bible.web.app>, a Firebase Hosting site inside
+the `corbs-cloud` project. After adding devos:
 
 ```sh
 npm run build && firebase deploy --only hosting
 ```
 
-`firebase.json` pins the target to the `morning-devos` site -- that project
+`firebase.json` pins the target to the `buddy-and-the-bible` site -- that project
 has several, so an unqualified deploy would be ambiguous. HTML revalidates on
 every request, css/js cache for ten minutes, images for a year. The HTML rule
 needs explicit `/` and `**/` sources: permalinks are directory-style, so
 `**/*.html` never matches a real request path and the pages would otherwise
 pick up Firebase's one-hour default.
+
+An earlier deploy lived at `morning-devos.web.app`. That site still exists
+and still serves the last build made under the old name; it is being
+retired by hand. Nothing in this repo points at it any more.
 
 `url` in `src/_data/site.json` is what enables the canonical, `og:url` and
 `og:image` tags; they are omitted while it is blank, since link previews need

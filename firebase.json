@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "morning-devos",
+    "site": "buddy-and-the-bible",
     "public": "_site",
     "ignore": [
       "firebase.json",
