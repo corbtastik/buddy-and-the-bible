@@ -15,8 +15,7 @@ eleventyExcludeFromCollections: true
   {# Activity graph: a row per month, a column per day of the month, so it
      fits the column at any width without scrolling. Hidden until the script
      runs, since clicking a day only does something with JavaScript. #}
-  <figure class="activity" id="activity" hidden>
-    <figcaption class="activity-cap">{{ activity.total }} devos on {{ activity.days }} days</figcaption>
+  <div class="activity" id="activity" hidden>
     <div class="activity-months" role="group"
          aria-label="Devos by day. Select a day to jump to it.">
       {%- for m in activity.months %}
@@ -25,24 +24,17 @@ eleventyExcludeFromCollections: true
         <div class="amonth-days" style="--cols:{{ activity.maxDays }}">
           {%- for d in m.days %}
           {%- if d.count %}
-          <button type="button" class="day" data-level="{{ d.level }}" data-day="{{ d.iso }}"
+          <button type="button" class="day day-on" data-day="{{ d.iso }}"
                   title="{{ d.label }}" aria-label="{{ d.label }}"></button>
           {%- else %}
-          <span class="day{% if d.weekend %} day-weekend{% endif %}" data-level="0" title="{{ d.label }}"></span>
+          <span class="day" title="{{ d.label }}"></span>
           {%- endif %}
           {%- endfor %}
         </div>
       </div>
       {%- endfor %}
     </div>
-    <div class="activity-key" aria-hidden="true">
-      <span>Less</span>
-      <span class="day" data-level="0"></span>
-      <span class="day" data-level="1"></span>
-      <span class="day" data-level="2"></span>
-      <span>More</span>
-    </div>
-  </figure>
+  </div>
 
   <a class="index-link" href="/scripture/">
     {# SF Symbols book.closed #}
@@ -63,7 +55,7 @@ eleventyExcludeFromCollections: true
           <circle cx="7" cy="7" r="5.2" stroke="currentColor" stroke-width="1.7"/>
           <path d="M11 11l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
         </svg>
-        <input type="search" id="q" placeholder="Search, or 5/1/26 to 5/15/26"
+        <input type="search" id="q" placeholder="Search"
                aria-label="Search devos, or type a date like 5/21/26 or a range like 5/1/26 to 5/15/26"
                aria-describedby="result-count"
                autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
@@ -116,5 +108,15 @@ eleventyExcludeFromCollections: true
 
   <p class="no-match" id="no-match" hidden>No devos match.</p>
 </main>
+
+{# Appears once the reader has scrolled; hidden by default so no-JS visitors
+   never see a control that does nothing. #}
+<button type="button" id="to-top" class="to-top" hidden aria-label="Back to top">
+  {# SF Symbols chevron.up #}
+  <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true">
+    <path d="M4 10.5 8.5 6l4.5 4.5" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
 
 <script src="/assets/js/search.js" defer></script>

@@ -215,6 +215,23 @@
   tools.hidden = false;
   apply();
 
+  /* ---------- back to top ---------- */
+
+  var toTop = document.getElementById("to-top");
+  if (toTop) {
+    toTop.hidden = false;
+    var showAfter = function () {
+      toTop.classList.toggle("is-shown", window.scrollY > 320);
+    };
+    showAfter();
+    window.addEventListener("scroll", showAfter, { passive: true });
+    toTop.addEventListener("click", function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      q.focus({ preventScroll: true });
+    });
+  }
+
   /* ---------- activity graph ---------- */
 
   var activity = document.getElementById("activity");

@@ -20,6 +20,26 @@ function assertDarkThemesMatch() {
   const media = grab(/:root:not\(\[data-theme="light"\]\)\{\n([\s\S]*?)\n {2}\}\n\}/);
   const attr = grab(/:root\[data-theme="dark"\]\{\n([\s\S]*?)\n\}/);
   const only = (a, b) => a.filter((x) => !b.includes(x));
+  // Also compare against the light :root. A token renamed in :root but left
+  // stale in both dark blocks keeps them matching each other while dark
+  // silently falls back to the light value -- which is how the activity
+  // graph nearly shipped with light-mode squares on black.
+  const names = (decls) => decls.map((d) => d.split(":")[0].trim()).sort();
+  const lightRoot = grab(/:root\{\n([\s\S]*?)\n\}/);
+  const lightNames = names(lightRoot).filter((n) => n.startsWith("--"));
+  const darkNames = names(media).filter((n) => n.startsWith("--"));
+  const orphan = darkNames.filter((n) => !lightNames.includes(n));
+  const unthemed = lightNames.filter(
+    (n) => !darkNames.includes(n) && !["--sf", "--top-inset"].includes(n)
+  );
+  if (orphan.length || unthemed.length) {
+    throw new Error(
+      "app.css theme tokens are out of step.\n" +
+        "  defined in dark but not in :root: " + (orphan.join(", ") || "-") + "\n" +
+        "  in :root with no dark value:      " + (unthemed.join(", ") || "-")
+    );
+  }
+
   if (media.join("|") !== attr.join("|")) {
     throw new Error(
       "app.css dark themes have drifted.\n" +

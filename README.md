@@ -100,27 +100,18 @@ past roughly 300 devos it would be worth moving it to a separate fetched
 The home page opens with a calendar of the days he sent a devo: a row per
 month, a column per day of the month. Selecting a day clears any active
 filter and scrolls the list to that day, flashing the row so the eye lands
-in the right place. Empty days are not interactive.
+in the right place. Empty days are not interactive, and every day he sent
+one is the same blue whatever the count -- the date and count are in each
+square's tooltip and accessible name.
 
-The first version copied GitHub's layout -- a column per week across the
+The first version copied GitHub's layout, a column per week across the
 year. That shape assumes a wide page: 43 columns did not fit this site's
-408px list column, so it needed horizontal scrolling and the day labels had
-to be pinned as the grid slid under them. Months-as-rows is at most 31
-columns, so `grid-template-columns: repeat(31, 1fr)` makes it fit the column
-by construction at any width. The squares come out the same 10px either way;
-what changes is that nothing scrolls and the whole range is visible at once.
-Weekends sit a shade lighter than other empty days, which turns his
-weekday rhythm into a diagonal as the weekend drifts through the month.
+408px list column, so it needed horizontal scrolling and pinned day labels.
+Months-as-rows is at most 31 columns, so `grid-template-columns:
+repeat(31, 1fr)` makes it fit by construction at any width.
 
-The shading is a sequential one-hue ramp -- stronger blue means more devos
-that day. Only three days carry two, so there are two filled steps. The
-steps come from the data-viz blue ramp and were put through its validator
-rather than chosen by eye: light (`#3987e5`, `#184f95`) passes every check;
-dark (`#1c5cab`, `#6da7ec`) passes chroma, CVD separation, the
-normal-vision floor and contrast, failing only the categorical lightness
-band, which does not apply to a sequential ramp where lightness is the
-encoding. Each square carries the date and count as a tooltip and an
-accessible name, so the information is never colour alone.
+A back-to-top button appears bottom right once the page is scrolled past
+320px, on the home page only.
 
 ## Scripture
 
@@ -160,12 +151,20 @@ page goes back to following the system.
 
 Every colour is a token, defined on `:root` for light and repeated in two
 dark blocks -- one under `@media (prefers-color-scheme: dark)` and one under
-`:root[data-theme="dark"]`. Those two must stay identical, and the build now
-enforces it: `assertDarkThemesMatch()` in `eleventy.config.js` compares them
-and fails the build with the offending tokens named. It exists because they
-drifted once -- the activity-graph colours landed in the media query only,
-so forcing dark through the toggle showed light-mode squares on black, and
-nothing about that failed visibly. Forcing a theme
+`:root[data-theme="dark"]`. `assertDarkThemesMatch()` in
+`eleventy.config.js` fails the build when they fall out of step, naming the
+offending tokens. It checks two things, because both have already happened
+while building the activity graph:
+
+- the two dark blocks must match each other -- the graph's colours once
+  landed in the media query only, so forcing dark through the toggle showed
+  light-mode squares on black;
+- they must declare the same token *names* as `:root` -- renaming a token in
+  `:root` while both dark blocks kept the old name left them agreeing with
+  each other and silently falling back to the light value.
+
+Neither failed visibly, which is the reason the check exists. Keep all light
+tokens in the single `:root` block; a second one would hide from the check. Forcing a theme
 also sets `color-scheme`, without which the browser keeps painting native
 controls and scrollbars for the system appearance.
 

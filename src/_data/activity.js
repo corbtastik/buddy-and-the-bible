@@ -44,9 +44,6 @@ export default function () {
         count,
         // 0 none, 1 one devo, 2 more than one. Only three days have two.
         level: count === 0 ? 0 : count === 1 ? 1 : 2,
-        // Saturday or Sunday: he almost never sends then, and saying so in
-        // the tooltip is clearer than leaving a reader to guess at a gap.
-        weekend: date.getUTCDay() === 0 || date.getUTCDay() === 6,
         label: count
           ? `${fmtFull.format(date)} — ${count} devo${count > 1 ? "s" : ""}`
           : `${fmtFull.format(date)} — none`,
