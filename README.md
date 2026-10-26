@@ -148,7 +148,8 @@ against the source. One folder per month, named for the month it covers:
 `references/jan-2026/`, `references/feb-2026/`, `references/mar-2026/`,
 `references/apr-may-2026/`, `references/june-2026/`,
 `references/july-2026/`, `references/august-2026/`,
-`references/sept-2026/`, `references/oct-2026/`.
+`references/sept-2026/`, `references/oct-2026/`. One folder is not a
+month: `references/misc-2026/` holds messages from other threads.
 
 He does not send a devo every weekday, so gaps in a month are normal. Each
 entry below lists the days with none, so a gap is visibly accounted for
@@ -603,7 +604,8 @@ than Buddy.
 *Coverage*
 
 - Sep 1 -- Sep 30. September 2026 has 22 weekdays and there are 20 devos.
-- **No devo on Sep 4 (Fri) or Sep 14 (Mon).**
+- **No devo on Sep 4 (Fri).** Sep 14 was empty in this batch too, but a
+  message from another thread supplies it -- see the `misc-2026` entry.
 
 *Corrections applied*
 
@@ -706,6 +708,81 @@ format; nothing about a devo's page says which it came from.
   emoji" noted in `oct.txt`) are not rendered, here or in any earlier
   month. Say so if you would rather they were; it would be a change across
   the whole archive.
+
+---
+
+#### Other threads — 22 devos — `references/misc-2026/`
+
+Messages he sent on other Message threads, including the one he used before
+starting the Morning Devo thread. Not a month: the dates run across April,
+September and October, and they are filed by their own date like any other
+devo, so they sort into place on the site.
+
+*Assumptions*
+
+- **Every date came from its own header.** No sequential guessing at all
+  here, since these come from mixed threads. Two files are named for their
+  date because they were not the first message that day:
+  `Fri-Apr-3rd-454PM.jpg` and `Wed-Apr-15-1052AM.jpg`. Both names check out
+  against the calendar.
+- **The year is absent** from the screenshots; taken as 2026 and consistent
+  with every weekday.
+
+*Coverage*
+
+- Apr 1 -- Apr 28 (20 messages), plus Sep 14 and Oct 5.
+- **Apr 3 carries two messages**, 4:52 PM and 4:54 PM, two minutes apart.
+- **Sep 14 fills a gap** that the September entry had recorded as having no
+  devo. September now has 21 of its 22 weekdays; only Sep 4 is still empty.
+- Apr 15's earlier message is not in the folder, so the 10:52 AM one is that
+  day's devo.
+- April now has 21 of its 22 weekdays. **Apr 2 (Thu) has no devo.**
+
+*Corrections applied*
+
+- Lost spaces restored, per the practice begun with January.
+- Numbered-book references spaced, as in earlier batches.
+- None to his wording.
+
+*Left as written — worth a look*
+
+- 2026-04-21 has "it up to us to seek the answer" (*it is*), the same phrase
+  that appears in 2026-07-17.
+- 2026-04-27 has "First on the list of our life must always to be like
+  Jesus" (*must always be*).
+- 2026-04-17 has "Is our life wrapped up on our career" (*in*), as
+  2026-09-03 does.
+- 2026-04-23 attributes "No man is happy who does not think himself so" to
+  "Roman Emperor Marcus Antonius".
+
+*Notes*
+
+- **DUPLICATES TO SCRUB.** Two pairs are word-for-word identical. Both are
+  published so nothing is lost; delete whichever side you prefer.
+
+  1. `2026-10-05-crowded-in.md` (6:54 AM, from `oct-2026`) and
+     `2026-10-05-crowded-in-other-thread.md` (6:53 AM, from `misc-2026`).
+     The same devo sent to two threads a minute apart.
+  2. `2026-02-02-strength-through-faith.md` and
+     `2026-02-03-strength-through-faith-resent.md`, already flagged under
+     February -- he re-sent it the next morning.
+
+  Two more are very close but **not** identical, so both are kept as sent:
+  `2026-04-13` and `2026-04-27` differ by one sentence (91% shared), and
+  `2026-04-21` and `2026-07-17` rearrange the same material and differ in
+  their closing scripture (88% shared).
+
+- **2026-09-14 is a placeholder.** Its text could not be written out: every
+  attempt to emit it was stopped by an automated content filter on my
+  output, four times running, while the other 21 went through untouched. It
+  is a false positive on ordinary devotional prose, and I would not try to
+  work around a safety filter. The page exists with its date, time, title
+  and scripture, and the body says where to find the source:
+  `references/misc-2026/Untitled 19.jpg` -- Mark 16:4-6, a reflection on the
+  resurrection, the hymn "He Lives", and 1 Peter 1:3-5. Pasting the body in
+  from the screenshot finishes it.
+- `references/april-2026/` held the two named files before this batch and
+  was folded into `misc-2026`; recorded as a move, the files are unchanged.
 
 ## Known gaps
 
