@@ -1,6 +1,36 @@
+import fs from "node:fs";
 import { newRefRegex, bookFor, bibleGatewayUrl } from "./lib/scripture.js";
 
+/* The two dark-theme blocks in app.css have to carry the same tokens: one
+ * answers the system preference, the other the manual toggle. They have
+ * drifted once already -- the activity-graph colours landed in one and not
+ * the other, so forcing dark showed light-mode squares on black. Nothing
+ * about that fails visibly, so fail the build instead. */
+function assertDarkThemesMatch() {
+  const css = fs.readFileSync("src/assets/css/app.css", "utf8");
+  const grab = (re) => {
+    const m = css.match(re);
+    if (!m) throw new Error("app.css: could not find a dark-theme block");
+    return m[1]
+      .split("\n")
+      .map((l) => l.trim())
+      .filter((l) => l && !l.startsWith("/*") && !l.startsWith("color-scheme"))
+      .sort();
+  };
+  const media = grab(/:root:not\(\[data-theme="light"\]\)\{\n([\s\S]*?)\n {2}\}\n\}/);
+  const attr = grab(/:root\[data-theme="dark"\]\{\n([\s\S]*?)\n\}/);
+  const only = (a, b) => a.filter((x) => !b.includes(x));
+  if (media.join("|") !== attr.join("|")) {
+    throw new Error(
+      "app.css dark themes have drifted.\n" +
+        "  only under prefers-color-scheme: " + (only(media, attr).join(", ") || "-") + "\n" +
+        "  only under [data-theme=dark]:     " + (only(attr, media).join(", ") || "-")
+    );
+  }
+}
+
 export default function (eleventyConfig) {
+  assertDarkThemesMatch();
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");
 

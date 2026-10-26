@@ -46,6 +46,7 @@ src/
   index.njk            conversation list (home)
   scripture.njk        the scripture index at /scripture/
   _data/scripture.js   builds that index from the devo Markdown
+  _data/activity.js    builds the calendar grid for the activity graph
   _data/site.json      title, author, description, url
   _includes/
     base.njk           <head>, meta and social tags
@@ -94,6 +95,23 @@ with JavaScript off. At 45 devos that index is about 64 KB of a 104 KB page;
 past roughly 300 devos it would be worth moving it to a separate fetched
 `search.json`.
 
+## Activity graph
+
+The home page opens with a GitHub-style calendar of the days he sent a devo,
+43 weeks from the first to the last. Selecting a day clears any active filter
+and scrolls the list to that day, flashing the row so the eye lands in the
+right place. Empty days are not interactive.
+
+The shading is a sequential one-hue ramp -- stronger blue means more devos
+that day. Only three days carry two, so there are two filled steps. The
+steps come from the data-viz blue ramp and were put through its validator
+rather than chosen by eye: light (`#3987e5`, `#184f95`) passes every check;
+dark (`#1c5cab`, `#6da7ec`) passes chroma, CVD separation, the
+normal-vision floor and contrast, failing only the categorical lightness
+band, which does not apply to a sequential ramp where lightness is the
+encoding. Each square carries the date and count as a tooltip and an
+accessible name, so the information is never colour alone.
+
 ## Scripture
 
 Every reference on a devo page links to that passage on BibleGateway in
@@ -132,7 +150,12 @@ page goes back to following the system.
 
 Every colour is a token, defined on `:root` for light and repeated in two
 dark blocks -- one under `@media (prefers-color-scheme: dark)` and one under
-`:root[data-theme="dark"]`. Those two must stay identical. Forcing a theme
+`:root[data-theme="dark"]`. Those two must stay identical, and the build now
+enforces it: `assertDarkThemesMatch()` in `eleventy.config.js` compares them
+and fails the build with the offending tokens named. It exists because they
+drifted once -- the activity-graph colours landed in the media query only,
+so forcing dark through the toggle showed light-mode squares on black, and
+nothing about that failed visibly. Forcing a theme
 also sets `color-scheme`, without which the browser keeps painting native
 controls and scrollbars for the system appearance.
 

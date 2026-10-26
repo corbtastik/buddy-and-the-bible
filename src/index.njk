@@ -12,6 +12,43 @@ eleventyExcludeFromCollections: true
     {% include "theme-toggle.njk" %}
   </header>
 
+  {# Activity graph. Hidden until activity.js runs, since clicking a day only
+     does something with JavaScript; the list below is the real content. #}
+  <figure class="activity" id="activity" hidden>
+    <figcaption class="activity-cap">
+      {{ activity.total }} devos on {{ activity.days }} days
+    </figcaption>
+    <div class="activity-scroll">
+      <div class="activity-grid" role="group" aria-label="Devos by day. Select a day to jump to it.">
+        <div class="activity-months" aria-hidden="true">
+          {%- for w in activity.weeks %}<span class="activity-month">{{ w.month }}</span>{% endfor %}
+        </div>
+        <div class="activity-dows" aria-hidden="true"><span>Mon</span><span>Wed</span><span>Fri</span></div>
+        <div class="activity-weeks">
+          {%- for w in activity.weeks %}
+          <div class="activity-week">
+            {%- for d in w.days %}
+            {%- if d.count %}
+            <button type="button" class="day" data-level="{{ d.level }}" data-day="{{ d.iso }}"
+                    title="{{ d.label }}" aria-label="{{ d.label }}"></button>
+            {%- else %}
+            <span class="day" data-level="0" title="{{ d.label }}"></span>
+            {%- endif %}
+            {%- endfor %}
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="activity-key" aria-hidden="true">
+      <span>Less</span>
+      <span class="day" data-level="0"></span>
+      <span class="day" data-level="1"></span>
+      <span class="day" data-level="2"></span>
+      <span>More</span>
+    </div>
+  </figure>
+
   <a class="index-link" href="/scripture/">
     {# SF Symbols book.closed #}
     <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">

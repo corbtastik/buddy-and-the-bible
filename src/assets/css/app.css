@@ -65,6 +65,9 @@
     --control-hover:rgb(255 255 255 / .10);
     --hover:rgb(255 255 255 / .05);
     --clear-ring:#636366;
+    --day-0:rgb(255 255 255 / .08);
+    --day-1:#1c5cab;
+    --day-2:#6da7ec;
   }
 }
 :root[data-theme="light"]{color-scheme:light}
@@ -88,6 +91,9 @@
   --control-hover:rgb(255 255 255 / .10);
   --hover:rgb(255 255 255 / .05);
   --clear-ring:#636366;
+  --day-0:rgb(255 255 255 / .08);
+  --day-1:#1c5cab;
+  --day-2:#6da7ec;
 }
 
 *,*::before,*::after{box-sizing:inherit}
@@ -180,6 +186,53 @@ a{color:inherit;text-decoration:none}
 .list-head-text{min-width:0}
 .list-head h1{margin:0;font-size:34px;line-height:41px;font-weight:700;letter-spacing:-.9px}
 .list-sub{margin:3px 0 0;font-size:15px;line-height:20px;color:var(--meta)}
+
+/* ---------- activity graph ----------
+   A sequential one-hue ramp: more devos that day, stronger blue. Steps come
+   from the data-viz blue ramp and were run through its validator -- light
+   passes every check; dark passes chroma, CVD (dE 23.9), normal-vision and
+   contrast, failing only the categorical lightness band, which does not
+   apply to a sequential ramp where lightness *is* the encoding. */
+:root{
+  --day-0:rgb(0 0 0 / .07);
+  --day-1:#3987e5;
+  --day-2:#184f95;
+}
+.activity{margin:0 0 10px;padding:0}
+.activity-cap{padding:0 4px 7px;font-size:13px;line-height:18px;color:var(--meta)}
+/* No left padding: a sticky child anchors to the padding edge, so any gutter
+   here would let the grid show through beside the pinned day labels. */
+.activity-scroll{overflow-x:auto;overscroll-behavior-x:contain;padding:0 4px 2px 0;
+  scrollbar-width:thin}
+.activity-grid{display:inline-grid;grid-template-columns:auto auto;
+  grid-template-areas:". months" "dows weeks";column-gap:5px;row-gap:3px}
+.activity-months{grid-area:months;display:flex;gap:2px}
+.activity-month{width:13px;flex:none;font-size:10px;line-height:12px;color:var(--meta);
+  white-space:nowrap;overflow:visible}
+/* Pinned: the grid scrolls under these, so the day labels stay readable the
+   way they do on GitHub. */
+.activity-dows{grid-area:dows;position:sticky;left:0;z-index:2;background:var(--bg);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:13px 4px 1px 4px;font-size:10px;line-height:12px;color:var(--meta)}
+.activity-weeks{grid-area:weeks;display:flex;gap:2px}
+.activity-week{display:flex;flex-direction:column;gap:2px}
+/* 13px hit target around an 10px square, so the squares stay small without
+   becoming impossible to tap. */
+.day{width:13px;height:13px;flex:none;display:block;padding:1.5px;border:0;
+  border-radius:3.5px;background-color:var(--day-0);background-clip:content-box}
+.day[data-level="1"]{background-color:var(--day-1)}
+.day[data-level="2"]{background-color:var(--day-2)}
+button.day{cursor:pointer}
+button.day:hover{outline:1.5px solid var(--text);outline-offset:-1px;border-radius:4px}
+button.day:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.activity-key{display:flex;align-items:center;gap:3px;padding:6px 4px 0;
+  font-size:11px;line-height:14px;color:var(--meta)}
+.activity-key span:first-child{margin-right:2px}
+.activity-key span:last-child{margin-left:2px}
+/* The row the reader jumped to, so the eye lands in the right place. */
+.row-jumped{animation:rowFlash 1.4s ease-out}
+@keyframes rowFlash{from{background:var(--control-hover)}to{background:transparent}}
+@media (prefers-reduced-motion:reduce){.row-jumped{animation:none;background:var(--control-hover)}}
 
 /* ---------- scripture index ---------- */
 .crumb{margin:0 0 6px;font-size:15px;line-height:20px;color:var(--accent)}

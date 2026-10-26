@@ -214,4 +214,36 @@
 
   tools.hidden = false;
   apply();
+
+  /* ---------- activity graph ---------- */
+
+  var activity = document.getElementById("activity");
+  if (activity) {
+    activity.hidden = false;
+
+    // Most recent weeks first, as the calendar reads right to left in time.
+    var scroller = activity.querySelector(".activity-scroll");
+    if (scroller) scroller.scrollLeft = scroller.scrollWidth;
+
+    activity.addEventListener("click", function (e) {
+      var cell = e.target.closest ? e.target.closest(".day[data-day]") : null;
+      if (!cell) return;
+      var day = cell.getAttribute("data-day");
+      var row = list.querySelector('.row[data-date="' + day + '"]');
+      if (!row) return;
+
+      // A filter could be hiding the day being jumped to, so clear it first.
+      if (q.value) {
+        q.value = "";
+        apply();
+      }
+      row.scrollIntoView({ block: "center", behavior: "smooth" });
+      rows.forEach(function (r) { r.classList.remove("row-jumped"); });
+      // Restart the flash even if the same day is clicked twice.
+      void row.offsetWidth;
+      row.classList.add("row-jumped");
+      var link = row.querySelector(".row-link");
+      if (link) link.focus({ preventScroll: true });
+    });
+  }
 })();
