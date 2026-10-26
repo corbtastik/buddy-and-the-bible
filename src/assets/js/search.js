@@ -163,13 +163,53 @@
     resort();
   });
 
+  /* ---------- keyboard navigation ---------- */
+
+  // Read the DOM rather than the cached array: sorting reorders the rows, so
+  // only the live document knows the order the reader actually sees.
+  function visibleLinks() {
+    return Array.prototype.filter
+      .call(list.querySelectorAll(".row"), function (r) { return !r.hidden; })
+      .map(function (r) { return r.querySelector(".row-link"); });
+  }
+
+  // delta > 0 moves down the matches, < 0 moves up. From the search box, down
+  // lands on the top match; up from the top match returns to the search box.
+  function move(from, delta) {
+    var links = visibleLinks();
+    if (!links.length) return;
+
+    var i = links.indexOf(from);
+    var next = i === -1 ? (delta > 0 ? 0 : links.length - 1) : i + delta;
+
+    if (next < 0) {
+      q.focus();
+      return;
+    }
+    if (next >= links.length) next = links.length - 1; // stop at the bottom
+    links[next].focus();
+  }
+
   q.addEventListener("input", apply);
   q.addEventListener("search", apply); // the field's own clear button
   q.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && q.value) {
       q.value = "";
       apply();
+      return;
     }
+    if (e.key === "ArrowDown") {
+      e.preventDefault(); // otherwise the caret jumps to the end of the text
+      move(null, 1);
+    }
+  });
+
+  list.addEventListener("keydown", function (e) {
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    var link = e.target.closest ? e.target.closest(".row-link") : null;
+    if (!link) return;
+    e.preventDefault(); // otherwise the page scrolls as well
+    move(link, e.key === "ArrowDown" ? 1 : -1);
   });
 
   tools.hidden = false;

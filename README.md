@@ -76,6 +76,10 @@ one. A string that looks like a date but is not one (`2/31/26`) stays a plain
 text term rather than silently filtering. The result line echoes the dates it
 understood, so a mistyped filter is visible. The one button reverses the sort.
 
+From the search box, Down jumps to the top match and Down/Up walk the
+matches in the order shown (so it follows the sort); Up from the top match
+returns to the box, Enter opens the devo, Escape clears the search.
+
 Each row carries its searchable text in a `data-text` attribute, so the index
 is the page itself -- no extra request, and the list still renders unfiltered
 with JavaScript off. That costs about 30 KB at 23 devos; past roughly 300 it
@@ -83,10 +87,17 @@ would be worth moving the index to a separate fetched `search.json`.
 
 ## Light and dark
 
-Both, following the system appearance the way Messages does. Every colour is a
-token defined twice in `app.css` -- once on `:root` for light, once under
-`@media (prefers-color-scheme: dark)`. For a manual switch, repeat the dark
-block under `:root[data-theme="dark"]` and set the attribute.
+Follows the system appearance the way Messages does, and the icon in the
+header pins either one. The choice is kept in `localStorage` and applied by a
+small inline script in `<head>` before first paint; picking whatever the
+system is already showing drops the override rather than pinning it, so the
+page goes back to following the system.
+
+Every colour is a token, defined on `:root` for light and repeated in two
+dark blocks -- one under `@media (prefers-color-scheme: dark)` and one under
+`:root[data-theme="dark"]`. Those two must stay identical. Forcing a theme
+also sets `color-scheme`, without which the browser keeps painting native
+controls and scrollbars for the system appearance.
 
 ## Typography
 

@@ -6,8 +6,11 @@ eleventyExcludeFromCollections: true
 ---
 <main class="screen screen-list">
   <header class="list-head">
-    <h1>{{ site.title }}</h1>
-    <p class="list-sub">{{ collections.devos | length }} devo{{ "" if collections.devos | length == 1 else "s" }} from {{ site.author }}</p>
+    <div class="list-head-text">
+      <h1>{{ site.title }}</h1>
+      <p class="list-sub">{{ collections.devos | length }} devo{{ "" if collections.devos | length == 1 else "s" }} from {{ site.author }}</p>
+    </div>
+    {% include "theme-toggle.njk" %}
   </header>
 
   {# Hidden until the script takes over: without JS none of it would do anything. #}

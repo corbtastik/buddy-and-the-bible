@@ -3,9 +3,9 @@
    the list and toolbar styles extend the same system.
 
    Light is the default here and dark comes in under prefers-color-scheme, the
-   way Messages follows the system appearance. Every colour is a token so the
-   two themes stay in step; add :root[data-theme="dark"] with the same block if
-   you ever want a manual switch. */
+   way Messages follows the system appearance. The toggle in the header can pin
+   either one via data-theme on <html>, which outranks the media query. Every
+   colour is a token so the two themes stay in step. */
 
 :root{
   /* Light — iOS Messages light appearance */
@@ -42,8 +42,11 @@
   --top-inset:env(safe-area-inset-top,0px);
 }
 
+/* Dark, two ways: automatically when the system asks for it, and explicitly
+   when the toggle pins it. :not([data-theme="light"]) lets an explicit light
+   choice win on a dark system. The two blocks must stay identical. */
 @media (prefers-color-scheme:dark){
-  :root{
+  :root:not([data-theme="light"]){
     /* Dark — the original design's palette */
     --bg:#000;            --bg-rgb:0 0 0;
     --bubble:#262629;
@@ -63,6 +66,28 @@
     --hover:rgb(255 255 255 / .05);
     --clear-ring:#636366;
   }
+}
+:root[data-theme="light"]{color-scheme:light}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  /* Dark — the original design's palette */
+  --bg:#000;            --bg-rgb:0 0 0;
+  --bubble:#262629;
+  --text:#fff;
+  --meta:#838389;
+  --name:#8c8c92;
+  --sep:rgb(255 255 255 / .10);
+  --glass:rgb(30 30 32 / .78);
+  --glass-edge:rgb(255 255 255 / .13);
+  --accent:#0a84ff;
+  --link:#54a8ff;
+  --quote-edge:rgb(255 255 255 / .22);
+  --quote-text:#e6e6ea;
+  --field:#1c1c1e;
+  --control:rgb(255 255 255 / .055);
+  --control-hover:rgb(255 255 255 / .10);
+  --hover:rgb(255 255 255 / .05);
+  --clear-ring:#636366;
 }
 
 *,*::before,*::after{box-sizing:inherit}
@@ -116,7 +141,7 @@ a{color:inherit;text-decoration:none}
 .from{margin:4px 0 0 58px;font-size:12px;line-height:16px;color:var(--name)}
 
 .msg{position:relative;margin:3px 0 0 43px;width:min(310px,calc(100% - 43px))}
-.bubble{background:var(--bubble);border-radius:18px;padding:10.3px 14px 10.3px 14.3px;
+.bubble{position:relative;z-index:1;background:var(--bubble);border-radius:18px;padding:10.3px 14px 10.3px 14.3px;
   font-size:17px;line-height:22px;letter-spacing:-.4px;color:var(--text);overflow-wrap:anywhere}
 .bubble > :first-child{margin-top:0}
 .bubble > :last-child{margin-bottom:0}
@@ -131,7 +156,7 @@ a{color:inherit;text-decoration:none}
 .bubble blockquote{margin:0 0 20px;padding-left:11px;border-left:2px solid var(--quote-edge);color:var(--quote-text)}
 .bubble h2,.bubble h3{margin:0 0 6px;font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.4px}
 
-.tail{position:absolute;left:0;bottom:-6.4px;width:22px;height:25px;display:block}
+.tail{position:absolute;z-index:0;left:0;bottom:-6.4px;width:22px;height:25px;display:block}
 .avatar{position:absolute;left:-39px;bottom:-6.3px;width:32px;height:32px;display:block;border-radius:50%}
 
 /* ---------- prev / next ---------- */
@@ -143,9 +168,20 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- conversation list (home) ---------- */
 .screen-list{padding-top:18px;padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))}
-.list-head{padding:22px 4px 14px}
+.list-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:22px 4px 14px}
+.list-head-text{min-width:0}
 .list-head h1{margin:0;font-size:34px;line-height:41px;font-weight:700;letter-spacing:-.9px}
 .list-sub{margin:3px 0 0;font-size:15px;line-height:20px;color:var(--meta)}
+
+/* ---------- appearance toggle ---------- */
+/* No ring and no fill: the glyph alone, sized to what the old circle was. */
+.theme-toggle{flex:none;display:grid;place-items:center;width:34px;height:34px;
+  border:0;background:none;color:var(--meta);margin-top:4px}
+.theme-toggle svg{width:100%;height:100%}
+.theme-toggle:hover{color:var(--text)}
+/* On a thread it sits in the fixed bar, opposite the back button. */
+.top .theme-toggle{position:absolute;right:20.5px;top:0;width:43.4px;height:43.4px;margin-top:0;
+  color:var(--text);pointer-events:auto}
 
 /* ---------- search / sort toolbar ---------- */
 .tools{display:flex;flex-direction:column;gap:7px;padding:2px 4px 12px}
@@ -164,9 +200,11 @@ a{color:inherit;text-decoration:none}
   width:17px;height:17px;cursor:pointer;background:no-repeat center/contain;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23a8a8ae'/%3E%3Cpath d='M5.4 5.4l5.2 5.2M10.6 5.4l-5.2 5.2' stroke='%23fff' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E")}
 @media (prefers-color-scheme:dark){
-  .search input::-webkit-search-cancel-button{
+  :root:not([data-theme="light"]) .search input::-webkit-search-cancel-button{
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23636366'/%3E%3Cpath d='M5.4 5.4l5.2 5.2M10.6 5.4l-5.2 5.2' stroke='%231c1c1e' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E")}
 }
+:root[data-theme="dark"] .search input::-webkit-search-cancel-button{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23636366'/%3E%3Cpath d='M5.4 5.4l5.2 5.2M10.6 5.4l-5.2 5.2' stroke='%231c1c1e' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E")}
 
 .sort-btn{flex:none;display:inline-flex;align-items:center;gap:5px;height:37px;padding:0 11px;
   border-radius:10px;border:1px solid var(--glass-edge);background:var(--control);
@@ -182,6 +220,8 @@ a{color:inherit;text-decoration:none}
 .row.row-first{border-top:none}
 .row-link{display:flex;gap:12px;align-items:flex-start;padding:11px 4px 12px;border-radius:12px}
 .row-link:hover{background:var(--hover)}
+/* Arrow-key navigation lands focus here, so make the current match obvious. */
+.row-link:focus-visible{background:var(--hover);outline:2px solid var(--accent);outline-offset:-2px}
 .row-avatar{flex:0 0 52px;width:52px;height:52px;border-radius:50%;display:block}
 .row-body{flex:1;min-width:0}
 .row-top{display:flex;align-items:baseline;gap:8px}
@@ -194,5 +234,7 @@ a{color:inherit;text-decoration:none}
   overflow:hidden;margin-top:1px;font-size:15px;line-height:20px;letter-spacing:-.2px;color:var(--meta)}
 
 @media (prefers-reduced-motion:no-preference){
-  .row-link,.pager-link,.sort-btn{transition:background-color .12s ease,color .12s ease}
+  .row-link,.pager-link,.sort-btn,.theme-toggle{transition:background-color .12s ease,color .12s ease}
 }
+/* Set while the appearance switches, so the whole page changes at once. */
+:root.theme-switching *{transition:none!important}
