@@ -57,6 +57,37 @@ docs/TEMPLATE.md       starting point for a new devo
 archive/               the original design export
 ```
 
+## Searching the list
+
+The home page filters client-side as you type. Dates go in the same box as the
+text -- there is no date picker:
+
+| Typed                      | Effect                                  |
+| -------------------------- | --------------------------------------- |
+| `humility`                 | devos containing the word               |
+| `haman humility`           | devos containing *both* words           |
+| `5/21/26`                  | that single day                         |
+| `5/1/26 to 5/15/26`        | that range, inclusive                   |
+| `love 5/1/26 to 5/15/26`   | text and range together                 |
+
+`to`, `-`, `–`, `..` and `through` all work as range separators, as does
+writing two dates side by side. A reversed range is read the same as a forward
+one. A string that looks like a date but is not one (`2/31/26`) stays a plain
+text term rather than silently filtering. The result line echoes the dates it
+understood, so a mistyped filter is visible. The one button reverses the sort.
+
+Each row carries its searchable text in a `data-text` attribute, so the index
+is the page itself -- no extra request, and the list still renders unfiltered
+with JavaScript off. That costs about 30 KB at 23 devos; past roughly 300 it
+would be worth moving the index to a separate fetched `search.json`.
+
+## Light and dark
+
+Both, following the system appearance the way Messages does. Every colour is a
+token defined twice in `app.css` -- once on `:root` for light, once under
+`@media (prefers-color-scheme: dark)`. For a manual switch, repeat the dark
+block under `:root[data-theme="dark"]` and set the attribute.
+
 ## Typography
 
 iOS Messages renders in SF Pro. On Apple devices `-apple-system` *is* SF Pro,

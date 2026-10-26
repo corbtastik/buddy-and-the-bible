@@ -36,9 +36,9 @@ export default function (eleventyConfig) {
       .filter(Boolean)
   );
 
-  // Plain-text preview for the conversation list.
-  eleventyConfig.addFilter("preview", (html, max = 140) => {
-    const text = String(html)
+  // Strip markup down to plain text.
+  const plain = (html) =>
+    String(html)
       .replace(/<[^>]+>/g, " ")
       .replace(/&#8203;|&nbsp;/g, " ")
       .replace(/&amp;/g, "&")
@@ -46,8 +46,18 @@ export default function (eleventyConfig) {
       .replace(/&#39;/g, "'")
       .replace(/\s+/g, " ")
       .trim();
-    return text.length > max ? text.slice(0, max).trimEnd() + "…" : text;
+
+  // Plain-text preview for the conversation list.
+  eleventyConfig.addFilter("preview", (html, max = 140) => {
+    const text = plain(html);
+    return text.length > max ? text.slice(0, max).trimEnd() + "\u2026" : text;
   });
+
+  // Everything the client-side search matches against, lowercased once at
+  // build time so filtering never has to case-fold every devo per keystroke.
+  eleventyConfig.addFilter("searchText", (...parts) =>
+    plain(parts.filter(Boolean).join(" ")).toLowerCase()
+  );
 
   return {
     dir: {

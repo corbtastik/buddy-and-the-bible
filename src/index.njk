@@ -10,9 +10,40 @@ eleventyExcludeFromCollections: true
     <p class="list-sub">{{ collections.devos | length }} devo{{ "" if collections.devos | length == 1 else "s" }} from {{ site.author }}</p>
   </header>
 
-  <ul class="rows">
+  {# Hidden until the script takes over: without JS none of it would do anything. #}
+  <div class="tools" id="tools" hidden>
+    <div class="tools-row">
+      <div class="search">
+        <svg class="search-icon" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5.2" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M11 11l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <input type="search" id="q" placeholder="Search, or 5/1/26 to 5/15/26"
+               aria-label="Search devos, or type a date like 5/21/26 or a range like 5/1/26 to 5/15/26"
+               aria-describedby="result-count"
+               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      </div>
+
+      {# SF Symbols arrow.up.arrow.down #}
+      <button type="button" id="sort" class="sort-btn" aria-label="Sort by date, newest first. Activate to reverse.">
+        <svg width="15" height="16" viewBox="0 0 15 16" fill="none" aria-hidden="true">
+          <path d="M4 13.2V3.4M1.6 5.8 4 3.2l2.4 2.6" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 2.8v9.8M8.6 10.2l2.4 2.6 2.4-2.6" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="sort-label">Newest</span>
+      </button>
+    </div>
+
+    <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+  </div>
+
+  <ul class="rows" id="devo-list">
     {% for devo in collections.devos %}
-    <li class="row">
+    <li class="row"
+        data-date="{{ devo.date | isoDate }}"
+        data-text="{{ devo.data.title | searchText(devo.data.scripture, devo.data.summary, devo.templateContent) }}">
       <a class="row-link" href="{{ devo.url }}">
         <img class="row-avatar" alt="" src="/assets/img/buddy.png" width="52" height="52">
         <span class="row-body">
@@ -28,4 +59,8 @@ eleventyExcludeFromCollections: true
     </li>
     {% endfor %}
   </ul>
+
+  <p class="no-match" id="no-match" hidden>No devos match.</p>
 </main>
+
+<script src="/assets/js/search.js" defer></script>
