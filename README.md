@@ -144,8 +144,8 @@ Pages or GitHub Pages would work just as well.
 
 `references/` holds the original iMessage screenshots the devos were
 transcribed from, kept as provenance so any transcription can be checked
-against the source. The loose files at its root are April--May 2026;
-each later month gets its own folder (`references/june-2026/`).
+against the source. One folder per month, named for the month it covers:
+`references/apr-may-2026/`, `references/june-2026/`.
 
 ### Transcription log
 
@@ -172,7 +172,7 @@ breaks) is ours. Anything beyond that is a correction and belongs under
 
 ---
 
-#### April--May 2026 — 22 devos — `references/*.jpg`
+#### April--May 2026 — 22 devos — `references/apr-may-2026/`
 
 *Assumptions*
 
