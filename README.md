@@ -145,7 +145,7 @@ Pages or GitHub Pages would work just as well.
 `references/` holds the original iMessage screenshots the devos were
 transcribed from, kept as provenance so any transcription can be checked
 against the source. One folder per month, named for the month it covers:
-`references/apr-may-2026/`, `references/june-2026/`,
+`references/jan-2026/`, `references/apr-may-2026/`, `references/june-2026/`,
 `references/july-2026/`, `references/august-2026/`,
 `references/sept-2026/`, `references/oct-2026/`.
 
@@ -194,6 +194,75 @@ Examples already in the archive:
   `Someone told me that this wasn't very comforting` (2026-08-10)
 - Whole passages written by someone else, set as a quotation with the
   attribution he gave: his son Brad's story on 2026-06-15
+
+---
+
+#### January 2026 — 21 devos — `references/jan-2026/`
+
+The earliest month in the archive, and the first to need two bubbles on one
+page.
+
+*Assumptions*
+
+- **Filename order is weekday order**, checked as always against each
+  header. It breaks twice: Jan 21 has no devo, and `Untitled 17.jpg` is a
+  second message rather than a new day.
+- **The year is absent** from the screenshots; taken as 2026 from the folder
+  name and consistent with all 21 weekdays.
+
+*Coverage*
+
+- Jan 1 -- Jan 30. January 2026 has 22 weekdays and 21 have a devo.
+- **No devo on Jan 21 (Wed).**
+
+*Corrections applied*
+
+- **Lost spaces restored.** Two devos came through with words run together
+  throughout -- 2026-01-06 ("Throughout theBible there arenumerous
+  accountswhere men chose todo things their ownway") and 2026-01-12 ("Life
+  is aboutdecisions. Some ofthem are insignificant,like what we're goingto
+  eat"). This is the capture dropping spaces, not his typing, and leaving it
+  would make both unreadable, so the spaces are restored. Scattered single
+  instances elsewhere in the month were restored the same way.
+  **This is a change of practice.** Four isolated cases in earlier months
+  were left as written and are still listed under their own entries
+  ("Sunday eveningand", "criticismcan", "BUSreligion", "neverhave"). Say
+  the word and they will be normalised to match.
+- One stray verse number `14` removed from the Daniel 2:44 quotation on
+  2026-01-08, the same copy artifact seen in June and October.
+- 2026-01-02 arrived hard-wrapped mid-sentence; reflowed into paragraphs.
+- Numbered-book references spaced, as in earlier batches.
+
+*Left as written — worth a look*
+
+- 2026-01-09 names the tract "Robert Turner's I've Ben Baptized" (*Been*).
+- 2026-01-01 has "Any yet, the challenge" (*And*).
+- 2026-01-26 has "an survivor of the D-day assault" and "many veteran's
+  whose lives".
+- 2026-01-28 has "our brothers of sisters" (*or*), "When in worship are
+  doing your best" (*are you*), and "are your entertained" (*you*).
+- 2026-01-16 ends the Earl Pitts quote "wake up Umerica!" -- that one is
+  the radio character's catchphrase, not an error.
+
+*Notes*
+
+- **2026-01-23 holds two messages.** `Untitled 16.jpg` is the devo at
+  6:58 AM; `Untitled 17.jpg` has no date header and no sender label, so it
+  is a second message in the same group -- Psalms 147 and a poem, "When
+  Winter Meets His Word", signed "From Uncle Dickie". Both are on the one
+  page, split with `***` so they render as two bubbles with a single tail
+  and avatar, the way iOS shows consecutive messages. This is the first use
+  of that split.
+- The Psalm and the poem are verse, so their lines carry markdown hard
+  breaks; without them the lines fold into paragraphs.
+- 2026-01-08 credits "Brother Warren Berkley", and 2026-01-23 "Uncle
+  Dickie" -- kept, per the policy on his own remarks.
+- 2026-01-16 includes three Wikipedia links he pasted in; kept, and they
+  render as links.
+- Several passages recur from later months and are slugged for their own
+  illustration: Matthew 7:13-14 (2026-01-09 `coasting`), Romans 10:17
+  (2026-01-14), Philippians 1:27 (2026-01-01), Hebrews 11:6 (2026-01-02)
+  and Matthew 18:6-9 (2026-01-28).
 
 ---
 
