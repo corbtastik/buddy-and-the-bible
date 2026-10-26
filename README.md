@@ -147,7 +147,7 @@ transcribed from, kept as provenance so any transcription can be checked
 against the source. One folder per month, named for the month it covers:
 `references/apr-may-2026/`, `references/june-2026/`,
 `references/july-2026/`, `references/august-2026/`,
-`references/sept-2026/`.
+`references/sept-2026/`, `references/oct-2026/`.
 
 He does not send a devo every weekday, so gaps in a month are normal. Each
 entry below lists the days with none, so a gap is visibly accounted for
@@ -442,6 +442,70 @@ Examples already in the archive:
 - The folder arrived nested as `references/august-2026/sept-2026/`, the same
   way August did, and was moved up beside the others. August's 20
   screenshots were untouched.
+
+---
+
+#### October 2026 — 12 devos — `references/oct-2026/`
+
+The first month with two kinds of source. Messages collapsed his longest
+posts, so those four were pasted into `references/oct-2026/oct.txt` instead,
+each separated by `---` and headed with its day, time and any tapback. The
+other eight are screenshots as usual. Both were transcribed to the same
+format; nothing about a devo's page says which it came from.
+
+*Assumptions*
+
+- **Filename order is weekday order** for the screenshots, checked as
+  always against each header. It breaks three times here, because the long
+  devos were pulled out into the text file and leave holes in the sequence.
+- **The year is absent** from both sources; taken as 2026 and consistent
+  with all 12 weekdays.
+
+*Coverage*
+
+- Oct 1 -- Oct 19: 8 from screenshots, 4 from `oct.txt`.
+- **No devo on Oct 7 (Wed)** -- the only gap inside that range.
+- **Oct 20 onward has not been provided yet** (9 weekdays), so the archive
+  currently ends at Oct 19.
+
+*Corrections applied*
+
+- Numbered-book references spaced, as in earlier batches. `oct.txt` also
+  ran several references straight into the verse
+  (`Galatians 2:11-12Now when Peter...`, `1Thessalonians4:15-18`); split.
+- One stray `2` removed from the Acts 22 quotation on 2026-10-15
+  ("standing by consenting 2 to his death"), the same kind of copy artifact
+  removed from the June quotations.
+
+*Left as written — worth a look*
+
+- 2026-10-08 has "there if a far better place" (*is*).
+- 2026-10-15 quotes Matthew 13:15 as "est they should understand" (*lest*),
+  and has "Webster includes in it's definitions".
+- 2026-10-14 has "because it's standards are noble, it's purpose righteous".
+- 2026-10-06 has "overlook some who are have good character".
+- 2026-10-09 has "the hand of God is not something should always be feared".
+
+*Notes*
+
+- **2026-10-19 was already in the archive** and was not written again.
+  `Untitled 8.jpg` is that devo, and its header reads "Mon, Oct 19 at
+  9:08 AM" -- matching both the date and the time inferred for it back when
+  the only evidence was the artifact export's bare "Monday 9:08 AM". The
+  inference is now confirmed by the source.
+- 2026-10-09 quotes the lyric "Daddy's hands", and 2026-10-13 the chorus of
+  "Jesus Is Coming Soon"; both set as quotations.
+- 2026-10-12 is built on a repeated "Isn't it strange" lead-in, bolded in
+  the original and kept bold.
+- 2026-10-14 reworks much of the 2026-09-08 devo; both are kept, slugged
+  `be-holy-for-i-am-holy` and `conduct-worthy-of-the-gospel`.
+- These screenshots are wider than earlier months because the Messages
+  window was widened. Like July's zoom, that changes the capture only --
+  the bubble renders at the same width and type size as every other devo.
+- Tapbacks (the hearts and thumbs-up on some messages, and the "1 Heart
+  emoji" noted in `oct.txt`) are not rendered, here or in any earlier
+  month. Say so if you would rather they were; it would be a change across
+  the whole archive.
 
 ## Known gaps
 
