@@ -145,7 +145,12 @@ Pages or GitHub Pages would work just as well.
 `references/` holds the original iMessage screenshots the devos were
 transcribed from, kept as provenance so any transcription can be checked
 against the source. One folder per month, named for the month it covers:
-`references/apr-may-2026/`, `references/june-2026/`.
+`references/apr-may-2026/`, `references/june-2026/`,
+`references/july-2026/`.
+
+He does not send a devo every weekday, so gaps in a month are normal. Each
+entry below lists the days with none, so a gap is visibly accounted for
+rather than looking like a transcription that got dropped.
 
 ### Transcription log
 
@@ -189,8 +194,8 @@ breaks) is ours. Anything beyond that is a correction and belongs under
 *Coverage*
 
 - Weekdays only, Apr 29 -- May 29: 2 in April, 20 in May.
-- **May 22 (Friday) has no screenshot** and so has no devo. Unknown whether
-  none was sent or the screenshot is just missing.
+- **May 22 (Friday) has no devo.** He does not send one every weekday, so a
+  missing day is expected rather than a lost screenshot.
 
 *Corrections applied*
 
@@ -251,6 +256,61 @@ breaks) is ours. Anything beyond that is a correction and belongs under
   quote so the two voices stay distinct.
 - 2026-06-30 uses Matthew 7:13-14 again, which 2026-05-08 already took as
   `the-narrow-gate`, so it is slugged `the-one-choice`.
+
+---
+
+#### July 2026 — 21 devos — `references/july-2026/`
+
+*Assumptions*
+
+- **Filename order is weekday order**, as in June: `Untitled.jpg` is Jul 1,
+  then `Untitled 2`--`21`. Checked rather than assumed -- every file's weekday
+  and send time was read back off its own screenshot header, all 21 matched.
+  This mattered more than usual here, because the count does not line up with
+  the calendar (see below) and a sequential guess would have been wrong from
+  Jul 24 onward.
+- **The year is absent** from the screenshots again; taken as 2026 from the
+  folder name and consistent with all 21 weekdays.
+
+*Coverage*
+
+- Jul 1 -- Jul 31. July 2026 has 23 weekdays and there are 21 devos.
+- **No devo on Jul 22 (Wed) or Jul 23 (Thu).** Expected -- he does not send
+  one every weekday.
+
+*Corrections applied*
+
+- Numbered-book references spaced, as in earlier batches.
+- None to his wording.
+
+*Left as written — worth a look*
+
+- **Three scripture citations point at the wrong passage.** 2026-07-07 cites
+  `James 1:3` for what is James 1:2-3, and `Peter 1:6-7` with the book number
+  missing (1 Peter). 2026-07-08 cites `2 Corinthians 6:9-10` for what is
+  actually 2 Corinthians 7:9-10.
+- 2026-07-01 spells it "the accencion of Jesus" in the numbered list, then
+  "ascension" correctly in the next paragraph.
+- 2026-07-06 quotes the hymn as "my live, my joy" (*my life*), and ends
+  "Jesus become all the world to us" (*becomes*).
+- 2026-07-17 keeps his "(copied)" marker, and has "it up to us" (*it is*).
+- 2026-07-21 ends "doing all God commands" (*God's*).
+- 2026-07-29 opens "And old sailor" (*An*).
+
+*Notes*
+
+- 2026-07-27 lists his "behind & beside" examples one per line in the
+  original; set as a bullet list.
+- 2026-07-30 runs Galatians 2:20 and 5:24 together in one quotation, with
+  "(5:24)" marking the join. Kept as one block, with the marker bolded.
+- Two passages recur from earlier months and are slugged apart from them:
+  John 3:15-16 on 2026-07-10 (June 15 holds `because-i-love-the-lord`), and
+  James on 2026-07-07 and 2026-07-29, which are `faith-that-endures` and
+  `rocks-and-shoals`.
+- These screenshots were captured with Messages zoomed out, so their text is
+  smaller than earlier batches. That affects the screenshots only -- the
+  bubble renders at a fixed 17px like every other devo, so nothing about the
+  site's type changed.
 
 ## Known gaps
 
