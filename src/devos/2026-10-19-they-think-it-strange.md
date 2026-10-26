@@ -1,6 +1,6 @@
 ---
 title: They Think It Strange
-date: 2025-10-20
+date: 2026-10-19
 time: 9:08 AM
 author: Buddy Payne
 scripture: 1 Peter 4:4

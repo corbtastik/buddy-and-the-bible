@@ -20,7 +20,9 @@ eleventyExcludeFromCollections: true
             <span class="row-title">{{ devo.data.title }}</span>
             <span class="row-date">{{ devo.date | shortDate }}<svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M1.2 1 6 6l-4.8 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </span>
-          <span class="row-preview">{{ devo.templateContent | preview }}</span>
+          {# Prefer the hand-written summary: every devo opens with its scripture,
+             so a content preview reads much the same from one row to the next. #}
+          <span class="row-preview">{{ devo.data.summary | preview if devo.data.summary else devo.templateContent | preview }}</span>
         </span>
       </a>
     </li>
