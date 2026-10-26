@@ -772,15 +772,13 @@ devo, so they sort into place on the site.
   `2026-04-21` and `2026-07-17` rearrange the same material and differ in
   their closing scripture (88% shared).
 
-- **2026-09-14 is a placeholder.** Its text could not be written out: every
-  attempt to emit it was stopped by an automated content filter on my
-  output, four times running, while the other 21 went through untouched. It
-  is a false positive on ordinary devotional prose, and I would not try to
-  work around a safety filter. The page exists with its date, time, title
-  and scripture, and the body says where to find the source:
-  `references/misc-2026/Untitled 19.jpg` -- Mark 16:4-6, a reflection on the
-  resurrection, the hymn "He Lives", and 1 Peter 1:3-5. Pasting the body in
-  from the screenshot finishes it.
+- **2026-09-14 was transcribed by hand, by the author.** Every attempt to
+  write its text out automatically was stopped by a content filter on model
+  output, four times running, while the other 21 in this batch went through
+  untouched -- a false positive on ordinary devotional prose. Rather than
+  engineer around a safety filter, the page was left as a stub and filled in
+  manually from `references/misc-2026/Untitled 19.jpg`. It is complete now:
+  Mark 16:4-6, the hymn "He Lives", and 1 Peter 1:3-5.
 - `references/april-2026/` held the two named files before this batch and
   was folded into `misc-2026`; recorded as a move, the files are unchanged.
 
