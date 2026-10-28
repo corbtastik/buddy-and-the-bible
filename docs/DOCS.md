@@ -850,6 +850,22 @@ devo, so they sort into place on the site.
 - `references/april-2026/` held the two named files before this batch and
   was folded into `misc-2026`; recorded as a move, the files are unchanged.
 
+---
+
+#### Added directly — not from a screenshot
+
+Everything else in the archive traces back to a file in `references/`.
+These do not, and are listed here so that stays visible.
+
+- **2026-10-28 `tears-of-repentance`** — a line from Charles Spurgeon,
+  relayed as text rather than captured from the thread.
+  - **The date is an assumption.** It was passed on without one, so the day
+    it was relayed was used. Every other date in the archive was read off a
+    screenshot header; this is the only one that was not.
+  - No send time was given, so `time` is omitted rather than invented. The
+    field is optional and the page shows the date alone.
+  - `scripture` is empty: he quoted Spurgeon, not a passage.
+
 ## Known gaps
 
 - There is no search-engine-facing index, tag page or scripture index yet.
