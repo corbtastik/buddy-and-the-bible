@@ -859,11 +859,9 @@ These do not, and are listed here so that stays visible.
 
 - **2026-10-28 `tears-of-repentance`** — a line from Charles Spurgeon,
   relayed as text rather than captured from the thread.
-  - **The date is an assumption.** It was passed on without one, so the day
-    it was relayed was used. Every other date in the archive was read off a
-    screenshot header; this is the only one that was not.
-  - No send time was given, so `time` is omitted rather than invented. The
-    field is optional and the page shows the date alone.
+  - Date and time confirmed by the author: sent 2026-10-28 at 7:45 AM. They
+    were not given when it was first added, so the date was assumed and the
+    time left off; both have since been supplied.
   - `scripture` is empty: he quoted Spurgeon, not a passage.
 
 ## Known gaps
