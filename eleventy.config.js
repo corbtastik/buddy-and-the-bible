@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import path from "node:path";
 import { newRefRegex, bookFor, bibleGatewayUrl } from "./lib/scripture.js";
 
 /* The two dark-theme blocks in app.css have to carry the same tokens: one
@@ -49,8 +50,54 @@ function assertDarkThemesMatch() {
   }
 }
 
+/* A global data file is exposed under its own basename, so src/_data/foo.js
+ * owns the name `foo` for every template. If a devo also has `foo:` in its
+ * front matter the two collide, and the global object wins -- the front
+ * matter is simply gone, with nothing logged.
+ *
+ * That is not hypothetical: _data/scripture.js shadowed the `scripture:`
+ * field on all 204 devos for as long as the scripture index existed. The
+ * only visible trace was the string "[object Object]" in the search index,
+ * and it stayed that way until someone went looking. Fail the build
+ * instead. */
+function assertNoDataKeyCollisions() {
+  const reserved = fs
+    .readdirSync("src/_data")
+    .filter((f) => /\.(js|json|cjs|mjs)$/.test(f))
+    .map((f) => f.replace(/\.\w+$/, ""));
+
+  const used = new Map(); // front-matter key -> the devos that use it
+  for (const file of fs.readdirSync("src/devos").filter((f) => f.endsWith(".md"))) {
+    const raw = fs.readFileSync(path.join("src/devos", file), "utf8");
+    const fm = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (!fm) continue;
+    for (const line of fm[1].split("\n")) {
+      const key = line.match(/^(\w+):/);
+      if (key && reserved.includes(key[1])) {
+        if (!used.has(key[1])) used.set(key[1], []);
+        used.get(key[1]).push(file);
+      }
+    }
+  }
+
+  if (used.size) {
+    throw new Error(
+      "front matter is shadowed by a global data file.\n" +
+        [...used]
+          .map(
+            ([key, files]) =>
+              `  "${key}:" collides with src/_data/${key}.* ` +
+              `(${files.length} devo${files.length > 1 ? "s" : ""}, e.g. ${files[0]})`
+          )
+          .join("\n") +
+        "\n  Rename the data file; the front-matter key is the harder one to move."
+    );
+  }
+}
+
 export default function (eleventyConfig) {
   assertDarkThemesMatch();
+  assertNoDataKeyCollisions();
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addWatchTarget("src/assets");
 

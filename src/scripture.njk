@@ -11,12 +11,12 @@ eleventyExcludeFromCollections: true
     <div class="list-head-text">
       <p class="crumb"><a href="/">&larr; All devos</a></p>
       <h1>Scripture</h1>
-      <p class="list-sub">{{ scripture.refCount }} references from {{ scripture.bookCount }} books, Genesis to Revelation</p>
+      <p class="list-sub">{{ scriptureIndex.refCount }} references from {{ scriptureIndex.bookCount }} books, Genesis to Revelation</p>
     </div>
     {% include "theme-toggle.njk" %}
   </header>
 
-  {% for b in scripture.books %}
+  {% for b in scriptureIndex.books %}
   <section class="book">
     <h2 class="book-name">{{ b.book }}</h2>
     <ul class="refs">

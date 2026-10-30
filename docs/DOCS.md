@@ -45,7 +45,7 @@ last bubble gets the tail and avatar.
 src/
   index.njk            conversation list (home)
   scripture.njk        the scripture index at /scripture/
-  _data/scripture.js   builds that index from the devo Markdown
+  _data/scriptureIndex.js  builds that index from the devo Markdown
   _data/activity.js    builds the calendar grid for the activity graph
   _data/site.json      title, author, description, url
   _includes/
@@ -134,7 +134,7 @@ and `Psalms 119: (18)`, whose shape is too irregular to parse.
 `/scripture/` lists all 352 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
 for the 40 verses cited more than once. It is linked from the home page
-only. The page is built by `src/_data/scripture.js`, which reads the
+only. The page is built by `src/_data/scriptureIndex.js`, which reads the
 Markdown directly rather than going through collections so it does not
 depend on every devo having rendered first.
 
@@ -168,6 +168,26 @@ Neither failed visibly, which is the reason the check exists. Keep all light
 tokens in the single `:root` block; a second one would hide from the check. Forcing a theme
 also sets `color-scheme`, without which the browser keeps painting native
 controls and scrollbars for the system appearance.
+
+## Global data and front matter
+
+A file in `src/_data/` is exposed to every template under its own basename,
+so `src/_data/foo.js` owns the name `foo`. If a devo also has `foo:` in its
+front matter the two collide and the global object wins: the front-matter
+value is gone, and nothing is logged.
+
+That is why the scripture index lives in `scriptureIndex.js` rather than the
+more obvious `scripture.js`. Under the obvious name it shadowed the
+`scripture:` field on all 204 devos from the day the index was added. The
+only trace was the literal string `[object Object]` sitting in every row's
+search index, and the four devos whose front matter spells a book out in
+full while the bubble abbreviates it -- `Hebrews 12:28-29` against
+`Heb. 12:28` -- could not be found by the full name.
+
+`assertNoDataKeyCollisions()` in `eleventy.config.js` now fails the build on
+any such collision, naming the key, the data file and how many devos use it.
+Rename the data file when it fires: a front-matter key is spread across
+every devo, and the data file is one line.
 
 ## Typography
 
