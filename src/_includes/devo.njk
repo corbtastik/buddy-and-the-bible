@@ -22,10 +22,13 @@ bodyClass: thread
 
   {% set chunks = content | bubbles %}
   {% for chunk in chunks %}
+  {%- set photo = chunk | isPhoto %}
   <div class="msg{% if loop.last %} msg-last{% endif %}">
-    <div class="bubble">{{ chunk | safe }}</div>
+    <div class="bubble{% if photo %} bubble-photo{% endif %}">{{ chunk | safe }}</div>
     {% if loop.last %}
+    {%- if not photo %}
     <svg class="tail" viewBox="0 -18.6 22 25" aria-hidden="true"><path d="M0-18.6V-6.5C0-1.2 2.6 3 8.6 6.2 7 4.5 6.4 3.2 6.6 1.9 10.6 4.4 15.6 2.2 21.8 0V-18.6Z" fill="var(--bubble)"/></svg>
+    {%- endif %}
     {%- set who = author if author else site.author %}
     {%- if who == site.author %}
     <img class="avatar" alt="{{ who }}" src="/assets/img/buddy.png" width="32" height="32">

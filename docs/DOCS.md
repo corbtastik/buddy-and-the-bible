@@ -857,12 +857,42 @@ devo, so they sort into place on the site.
 Everything else in the archive traces back to a file in `references/`.
 These do not, and are listed here so that stays visible.
 
-- **2026-10-28 `tears-of-repentance`** — a line from Charles Spurgeon,
-  relayed as text rather than captured from the thread.
+- **2026-10-28 `tears-of-repentance`** — a line from Charles Spurgeon.
   - Date and time confirmed by the author: sent 2026-10-28 at 7:45 AM. They
     were not given when it was first added, so the date was assumed and the
     time left off; both have since been supplied.
   - `scripture` is empty: he quoted Spurgeon, not a passage.
+  - First relayed as text, then replaced by the picture he actually sent --
+    a Challies quote graphic, saved as
+    `src/assets/img/charles-spurgeon-tears-of-repentance.jpg`. The quote is
+    typeset into the picture, so the devo carries no body text; it lives in
+    the image's `alt` instead. This is the only photo message in the archive
+    so far, and the only devo whose words a reader cannot select.
+
+### Photo messages
+
+A devo whose whole body is one `<img>` is rendered the way Messages renders
+an attachment: the picture itself, rounded, with no grey bubble behind it and
+no tail. Everything else about the message -- the stamp, the name, the avatar,
+the pager -- is unchanged.
+
+Three pieces make that work, and they have to agree:
+
+- `isPhoto` in `eleventy.config.js` decides whether a bubble's contents are
+  nothing but a picture. Markdown wraps `![alt](src)` in a paragraph but
+  passes a bare `<img>` tag straight through as an HTML block, so it allows
+  for either.
+- `src/_includes/devo.njk` puts `.bubble-photo` on the bubble and leaves the
+  tail off.
+- `.bubble-photo` in `app.css` drops the background and padding and rounds
+  the picture to the bubble's own 18px.
+
+Write one as a bare `<img>` with `width`, `height` and `alt`. The dimensions
+hold the space while the picture loads; the `alt` is not optional, because
+for a picture of text it is the only copy of the words that exists. `plain()`
+lifts `alt` out before stripping tags, so a photo devo is still searchable --
+searching *quicker* finds this one, and that word appears nowhere but inside
+the picture.
 
 ## Known gaps
 

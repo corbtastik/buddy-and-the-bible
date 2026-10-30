@@ -91,6 +91,10 @@ export default function (eleventyConfig) {
   // Strip markup down to plain text.
   const plain = (html) =>
     String(html)
+      // Alt text is the only text a picture carries, and a devo that is a
+      // photo of a quote would otherwise be unsearchable. Lift it out before
+      // the tags go, or it would be stripped along with the tag it sits in.
+      .replace(/<img\b[^>]*?\balt="([^"]*)"[^>]*>/gi, " $1 ")
       .replace(/<[^>]+>/g, " ")
       .replace(/&#8203;|&nbsp;/g, " ")
       .replace(/&amp;/g, "&")
@@ -104,6 +108,16 @@ export default function (eleventyConfig) {
     const text = plain(html);
     return text.length > max ? text.slice(0, max).trimEnd() + "\u2026" : text;
   });
+
+  /* A message that is nothing but a picture. Messages drops the grey bubble
+   * and its tail for an attachment and rounds the picture itself, so the
+   * layout needs to tell the two apart.
+   *
+   * Markdown wraps `![alt](src)` in a paragraph but passes a bare <img> tag
+   * straight through as an HTML block, so allow for either. */
+  eleventyConfig.addFilter("isPhoto", (html) =>
+    /^\s*(?:<p>\s*)?<img\b[^>]*>(?:\s*<\/p>)?\s*$/i.test(String(html))
+  );
 
   // Everything the client-side search matches against, lowercased once at
   // build time so filtering never has to case-fold every devo per keystroke.

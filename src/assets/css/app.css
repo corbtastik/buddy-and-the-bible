@@ -168,6 +168,15 @@ a{color:inherit;text-decoration:none}
 .bubble blockquote{margin:0 0 20px;padding-left:11px;border-left:2px solid var(--quote-edge);color:var(--quote-text)}
 .bubble h2,.bubble h3{margin:0 0 6px;font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.4px}
 
+/* A photo message. Messages shows an attachment as the picture itself,
+   rounded, with no grey behind it and no tail -- so the bubble keeps only its
+   shape. The layout leaves the tail off these (see isPhoto in the config). */
+.bubble-photo{background:none;padding:0;overflow:hidden}
+.bubble-photo p{margin:0}
+.bubble-photo img{display:block;width:100%;height:auto;border-radius:18px}
+/* A picture inside an ordinary text message still gets rounded, just smaller. */
+.bubble img{display:block;max-width:100%;height:auto;border-radius:12px}
+
 .tail{position:absolute;z-index:0;left:0;bottom:-6.4px;width:22px;height:25px;display:block}
 .avatar{position:absolute;left:-39px;bottom:-6.3px;width:32px;height:32px;display:block;border-radius:50%}
 /* Stand-in for a sender we have no photo of. */
