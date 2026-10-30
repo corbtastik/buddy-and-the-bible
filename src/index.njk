@@ -99,7 +99,7 @@ eleventyExcludeFromCollections: true
           </span>
           {# Prefer the hand-written summary: every devo opens with its scripture,
              so a content preview reads much the same from one row to the next. #}
-          <span class="row-preview">{{ devo.data.summary | preview if devo.data.summary else devo.templateContent | preview }}</span>
+          <span class="row-preview">{{ devo.data.summary | smart | preview if devo.data.summary else devo.templateContent | preview }}</span>
         </span>
       </a>
     </li>

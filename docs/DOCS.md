@@ -203,6 +203,36 @@ it, Windows would get Segoe UI and Android would get Roboto. Drop the Google
 Fonts `<link>` in `src/_includes/base.njk` if you would rather have no
 external dependency; Apple devices are unaffected either way.
 
+### Dashes and quotes
+
+Devo bodies go through markdown-it with `typographer` on, so `--` becomes an
+en dash and straight quotes curl. Write them the typewriter way in the
+Markdown and let the build do it.
+
+`summary` does not get that, because front matter never goes through
+markdown-it. It reached the conversation list and the `<meta>` description
+exactly as typed, so 19 summaries read "children -- His word" while the
+bubble beside them read "children – His word" -- and the same text is the
+link preview when a devo is texted to someone, which is the one place it
+really showed.
+
+The `smart` filter applies the same substitutions by hand, and is used at
+both places a summary surfaces: `src/index.njk` for the list row and
+`src/_includes/base.njk` for the description and `og:description`. It is
+idempotent, so the 18 summaries already written with real punctuation are
+untouched.
+
+**The search index deliberately does not get it.** `searchText` indexes the
+raw summary, because the index is matched against what someone types and a
+keyboard types straight quotes. Curling the summaries would make 44 of them
+harder to find rather than easier.
+
+That exposes an older gap worth knowing about: `src/assets/js/search.js`
+folds case but not punctuation, and the body text in the index is already
+curly. So typing `god's` matches nothing while `god’s` with a real
+apostrophe matches 77 devos. Folding both to the same form in `searchText`
+and in `search.js` would fix it; nothing does today.
+
 ## Deploying
 
 Live at <https://buddy-and-the-bible.web.app>, a Firebase Hosting site inside

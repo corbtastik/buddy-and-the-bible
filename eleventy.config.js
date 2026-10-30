@@ -150,6 +150,26 @@ export default function (eleventyConfig) {
       .replace(/\s+/g, " ")
       .trim();
 
+  /* The typographic substitutions markdown-it's typographer makes, for text
+   * that never goes through markdown-it. `summary` is the only such text:
+   * it is front matter, so it reaches the conversation list and the meta
+   * description exactly as typed, while the bubble beside it has been
+   * curled. That showed as "children -- His word" in the list and, worse,
+   * in the link preview when a devo is texted to someone.
+   *
+   * Ordering matters: --- before --, or the em dash never matches. */
+  const smart = (text) =>
+    String(text)
+      .replace(/---/g, "—")
+      .replace(/--/g, "–")
+      .replace(/\.\.\./g, "…")
+      .replace(/(^|[-—–\s(\[{"])'/g, "$1‘")
+      .replace(/'/g, "’")
+      .replace(/(^|[-—–\s(\[{‘])"/g, "$1“")
+      .replace(/"/g, "”");
+
+  eleventyConfig.addFilter("smart", smart);
+
   // Plain-text preview for the conversation list.
   eleventyConfig.addFilter("preview", (html, max = 140) => {
     const text = plain(html);
@@ -166,8 +186,16 @@ export default function (eleventyConfig) {
     /^\s*(?:<p>\s*)?<img\b[^>]*>(?:\s*<\/p>)?\s*$/i.test(String(html))
   );
 
-  // Everything the client-side search matches against, lowercased once at
-  // build time so filtering never has to case-fold every devo per keystroke.
+  /* Everything the client-side search matches against, lowercased once at
+   * build time so filtering never has to case-fold every devo per keystroke.
+   *
+   * Deliberately NOT passed through smart(). The index is matched against
+   * what someone types, and a keyboard types straight quotes: running the
+   * summaries through it would curl 44 of them and make them harder to
+   * find, not easier. (The rendered bubble text in here is already curly,
+   * which is why "god's" finds nothing today and "god's" with a curly
+   * apostrophe finds 77 -- a separate gap, in search.js, which does no
+   * punctuation folding at all.) */
   eleventyConfig.addFilter("searchText", (...parts) =>
     plain(parts.filter(Boolean).join(" ")).toLowerCase()
   );

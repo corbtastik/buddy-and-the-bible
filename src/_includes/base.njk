@@ -9,7 +9,7 @@
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 
 {%- set pageTitle = title if title else site.title %}
-{%- set pageDesc = summary if summary else site.description %}
+{%- set pageDesc = summary | smart if summary else site.description %}
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">
 
