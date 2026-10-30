@@ -131,7 +131,7 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 345 references in canonical order, Genesis to
+`/scripture/` lists all 352 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
 for the 40 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scripture.js`, which reads the
@@ -715,7 +715,7 @@ than Buddy.
 
 ---
 
-#### October 2026 — 12 devos — `references/oct-2026/`
+#### October 2026 — 14 devos — `references/oct-2026/`
 
 The first month with two kinds of source. Messages collapsed his longest
 posts, so those four were pasted into `references/oct-2026/oct.txt` instead,
@@ -735,8 +735,10 @@ format; nothing about a devo's page says which it came from.
 
 - Oct 1 -- Oct 19: 8 from screenshots, 4 from `oct.txt`.
 - **No devo on Oct 7 (Wed)** -- the only gap inside that range.
-- **Oct 20 onward has not been provided yet** (9 weekdays), so the archive
-  currently ends at Oct 19.
+- Oct 29 and Oct 30: 2 more, appended to `oct.txt` in a later batch. Both
+  are text-only; no screenshots were added for them.
+- **Oct 20 -- Oct 28 has not been provided** (7 weekdays), so there is a
+  hole between the two batches.
 
 *Corrections applied*
 
@@ -746,6 +748,18 @@ format; nothing about a devo's page says which it came from.
 - One stray `2` removed from the Acts 22 quotation on 2026-10-15
   ("standing by consenting 2 to his death"), the same kind of copy artifact
   removed from the June quotations.
+- **2026-10-30 is dated from its weekday, not its header.** `oct.txt` heads
+  it "Fri, Oct 31st at 7:47 AM", but Oct 31 2026 is a *Saturday*; the Friday
+  that week is Oct 30, which was also the day the batch was handed over.
+  Two independent checks point the same way, so the devo is filed as Oct 30
+  and the header is taken as a typo. **Worth confirming** -- if the date is
+  right and the weekday wrong, rename the file to `2026-10-31-` and change
+  the `date`; nothing else depends on it.
+- `2Timothy 2:15` and `1Thess. 5:17` spaced to `2 Timothy` and `1 Thess.`,
+  as in earlier batches. The abbreviation is left short; the linker resolves
+  it to 1 Thessalonians either way.
+- Word's bullet character (`·` followed by a run of spaces) converted to
+  Markdown list items on 2026-10-29.
 
 *Left as written — worth a look*
 
@@ -755,6 +769,18 @@ format; nothing about a devo's page says which it came from.
 - 2026-10-14 has "because it's standards are noble, it's purpose righteous".
 - 2026-10-06 has "overlook some who are have good character".
 - 2026-10-09 has "the hand of God is not something should always be feared".
+- 2026-10-29 attributes "The meaning of life is to find your gift. The
+  purpose of life is to give it away" to **William Shakespeare**. The line
+  is not Shakespeare's -- it is usually given to Picasso, and is probably
+  neither. Kept as he wrote it.
+- 2026-10-29 has "the American society rest on the backbone" and "the
+  medical profession rest on the weary backs" (*rests*).
+- 2026-10-30 has "the work of other doctors and scientist" (*scientists*)
+  and "So there I was there trying to count the tubes".
+- 2026-10-30 quotes 2 Timothy 2:15 in the **KJV** ("Study to shew thyself
+  approved"), not the NKJV he uses everywhere else. The auto-link still
+  points at NKJV, so the linked text will not match the bubble on that one
+  verse.
 
 *Notes*
 
@@ -776,6 +802,19 @@ format; nothing about a devo's page says which it came from.
   emoji" noted in `oct.txt`) are not rendered, here or in any earlier
   month. Say so if you would rather they were; it would be a change across
   the whole archive.
+- Both October 29--30 devos open with a title line he wrote himself ("From
+  the Hospital Bed - Nurses"). The page's own `<h1>` is screen-reader only,
+  so dropping that line would lose it from the bubble; it is kept, set bold
+  the way the `PERSECUTION`/`FAILURE` labels are on 2026-10-08. The
+  front-matter titles normalise his dash to a colon so they read well in
+  the conversation list and the pager.
+- They read as the first two of a series -- he is writing from a hospital
+  bed. Expect more under the same heading.
+- **2026-10-30 may be truncated.** `oct.txt` ends mid-sentence on
+  Hebrews 10:24-25a ("as is the manner of some,"), with no closing thought
+  after the third life-line. That is exactly where the pasted text stops,
+  so it may be the end of the message or it may be a short paste. Worth a
+  look at the original.
 
 ---
 

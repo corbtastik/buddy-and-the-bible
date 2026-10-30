@@ -10,11 +10,11 @@ they can be read, searched and kept, rather than scrolling away in a group
 message.
 
 Each devo is shown the way it arrived: as a message in a thread. There are
-**203 of them**, from January to October 2026, transcribed from screenshots
-of the original messages.
+**204 of them**, from January to October 2026, transcribed from the
+original messages.
 
 You can search the devos by word or by date, browse a
-[scripture index](https://buddy-and-the-bible.web.app/scripture/) of all 345
+[scripture index](https://buddy-and-the-bible.web.app/scripture/) of all 352
 verses he cites, and see at a glance which days he wrote.
 
 ## Running it
