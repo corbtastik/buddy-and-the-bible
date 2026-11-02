@@ -131,7 +131,7 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 352 references in canonical order, Genesis to
+`/scripture/` lists all 354 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
 for the 40 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
@@ -267,7 +267,9 @@ against the source. One folder per month, named for the month it covers:
 `references/apr-may-2026/`, `references/june-2026/`,
 `references/july-2026/`, `references/august-2026/`,
 `references/sept-2026/`, `references/oct-2026/`. One folder is not a
-month: `references/misc-2026/` holds messages from other threads.
+month: `references/misc-2026/` holds messages from other threads. There is
+no `references/nov-2026/` yet either -- November's one devo was appended to
+`references/oct-2026/oct.txt`, where the batch before it arrived.
 
 He does not send a devo every weekday, so gaps in a month are normal. Each
 entry below lists the days with none, so a gap is visibly accounted for
@@ -865,6 +867,63 @@ format; nothing about a devo's page says which it came from.
   after the third life-line. That is exactly where the pasted text stops,
   so it may be the end of the message or it may be a short paste. Worth a
   look at the original.
+
+---
+
+#### November 2026 — 1 devo — `references/oct-2026/oct.txt`
+
+The third of the hospital-bed series, and the first month with no folder of
+its own. It was appended to October's text file in the same shape as the two
+before it, so its source is the last entry in `references/oct-2026/oct.txt`
+rather than a `references/nov-2026/`. Move it when a November batch of its
+own arrives.
+
+*Assumptions*
+
+- **The date came from its own header**, "Mon, Nov 2nd 6:25 AM". Nov 2 2026
+  *is* a Monday, so header and calendar agree -- unlike 2026-10-30 in the
+  batch before it. The header drops the "at" the other entries use; nothing
+  reads it, so it needed no fixing.
+- **The year is absent** from the text, as always; taken as 2026.
+
+*Coverage*
+
+- Nov 2 only, text-only, no screenshot.
+- **Nov 3 onward has not been provided yet**, so the archive currently ends
+  at Nov 2.
+
+*Corrections applied*
+
+- `Ephesians 5:15-16See then that you walk...` split, the same run-together
+  reference `oct.txt` produced throughout October.
+- Word's paragraph indent -- a run of spaces before "One of the questions"
+  -- read as a paragraph break, as on 2026-10-29 and 2026-10-30.
+
+*Left as written — worth a look*
+
+- The opening sentence has no main clause: "When you are constrained in the
+  hospital bed hooked up to all the IV's and tubes that are feeding you and
+  giving you all the medicine the doctors order."
+- "each of us will give and accounting" (*an*), and "for some purpose its
+  leaving our account" (*it's*).
+- "Each moment that passes has been taken out of your assets and placed in
+  our investments" switches from *your* to *our* mid-sentence.
+- "Are we investing our time to God's glory or to our own destruction."
+  ends on a period though it reads as a question.
+
+*Notes*
+
+- Same shape as the first two of the series: his own title line bold at the
+  top of the bubble, and a front-matter title that normalises his dash to a
+  colon. His lowercase *time* is kept in the bubble and title-cased only in
+  the front matter, where it sits beside "Nurses" and "Life Lines" in the
+  conversation list.
+- `scripture` is **Ephesians 5:15-16**, the verse the devo argues from
+  ("redeeming the time"), not the Ecclesiastes 3:1 it opens with -- that one
+  is already the headline verse on 2026-04-01 and 2026-07-24.
+- **It may be truncated**, the same worry as 2026-10-30. The paste ends on
+  the Romans 2:5-6 quotation, whose own last character is a colon
+  introducing a list that is not there. Worth a look at the original.
 
 ---
 
