@@ -131,7 +131,7 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 354 references in canonical order, Genesis to
+`/scripture/` lists all 355 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
 for the 40 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
@@ -268,8 +268,8 @@ against the source. One folder per month, named for the month it covers:
 `references/july-2026/`, `references/august-2026/`,
 `references/sept-2026/`, `references/oct-2026/`. One folder is not a
 month: `references/misc-2026/` holds messages from other threads. There is
-no `references/nov-2026/` yet either -- November's one devo was appended to
-`references/oct-2026/oct.txt`, where the batch before it arrived.
+no `references/nov-2026/` yet either -- November's devos were appended to
+`references/oct-2026/oct.txt`, where the batch before them arrived.
 
 He does not send a devo every weekday, so gaps in a month are normal. Each
 entry below lists the days with none, so a gap is visibly accounted for
@@ -870,60 +870,85 @@ format; nothing about a devo's page says which it came from.
 
 ---
 
-#### November 2026 — 1 devo — `references/oct-2026/oct.txt`
+#### November 2026 — 2 devos — `references/oct-2026/oct.txt`
 
-The third of the hospital-bed series, and the first month with no folder of
-its own. It was appended to October's text file in the same shape as the two
-before it, so its source is the last entry in `references/oct-2026/oct.txt`
-rather than a `references/nov-2026/`. Move it when a November batch of its
-own arrives.
+The third and fourth of the hospital-bed series, and the first month with no
+folder of its own. Both were appended to October's text file in the same
+shape as the two before them, so their source is the tail of
+`references/oct-2026/oct.txt` rather than a `references/nov-2026/`. Move
+them when a November batch of its own arrives.
 
 *Assumptions*
 
-- **The date came from its own header**, "Mon, Nov 2nd 6:25 AM". Nov 2 2026
-  *is* a Monday, so header and calendar agree -- unlike 2026-10-30 in the
-  batch before it. The header drops the "at" the other entries use; nothing
+- **Both dates came from their own headers**, "Mon, Nov 2nd 6:25 AM" and
+  "Tue, Nov 3rd 6:43 AM". Nov 2 2026 *is* a Monday and Nov 3 *is* a Tuesday,
+  so header and calendar agree on both -- unlike 2026-10-30 in the batch
+  before them. Both headers drop the "at" the other entries use; nothing
   reads it, so it needed no fixing.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 only, text-only, no screenshot.
-- **Nov 3 onward has not been provided yet**, so the archive currently ends
-  at Nov 2.
+- Nov 2 and Nov 3, both text-only, no screenshots.
+- **Nov 4 onward has not been provided yet**, so the archive currently ends
+  at Nov 3.
 
 *Corrections applied*
 
-- `Ephesians 5:15-16See then that you walk...` split, the same run-together
-  reference `oct.txt` produced throughout October.
+- `Ephesians 5:15-16See then that you walk...` split on 2026-11-02, the same
+  run-together reference `oct.txt` produced throughout October. The
+  `James 5:13-18` reference on 2026-11-03 came through already spaced and
+  needed no splitting.
 - Word's paragraph indent -- a run of spaces before "One of the questions"
-  -- read as a paragraph break, as on 2026-10-29 and 2026-10-30.
+  on 2026-11-02 and before "As I lay in the hospital bed" on 2026-11-03 --
+  read as a paragraph break, as on 2026-10-29 and 2026-10-30.
+- **Two lost spaces restored inside the James 5 quotation** on 2026-11-03,
+  both at a verse boundary: "avails much.Elijah was a man" and "three years
+  and six months.And he prayed again". Same capture artifact as the spaces
+  restored in January, and at verse joins rather than anywhere he was
+  writing himself.
 
 *Left as written — worth a look*
 
-- The opening sentence has no main clause: "When you are constrained in the
-  hospital bed hooked up to all the IV's and tubes that are feeding you and
-  giving you all the medicine the doctors order."
-- "each of us will give and accounting" (*an*), and "for some purpose its
-  leaving our account" (*it's*).
-- "Each moment that passes has been taken out of your assets and placed in
-  our investments" switches from *your* to *our* mid-sentence.
-- "Are we investing our time to God's glory or to our own destruction."
-  ends on a period though it reads as a question.
+- 2026-11-02's opening sentence has no main clause: "When you are
+  constrained in the hospital bed hooked up to all the IV's and tubes that
+  are feeding you and giving you all the medicine the doctors order."
+- 2026-11-02 has "each of us will give and accounting" (*an*), and "for some
+  purpose its leaving our account" (*it's*).
+- 2026-11-02's "Each moment that passes has been taken out of your assets
+  and placed in our investments" switches from *your* to *our* mid-sentence.
+- 2026-11-02's "Are we investing our time to God's glory or to our own
+  destruction." ends on a period though it reads as a question.
+- 2026-11-03 has "if prayer is offered in faith and it in harmony with God's
+  will" (*is in harmony*), and "those suffering and are sick spiritually".
+- 2026-11-03's James 5 quotation ends with no full stop, on "the earth
+  produced its fruit". Restoring the two verse-boundary spaces was a capture
+  fix; adding punctuation would not be, so it is left as the paste gave it.
+  See the truncation note below -- the two may be the same thing.
+- 2026-11-03 uses `&` for *and* twice ("suffering & sick" and "protection,
+  providence & provision"); kept, as his shorthand.
 
 *Notes*
 
 - Same shape as the first two of the series: his own title line bold at the
   top of the bubble, and a front-matter title that normalises his dash to a
-  colon. His lowercase *time* is kept in the bubble and title-cased only in
-  the front matter, where it sits beside "Nurses" and "Life Lines" in the
-  conversation list.
-- `scripture` is **Ephesians 5:15-16**, the verse the devo argues from
-  ("redeeming the time"), not the Ecclesiastes 3:1 it opens with -- that one
-  is already the headline verse on 2026-04-01 and 2026-07-24.
-- **It may be truncated**, the same worry as 2026-10-30. The paste ends on
-  the Romans 2:5-6 quotation, whose own last character is a colon
-  introducing a list that is not there. Worth a look at the original.
+  colon. His lowercase *time* and *prayer* are kept in the bubble and
+  title-cased only in the front matter, where they sit beside "Nurses" and
+  "Life Lines" in the conversation list.
+- `scripture` on 2026-11-02 is **Ephesians 5:15-16**, the verse the devo
+  argues from ("redeeming the time"), not the Ecclesiastes 3:1 it opens with
+  -- that one is already the headline verse on 2026-04-01 and 2026-07-24.
+  2026-11-03 cites only **James 5:13-18**, so there was nothing to choose;
+  it is the first devo in the archive to reference James 5.
+- **Both may be truncated**, the same worry as 2026-10-30. 2026-11-02's
+  paste ends on the Romans 2:5-6 quotation, whose own last character is a
+  colon introducing a list that is not there. 2026-11-03's ends on a closing
+  paragraph that reads complete -- "And prayer connects with that power." --
+  but its James 5 quotation stops without a full stop, so a few characters
+  may have been lost there. Worth a look at the originals.
+- Three of the four hospital-bed devos now end with the same unease about
+  the paste rather than the message. If the source is a Word document being
+  copied in, the end of a block is where it keeps going wrong.
 
 ---
 
