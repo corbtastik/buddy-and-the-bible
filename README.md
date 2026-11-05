@@ -21,8 +21,9 @@ verses he cites, and see at a glance which days he wrote.
 
 ```sh
 npm install
-npm start     # http://localhost:8080
-npm run build # writes the static site to _site/
+npm start      # http://localhost:8080
+npm run build  # writes the static site to _site/
+npm run deploy # builds, then deploys to Firebase Hosting
 ```
 
 Built with [Eleventy](https://www.11ty.dev/) and hosted on Firebase.

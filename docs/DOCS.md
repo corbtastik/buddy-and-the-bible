@@ -239,15 +239,34 @@ Live at <https://buddy-and-the-bible.web.app>, a Firebase Hosting site inside
 the `corbs-cloud` project. After adding devos:
 
 ```sh
-npm run build && firebase deploy --only hosting
+npm run deploy    # builds, then deploys hosting
 ```
 
-`firebase.json` pins the target to the `buddy-and-the-bible` site -- that project
-has several, so an unqualified deploy would be ambiguous. HTML revalidates on
-every request, css/js cache for ten minutes, images for a year. The HTML rule
-needs explicit `/` and `**/` sources: permalinks are directory-style, so
-`**/*.html` never matches a real request path and the pages would otherwise
-pick up Firebase's one-hour default.
+That is `npm run build && firebase deploy --only hosting` in one script, so the
+build can't be skipped by accident -- deploying stale `_site/` is the one
+mistake this command exists to prevent. `npm run preview` does the same thing
+to a `preview` channel instead, which gets a temporary URL and leaves the live
+site alone.
+
+Two separate things pin what gets deployed where. `firebase.json` pins the
+*site* to `buddy-and-the-bible` -- that project has several, so an unqualified
+deploy would be ambiguous. `.firebaserc` pins the *project* to `corbs-cloud`.
+
+`.firebaserc` is committed on purpose. Without it the Firebase CLI falls back
+to the active project in its own global config at
+`~/.config/configstore/firebase-tools.json`, which is keyed by absolute
+directory path -- so it is per-machine, and it does not survive renaming the
+directory or cloning the repo somewhere else. It did not survive this repo's
+own rename: deploys ran for months out of `.../corbtastik/morning-devos`, and
+the first deploy after the directory became `buddy-and-the-bible` failed with
+"No currently active project" because that path had no entry. The committed
+file makes the command above work from any checkout with no `--project` flag.
+
+HTML revalidates on every request, css/js cache for ten minutes, images for a
+year, all set in `firebase.json`. The HTML rule needs explicit `/` and `**/`
+sources: permalinks are directory-style, so `**/*.html` never matches a real
+request path and the pages would otherwise pick up Firebase's one-hour
+default.
 
 An earlier deploy lived at `morning-devos.web.app`. That site still exists
 and still serves the last build made under the old name; it is being
