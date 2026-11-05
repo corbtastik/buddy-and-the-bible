@@ -131,9 +131,9 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 355 references in canonical order, Genesis to
+`/scripture/` lists all 357 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
-for the 40 verses cited more than once. It is linked from the home page
+for the 38 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
 Markdown directly rather than going through collections so it does not
 depend on every devo having rendered first.
@@ -260,16 +260,21 @@ Pages or GitHub Pages would work just as well.
 
 ## Where the devos came from
 
-`references/` holds the original iMessage screenshots the devos were
-transcribed from, kept as provenance so any transcription can be checked
-against the source. One folder per month, named for the month it covers:
-`references/jan-2026/`, `references/feb-2026/`, `references/mar-2026/`,
-`references/apr-may-2026/`, `references/june-2026/`,
-`references/july-2026/`, `references/august-2026/`,
-`references/sept-2026/`, `references/oct-2026/`. One folder is not a
-month: `references/misc-2026/` holds messages from other threads. There is
-no `references/nov-2026/` yet either -- November's devos were appended to
-`references/oct-2026/oct.txt`, where the batch before them arrived.
+`references/` holds what the devos were transcribed from, kept as provenance
+so any transcription can be checked against the source. It is gitignored, so
+none of it is committed.
+
+There are two kinds of source in there. Most devos came from an iMessage
+screenshot, and those live in one folder per month, named for the month it
+covers: `references/jan-2026/`, `references/feb-2026/`,
+`references/mar-2026/`, `references/apr-may-2026/`, `references/june-2026/`,
+`references/july-2026/`, `references/august-2026/`, `references/sept-2026/`,
+`references/oct-2026/`. One folder is not a month: `references/misc-2026/`
+holds messages from other threads. There is no `references/nov-2026/` yet,
+because November's four devos were hand-entered rather than captured.
+
+The rest were typed or pasted in by hand, and they all live in one file --
+`references/manual-devos.md`, described next.
 
 He does not send a devo every weekday, so gaps in a month are normal. Each
 entry below lists the days with none, so a gap is visibly accounted for
@@ -278,6 +283,52 @@ rather than looking like a transcription that got dropped.
 Nor are they always sent in the morning. `time` records whatever the
 screenshot says, afternoon included, so an odd hour is the source speaking
 and not a typo.
+
+### Hand-entered devos
+
+`references/manual-devos.md` is the intake file for devos that arrive as text
+rather than as a screenshot -- Messages collapses his longest posts, so those
+get pasted in instead of captured. **One file for every year and month**;
+entries are keyed by date, so they can be added in any order and a new month
+needs no new file. The file carries its own instructions at the top.
+
+One entry per devo, a `## YYYY-MM-DD` heading below the `## Entries` line:
+
+```
+## 2026-11-03
+
+- time: 6:43 AM
+- source: manual
+- header: Tue, Nov 3rd 6:43 AM
+- complete: yes
+- tapbacks:
+- note:
+
+His message, pasted from the first line to the last.
+```
+
+The body runs to the next `## ` heading, so there is no closing delimiter.
+`***` on its own line splits one message into separate bubbles, the same
+marker the devo pages use. Only the date and `time` are needed; the rest are
+optional, and each of them exists because of a judgment call this archive
+actually had to make:
+
+| Field      | Why it is there                                                  |
+| ---------- | ---------------------------------------------------------------- |
+| `## date`  | His headers never show the year, and twice the weekday and date in a header have disagreed. An ISO date ends the guessing |
+| `header`   | The literal Messages header, so a disagreement with `date` can be *caught* rather than silently resolved -- see 2026-10-30 |
+| `complete` | `yes`/`no`/`unsure`. Three of the four hospital-bed devos end where the paste looks to have given out; this says whether that is really the end |
+| `tapbacks` | Recorded, not rendered -- the standing choice across the archive |
+| `note`     | Free text, read every time. The override for anything else here  |
+| `posted`   | Written back after publishing: the slug it became               |
+
+An entry with no matching `src/devos/YYYY-MM-DD-*.md` is one that has not
+been published yet; nothing else marks an entry as new.
+
+The eight entries for Oct 8 -- Nov 3 2026 were migrated in from
+`references/oct-2026/oct.txt`, the per-month text file this replaced, which
+is now retired. Entries below that cite `oct.txt` are describing that same
+pasted text; the headers and bodies carried over verbatim.
 
 ### Transcription log
 
@@ -767,13 +818,18 @@ than Buddy.
 
 ---
 
-#### October 2026 — 14 devos — `references/oct-2026/`
+#### October 2026 — 14 devos — `references/oct-2026/` and `references/manual-devos.md`
 
 The first month with two kinds of source. Messages collapsed his longest
-posts, so those four were pasted into `references/oct-2026/oct.txt` instead,
-each separated by `---` and headed with its day, time and any tapback. The
-other eight are screenshots as usual. Both were transcribed to the same
-format; nothing about a devo's page says which it came from.
+posts, so those four were pasted in as text instead, and the other eight are
+screenshots as usual. Both were transcribed to the same format; nothing about
+a devo's page says which it came from.
+
+The pasted four, and the two appended later, were originally in
+`references/oct-2026/oct.txt` -- entries separated by `---` and headed with
+the day, time and any tapback. They now live in `references/manual-devos.md`
+with the rest of the hand-entered devos, headers and bodies verbatim, so
+`oct.txt` below means that same text in its new home.
 
 *Assumptions*
 
@@ -785,10 +841,10 @@ format; nothing about a devo's page says which it came from.
 
 *Coverage*
 
-- Oct 1 -- Oct 19: 8 from screenshots, 4 from `oct.txt`.
+- Oct 1 -- Oct 19: 8 from screenshots, 4 pasted in as text.
 - **No devo on Oct 7 (Wed)** -- the only gap inside that range.
-- Oct 29 and Oct 30: 2 more, appended to `oct.txt` in a later batch. Both
-  are text-only; no screenshots were added for them.
+- Oct 29 and Oct 30: 2 more, pasted in as text in a later batch. Both are
+  text-only; no screenshots were added for them.
 - **Oct 20 -- Oct 28 has not been provided** (7 weekdays), so there is a
   hole between the two batches.
 
@@ -851,9 +907,9 @@ format; nothing about a devo's page says which it came from.
   window was widened. Like July's zoom, that changes the capture only --
   the bubble renders at the same width and type size as every other devo.
 - Tapbacks (the hearts and thumbs-up on some messages, and the "1 Heart
-  emoji" noted in `oct.txt`) are not rendered, here or in any earlier
-  month. Say so if you would rather they were; it would be a change across
-  the whole archive.
+  emoji" on the 2026-10-15 header, now its `tapbacks` field) are not
+  rendered, here or in any earlier month. Say so if you would rather they
+  were; it would be a change across the whole archive.
 - Both October 29--30 devos open with a title line he wrote himself ("From
   the Hospital Bed - Nurses"). The page's own `<h1>` is screen-reader only,
   so dropping that line would lose it from the bubble; it is kept, set bold
@@ -862,51 +918,62 @@ format; nothing about a devo's page says which it came from.
   the conversation list and the pager.
 - They read as the first two of a series -- he is writing from a hospital
   bed. Expect more under the same heading.
-- **2026-10-30 may be truncated.** `oct.txt` ends mid-sentence on
+- **2026-10-30 may be truncated.** The paste ends mid-sentence on
   Hebrews 10:24-25a ("as is the manner of some,"), with no closing thought
   after the third life-line. That is exactly where the pasted text stops,
   so it may be the end of the message or it may be a short paste. Worth a
-  look at the original.
+  look at the original; its entry is marked `complete: unsure`.
 
 ---
 
-#### November 2026 — 2 devos — `references/oct-2026/oct.txt`
+#### November 2026 — 4 devos — `references/manual-devos.md`
 
-The third and fourth of the hospital-bed series, and the first month with no
-folder of its own. Both were appended to October's text file in the same
-shape as the two before them, so their source is the tail of
-`references/oct-2026/oct.txt` rather than a `references/nov-2026/`. Move
-them when a November batch of its own arrives.
+The last three of the hospital-bed series plus one devo outside it, and the
+first month with no screenshot folder of its own. All four were hand-entered,
+so there is nothing to capture and no `references/nov-2026/` to create -- they
+are entries in `references/manual-devos.md` like every other pasted devo. A
+November batch of screenshots, if one ever arrives, would get its own folder
+alongside.
 
 *Assumptions*
 
-- **Both dates came from their own headers**, "Mon, Nov 2nd 6:25 AM" and
-  "Tue, Nov 3rd 6:43 AM". Nov 2 2026 *is* a Monday and Nov 3 *is* a Tuesday,
-  so header and calendar agree on both -- unlike 2026-10-30 in the batch
-  before them. Both headers drop the "at" the other entries use; nothing
-  reads it, so it needed no fixing.
+- **Every date came from its own header**, "Mon, Nov 2nd 6:25 AM", "Tue, Nov
+  3rd 6:43 AM", "Wed, Nov 4th 7:44 AM" and ", Thurs, Nov 5th 7:35 AM". Nov 2
+  2026 *is* a Monday and so on through Nov 5 -- header and calendar agree on
+  all four, unlike 2026-10-30 in the batch before them. All four headers drop
+  the "at" the other entries use, and Nov 5's opens with a stray comma and
+  abbreviates the weekday "Thurs"; nothing reads the field, so none of it
+  needed fixing.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 and Nov 3, both text-only, no screenshots.
-- **Nov 4 onward has not been provided yet**, so the archive currently ends
-  at Nov 3.
+- Nov 2 -- Nov 5, all four text-only, no screenshots.
+- Four consecutive weekdays, Monday to Thursday, with no gap.
+- **Nov 6 onward has not been provided yet**, so the archive currently ends
+  at Nov 5.
 
 *Corrections applied*
 
 - `Ephesians 5:15-16See then that you walk...` split on 2026-11-02, the same
   run-together reference `oct.txt` produced throughout October. The
-  `James 5:13-18` reference on 2026-11-03 came through already spaced and
-  needed no splitting.
+  `James 5:13-18` reference on 2026-11-03 and every reference on 2026-11-04
+  and 2026-11-05 came through already spaced and needed no splitting.
 - Word's paragraph indent -- a run of spaces before "One of the questions"
-  on 2026-11-02 and before "As I lay in the hospital bed" on 2026-11-03 --
-  read as a paragraph break, as on 2026-10-29 and 2026-10-30.
+  on 2026-11-02, before "As I lay in the hospital bed" on 2026-11-03, and
+  before both "So after waiting several days" and "The very purpose of Jesus
+  coming" on 2026-11-04 -- read as a paragraph break, as on 2026-10-29 and
+  2026-10-30.
 - **Two lost spaces restored inside the James 5 quotation** on 2026-11-03,
   both at a verse boundary: "avails much.Elijah was a man" and "three years
   and six months.And he prayed again". Same capture artifact as the spaces
   restored in January, and at verse joins rather than anywhere he was
   writing himself.
+- `2Peter 3:9` spaced on 2026-11-04, per the standing practice for numbered
+  books.
+- 2026-11-05 arrived as four lines with no blank line between them --
+  scripture, prose, scripture, prose. Read as four paragraphs, which is the
+  only shape those line breaks can mean.
 
 *Left as written — worth a look*
 
@@ -927,28 +994,65 @@ them when a November batch of its own arrives.
   See the truncation note below -- the two may be the same thing.
 - 2026-11-03 uses `&` for *and* twice ("suffering & sick" and "protection,
   providence & provision"); kept, as his shorthand.
+- **2026-11-04 cites `Mark 2:16` for text that is actually Mark 2:17.** The
+  most substantive of these, and the same call as 2026-06-12's
+  `Hebrews 12:15-16`: his citation stands in the bubble and in the front
+  matter, so the page links what he wrote. The verse he quoted is the one he
+  already quoted as Luke 5:31 six days earlier on 2026-10-29.
+- 2026-11-04's Romans quotation runs two verses together under one
+  reference, marking the second with a bare `(6:23)` -- "for all have sinned
+  and fall short of the glory of God, (6:23) For the wages of sin is death".
+  Kept in one blockquote with the parenthetical inline, as with
+  2026-10-30's `Psalm 95:1-2 ... (6)`.
+- 2026-11-04 has "Before man will respond to Jesus call" (*Jesus'*).
+- 2026-11-05 switches person inside one sentence: "Our faith rests securely
+  upon the evidence of verifiable truth, not on your emotions, someone
+  else's emotion, your opinions or someone else's opinions."
 
 *Notes*
 
-- Same shape as the first two of the series: his own title line bold at the
-  top of the bubble, and a front-matter title that normalises his dash to a
-  colon. His lowercase *time* and *prayer* are kept in the bubble and
-  title-cased only in the front matter, where they sit beside "Nurses" and
-  "Life Lines" in the conversation list.
+- The three hospital-bed devos keep the shape of the first two: his own
+  title line bold at the top of the bubble, and a front-matter title that
+  normalises his dash to a colon. His lowercase *time*, *prayer* and *the
+  diagnosis* are kept in the bubble and title-cased only in the front
+  matter, where they sit beside "Nurses" and "Life Lines" in the
+  conversation list.
+- **2026-11-05 has no title line of his own** and is not part of the series
+  -- it opens straight on 2 Corinthians 5:7, so the post does too, like
+  2026-10-15 and the other untitled ones. "Walk by Faith" is ours, taken
+  from the verse he opens with and the line he closes on.
+- **2026-11-05 is a near-rewrite of 2026-07-03**, "Faith Is Not Blind": same
+  two verses, same argument, much of it word for word. The differences are
+  his, not the capture's -- "we are not blindly groping through life" for
+  "Faith is not blind", *your* emotions for *one's*, "crucial to spiritual
+  success" for "critical to having and maintaining a relationship with
+  God" -- and it adds a closing call the earlier one does not have ("Make
+  today the day you turn away from sin and swiftly run to God"). Published
+  as its own devo, since he sent it as one; the earlier title was already
+  taken, which is why this one is not called the same thing.
 - `scripture` on 2026-11-02 is **Ephesians 5:15-16**, the verse the devo
   argues from ("redeeming the time"), not the Ecclesiastes 3:1 it opens with
   -- that one is already the headline verse on 2026-04-01 and 2026-07-24.
   2026-11-03 cites only **James 5:13-18**, so there was nothing to choose;
-  it is the first devo in the archive to reference James 5.
-- **Both may be truncated**, the same worry as 2026-10-30. 2026-11-02's
-  paste ends on the Romans 2:5-6 quotation, whose own last character is a
-  colon introducing a list that is not there. 2026-11-03's ends on a closing
-  paragraph that reads complete -- "And prayer connects with that power." --
-  but its James 5 quotation stops without a full stop, so a few characters
-  may have been lost there. Worth a look at the originals.
-- Three of the four hospital-bed devos now end with the same unease about
-  the paste rather than the message. If the source is a Word document being
-  copied in, the end of a block is where it keeps going wrong.
+  it is the first devo in the archive to reference James 5. 2026-11-04 takes
+  **Mark 2:16**, his citation for the diagnosis verse the whole devo turns
+  on, and is the first to reference Mark 2. 2026-11-05 takes
+  **2 Corinthians 5:7**, which it opens with and ends on; it is the headline
+  on 2026-03-17 as well, which is no bar -- Matthew 7:13-14 is the headline
+  on four.
+- **2026-11-02 and 2026-11-03 may be truncated**, the same worry as
+  2026-10-30. 2026-11-02's paste ends on the Romans 2:5-6 quotation, whose
+  own last character is a colon introducing a list that is not there.
+  2026-11-03's ends on a closing paragraph that reads complete -- "And
+  prayer connects with that power." -- but its James 5 quotation stops
+  without a full stop, so a few characters may have been lost there. Worth a
+  look at the originals.
+- **The run of truncations ends here.** Three of the four hospital-bed devos
+  pasted before Nov 4 ended with that unease; 2026-11-04 closes on a full
+  paragraph ("be able to teach them to others.") and 2026-11-05 on a full
+  sentence ("be strong and walk by faith."), both marked `complete: yes`.
+  Whatever was clipping the end of a Word block was not doing it on these
+  two.
 
 ---
 
