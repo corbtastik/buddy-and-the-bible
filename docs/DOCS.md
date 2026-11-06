@@ -131,9 +131,9 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 357 references in canonical order, Genesis to
+`/scripture/` lists all 360 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
-for the 38 verses cited more than once. It is linked from the home page
+for the 39 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
 Markdown directly rather than going through collections so it does not
 depend on every devo having rendered first.
@@ -945,10 +945,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 4 devos — `references/manual-devos.md`
+#### November 2026 — 5 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus one devo outside it, and the
-first month with no screenshot folder of its own. All four were hand-entered,
+The last three of the hospital-bed series plus two devos outside it, and the
+first month with no screenshot folder of its own. All five were hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
 November batch of screenshots, if one ever arrives, would get its own folder
@@ -957,27 +957,29 @@ alongside.
 *Assumptions*
 
 - **Every date came from its own header**, "Mon, Nov 2nd 6:25 AM", "Tue, Nov
-  3rd 6:43 AM", "Wed, Nov 4th 7:44 AM" and ", Thurs, Nov 5th 7:35 AM". Nov 2
-  2026 *is* a Monday and so on through Nov 5 -- header and calendar agree on
-  all four, unlike 2026-10-30 in the batch before them. All four headers drop
-  the "at" the other entries use, and Nov 5's opens with a stray comma and
-  abbreviates the weekday "Thurs"; nothing reads the field, so none of it
-  needed fixing.
+  3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM" and "Fri,
+  Nov 6th 5:58 AM". Nov 2 2026 *is* a Monday and so on through Nov 6 -- header
+  and calendar agree on all five, unlike 2026-10-30 in the batch before them.
+  All five headers drop the "at" the other entries use, and Nov 5's opens with
+  a stray comma and abbreviates the weekday "Thurs"; nothing reads the field,
+  so none of it needed fixing.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 -- Nov 5, all four text-only, no screenshots.
-- Four consecutive weekdays, Monday to Thursday, with no gap.
-- **Nov 6 onward has not been provided yet**, so the archive currently ends
-  at Nov 5.
+- Nov 2 -- Nov 6, all five text-only, no screenshots.
+- Five consecutive weekdays, Monday to Friday, with no gap -- a full week, and
+  the first in the archive since the hospital stay began.
+- **Nov 9 onward has not been provided yet**, so the archive currently ends
+  at Nov 6.
 
 *Corrections applied*
 
 - `Ephesians 5:15-16See then that you walk...` split on 2026-11-02, the same
   run-together reference `oct.txt` produced throughout October. The
-  `James 5:13-18` reference on 2026-11-03 and every reference on 2026-11-04
-  and 2026-11-05 came through already spaced and needed no splitting.
+  `James 5:13-18` reference on 2026-11-03 and every reference on 2026-11-04,
+  2026-11-05 and 2026-11-06 came through already spaced and needed no
+  splitting.
 - Word's paragraph indent -- a run of spaces before "One of the questions"
   on 2026-11-02, before "As I lay in the hospital bed" on 2026-11-03, and
   before both "So after waiting several days" and "The very purpose of Jesus
@@ -992,7 +994,14 @@ alongside.
   books.
 - 2026-11-05 arrived as four lines with no blank line between them --
   scripture, prose, scripture, prose. Read as four paragraphs, which is the
-  only shape those line breaks can mean.
+  only shape those line breaks can mean. 2026-11-06 arrived the same way, in
+  eight lines alternating the same two kinds, and was read the same way.
+- **A backwards opening quote mark** on 2026-11-06, in `,  "there just wasn't
+  enough evidence for me to believe you were real."` -- the paste opens that
+  quotation with a *closing* curly mark. Written straight in the Markdown like
+  every other quote, so the build curls it the right way round. A capture
+  artifact, not his punctuation; the straight-quote convention means nothing
+  else here had to change.
 
 *Left as written — worth a look*
 
@@ -1027,6 +1036,20 @@ alongside.
 - 2026-11-05 switches person inside one sentence: "Our faith rests securely
   upon the evidence of verifiable truth, not on your emotions, someone
   else's emotion, your opinions or someone else's opinions."
+- 2026-11-06 has "faith operates without evidence instead, evidence is the
+  basis of our faith", which wants a semicolon or a full stop where the comma
+  is, and "Scriptures teach us that creation is evidence in the existence of
+  God" (*of*).
+- 2026-11-06 has "What Paul is saying that just because some ignore" (*saying
+  is that*), and "it is the Apostles word we have in written form"
+  (*Apostles'*).
+- 2026-11-06's "Scriptures teach us that creation is evidence in the existence
+  of God" ends with no full stop, the line break before the Romans 1:20
+  reference standing in for one. Same call as 2026-11-03's James 5 quotation:
+  restoring a dropped space is a capture fix, adding punctuation is not.
+- 2026-11-06's "Why did God choose these women to be the first to witness the
+  resurrection of the Lord." ends on a period though it reads as a question,
+  the same shape as 2026-11-02's "or to our own destruction."
 
 *Notes*
 
@@ -1036,10 +1059,12 @@ alongside.
   diagnosis* are kept in the bubble and title-cased only in the front
   matter, where they sit beside "Nurses" and "Life Lines" in the
   conversation list.
-- **2026-11-05 has no title line of his own** and is not part of the series
-  -- it opens straight on 2 Corinthians 5:7, so the post does too, like
-  2026-10-15 and the other untitled ones. "Walk by Faith" is ours, taken
-  from the verse he opens with and the line he closes on.
+- **2026-11-05 and 2026-11-06 have no title line of his own** and neither is
+  part of the series -- they open straight on scripture, so the posts do too,
+  like 2026-10-15 and the other untitled ones. "Walk by Faith" and "The
+  Evidence of Things Not Seen" are both ours, each taken from the verse he
+  opens with; Nov 5's doubles as the line he closes on, and Nov 6's is the
+  phrase from Hebrews 11:1 that the whole devo expounds.
 - **2026-11-05 is a near-rewrite of 2026-07-03**, "Faith Is Not Blind": same
   two verses, same argument, much of it word for word. The differences are
   his, not the capture's -- "we are not blindly groping through life" for
@@ -1058,7 +1083,12 @@ alongside.
   on, and is the first to reference Mark 2. 2026-11-05 takes
   **2 Corinthians 5:7**, which it opens with and ends on; it is the headline
   on 2026-03-17 as well, which is no bar -- Matthew 7:13-14 is the headline
-  on four.
+  on four. 2026-11-06 takes **Hebrews 11:1**, the definition it quotes and
+  then spends the whole devo unpacking; that is the headline on 2026-07-03
+  too, and the third devo in the archive to cite the verse. Its other three
+  references -- Romans 1:20, Luke 24:8-11 and John 20:30-31 -- are all new to
+  the archive, which is why the scripture index gained three entries for one
+  devo.
 - **2026-11-02 and 2026-11-03 may be truncated**, the same worry as
   2026-10-30. 2026-11-02's paste ends on the Romans 2:5-6 quotation, whose
   own last character is a colon introducing a list that is not there.
@@ -1068,10 +1098,19 @@ alongside.
   look at the originals.
 - **The run of truncations ends here.** Three of the four hospital-bed devos
   pasted before Nov 4 ended with that unease; 2026-11-04 closes on a full
-  paragraph ("be able to teach them to others.") and 2026-11-05 on a full
-  sentence ("be strong and walk by faith."), both marked `complete: yes`.
-  Whatever was clipping the end of a Word block was not doing it on these
-  two.
+  paragraph ("be able to teach them to others."), 2026-11-05 on a full
+  sentence ("be strong and walk by faith.") and 2026-11-06 on a whole
+  punctuated quotation of John 20:30-31, all three marked `complete: yes`.
+  Whatever was clipping the end of a Word block was not doing it on these.
+  Ending on scripture is not itself a truncation signal -- he closes that way
+  often, 2026-10-29 included; what marked Nov 2 was that the quotation itself
+  broke off mid-thought.
+- **Nov 5 and Nov 6 read as a pair on one subject**, faith and the evidence it
+  rests on, and both reach back to 2026-07-03 "Faith Is Not Blind" -- Nov 5
+  rewrites it, Nov 6 argues the other half, that the evidence is the apostles'
+  recorded testimony. 2026-03-10 "The List of Witnesses" is the nearest
+  earlier devo to Nov 6's argument, on the same resurrection eyewitnesses from
+  1 Corinthians 15:3-8, but it shares no verse with it.
 
 ---
 
