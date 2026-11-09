@@ -131,7 +131,7 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 360 references in canonical order, Genesis to
+`/scripture/` lists all 363 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
 for the 39 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
@@ -945,10 +945,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 5 devos — `references/manual-devos.md`
+#### November 2026 — 6 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus two devos outside it, and the
-first month with no screenshot folder of its own. All five were hand-entered,
+The last three of the hospital-bed series plus three devos outside it, and the
+first month with no screenshot folder of its own. All six were hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
 November batch of screenshots, if one ever arrives, would get its own folder
@@ -957,21 +957,22 @@ alongside.
 *Assumptions*
 
 - **Every date came from its own header**, "Mon, Nov 2nd 6:25 AM", "Tue, Nov
-  3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM" and "Fri,
-  Nov 6th 5:58 AM". Nov 2 2026 *is* a Monday and so on through Nov 6 -- header
-  and calendar agree on all five, unlike 2026-10-30 in the batch before them.
-  All five headers drop the "at" the other entries use, and Nov 5's opens with
-  a stray comma and abbreviates the weekday "Thurs"; nothing reads the field,
-  so none of it needed fixing.
+  3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM", "Fri,
+  Nov 6th 5:58 AM" and "Mon, Nov 9th 7:04 AM". Nov 2 2026 *is* a Monday and so
+  on through Nov 9 -- header and calendar agree on all six, unlike 2026-10-30
+  in the batch before them. All six headers drop the "at" the other entries
+  use, and Nov 5's opens with a stray comma and abbreviates the weekday
+  "Thurs"; nothing reads the field, so none of it needed fixing.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 -- Nov 6, all five text-only, no screenshots.
-- Five consecutive weekdays, Monday to Friday, with no gap -- a full week, and
-  the first in the archive since the hospital stay began.
-- **Nov 9 onward has not been provided yet**, so the archive currently ends
-  at Nov 6.
+- Nov 2 -- Nov 9, all six text-only, no screenshots.
+- Six consecutive weekdays with no gap: Nov 2 to Nov 6 is a full week, the
+  first in the archive since the hospital stay began, and Nov 9 opens the
+  next one. Nov 7 and Nov 8 are the weekend, so they are not a gap.
+- **Nov 10 onward has not been provided yet**, so the archive currently ends
+  at Nov 9.
 
 *Corrections applied*
 
@@ -996,6 +997,10 @@ alongside.
   scripture, prose, scripture, prose. Read as four paragraphs, which is the
   only shape those line breaks can mean. 2026-11-06 arrived the same way, in
   eight lines alternating the same two kinds, and was read the same way.
+- **Two more lost spaces restored** on 2026-11-09, both after punctuation
+  inside a quotation: "the boundaries of their dwellings,so that they should
+  seek the Lord" and "knock, and it will be opened to you.For everyone who
+  asks". Same capture artifact as the January spaces and the 2026-11-03 ones.
 - **A backwards opening quote mark** on 2026-11-06, in `,  "there just wasn't
   enough evidence for me to believe you were real."` -- the paste opens that
   quotation with a *closing* curly mark. Written straight in the Markdown like
@@ -1050,6 +1055,21 @@ alongside.
 - 2026-11-06's "Why did God choose these women to be the first to witness the
   resurrection of the Lord." ends on a period though it reads as a question,
   the same shape as 2026-11-02's "or to our own destruction."
+- 2026-11-09 opens "Within the Context of Paul's sermon" with *Context*
+  capitalised mid-sentence, and then refers to Paul as "he was addressing" and
+  "He speaks of God" two clauses apart -- same subject, two capitalisations.
+- 2026-11-09 has "creator of all things one who has created man to 'seek
+  Him.'", which wants a comma or a dash between the two phrases.
+- **Both scripture quotations on 2026-11-09 open a quote mark and never close
+  it**, Acts 17:26-27 and Matthew 7:7-8. Left as he sent them, as with
+  2026-10-30's John 6:68 and the unclosed "Someone wrote," on 2026-06-17.
+  Worth knowing what that renders as: markdown-it's typographer only curls
+  quotes it can pair, so an unmatched one stays a straight `"` in the bubble
+  while every other quote on the page is curly. 2026-10-30 already ships that
+  way; on 2026-11-09 it is the devo's opening character, so it shows more.
+- 2026-11-09's hymn has "stay Thou near by" and "Temptations loose their
+  pow'r" (*nearby*, *lose*). Both are his -- see the note below on the same
+  couplet appearing differently on 2026-02-12.
 
 *Notes*
 
@@ -1059,12 +1079,31 @@ alongside.
   diagnosis* are kept in the bubble and title-cased only in the front
   matter, where they sit beside "Nurses" and "Life Lines" in the
   conversation list.
-- **2026-11-05 and 2026-11-06 have no title line of his own** and neither is
-  part of the series -- they open straight on scripture, so the posts do too,
-  like 2026-10-15 and the other untitled ones. "Walk by Faith" and "The
-  Evidence of Things Not Seen" are both ours, each taken from the verse he
-  opens with; Nov 5's doubles as the line he closes on, and Nov 6's is the
-  phrase from Hebrews 11:1 that the whole devo expounds.
+- **2026-11-05, 2026-11-06 and 2026-11-09 have no title line of his own** and
+  none is part of the series -- they open straight on scripture, so the posts
+  do too, like 2026-10-15 and the other untitled ones. "Walk by Faith", "The
+  Evidence of Things Not Seen" and "Not Far from Each One of Us" are all ours,
+  each taken from the verse he opens with; Nov 5's doubles as the line he
+  closes on, and Nov 6's is the phrase from Hebrews 11:1 that the whole devo
+  expounds.
+- **Nov 9's title is third choice**, and the reason is worth recording. The
+  two titles the devo asks for are both taken by devos it is closely related
+  to: "Diligently Seek Him" (2026-01-02), which is headlined on the same
+  Hebrews 11:6 and argues the same point about diligence, and "I Need Thee
+  Every Hour" (2026-02-12), which quotes the same hymn. "Not Far from Each One
+  of Us" comes from the end of Acts 17:27, the headline verse, and is the one
+  phrase in the devo neither neighbour uses.
+- **The hymn is set as a blockquote with hard line breaks**, one line per
+  line, following 2026-01-23 -- the only other devo in the archive that quotes
+  verse laid out as verse. No bold reference prefix, since it is a hymn rather
+  than scripture, which follows 2026-08-26's two stanzas of "Sweet will of
+  God". His own quote marks around the six lines are kept where he put them,
+  and they pair, so they curl.
+- **The same hymn couplet is in the archive twice, spelled three ways.**
+  2026-02-12 has "stay thou nearby; temptations lose their pow'r when Thou are
+  nigh.."; 2026-11-09 has "stay Thou near by, / Temptations loose their pow'r
+  when Thou art nigh." Both reproduced as he sent them -- he is quoting from
+  memory, and the differences are the record of that.
 - **2026-11-05 is a near-rewrite of 2026-07-03**, "Faith Is Not Blind": same
   two verses, same argument, much of it word for word. The differences are
   his, not the capture's -- "we are not blindly groping through life" for
@@ -1088,7 +1127,14 @@ alongside.
   too, and the third devo in the archive to cite the verse. Its other three
   references -- Romans 1:20, Luke 24:8-11 and John 20:30-31 -- are all new to
   the archive, which is why the scripture index gained three entries for one
-  devo.
+  devo. 2026-11-09 takes **Acts 17:26-27**, the Mars Hill passage he opens
+  with and names in the devo ("Within the Context of Paul's sermon on Mars
+  Hill"), and it is new to the archive. Hebrews 11:6 was the other candidate
+  and is the weaker one twice over: it is already the headline on 2026-01-02,
+  which makes the same argument, and on three more besides -- it is the
+  archive's most-headlined verse after Matthew 7:13-14. Psalm 14:2 and
+  Matthew 7:7-8 are also new, so this devo too added three index entries;
+  Hebrews 11:6 is now cited five times.
 - **2026-11-02 and 2026-11-03 may be truncated**, the same worry as
   2026-10-30. 2026-11-02's paste ends on the Romans 2:5-6 quotation, whose
   own last character is a colon introducing a list that is not there.
@@ -1105,6 +1151,12 @@ alongside.
   Ending on scripture is not itself a truncation signal -- he closes that way
   often, 2026-10-29 included; what marked Nov 2 was that the quotation itself
   broke off mid-thought.
+- **The Nov 9 entry arrived headed `## 11-09-2026`**, in US order rather than
+  the ISO form this file requires, and was normalised to `## 2026-11-09`. The
+  heading is the one field that becomes a filename, so the format is not
+  cosmetic. Nothing was ambiguous here -- "Mon, Nov 9th" and Nov 9 2026 being
+  a Monday agree -- but `11-09-2026` and `09-11-2026` are the same characters
+  in two orders, which is exactly what the ISO rule exists to prevent.
 - **Nov 5 and Nov 6 read as a pair on one subject**, faith and the evidence it
   rests on, and both reach back to 2026-07-03 "Faith Is Not Blind" -- Nov 5
   rewrites it, Nov 6 argues the other half, that the evidence is the apostles'
