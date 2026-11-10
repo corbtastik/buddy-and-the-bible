@@ -144,9 +144,9 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 363 references in canonical order, Genesis to
+`/scripture/` lists all 365 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
-for the 39 verses cited more than once. It is linked from the home page
+for the 40 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
 Markdown directly rather than going through collections so it does not
 depend on every devo having rendered first.
@@ -1031,10 +1031,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 6 devos — `references/manual-devos.md`
+#### November 2026 — 7 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus three devos outside it, and the
-first month with no screenshot folder of its own. All six were hand-entered,
+The last three of the hospital-bed series plus four devos outside it, and the
+first month with no screenshot folder of its own. All seven were hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
 November batch of screenshots, if one ever arrives, would get its own folder
@@ -1044,21 +1044,25 @@ alongside.
 
 - **Every date came from its own header**, "Mon, Nov 2nd 6:25 AM", "Tue, Nov
   3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM", "Fri,
-  Nov 6th 5:58 AM" and "Mon, Nov 9th 7:04 AM". Nov 2 2026 *is* a Monday and so
-  on through Nov 9 -- header and calendar agree on all six, unlike 2026-10-30
-  in the batch before them. All six headers drop the "at" the other entries
-  use, and Nov 5's opens with a stray comma and abbreviates the weekday
-  "Thurs"; nothing reads the field, so none of it needed fixing.
+  Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM" and "Tue, Nov 10th 5:42 AM". Nov 2
+  2026 *is* a Monday and so on through Nov 10 -- header and calendar agree on
+  all seven, unlike 2026-10-30 in the batch before them. All seven headers drop
+  the "at" the other entries use, and Nov 5's opens with a stray comma and
+  abbreviates the weekday "Thurs"; nothing reads the field, so none of it
+  needed fixing.
+- **The Nov 10 entry omits `source:`**, which the file documents as defaulting
+  to `manual`. Taken as manual, consistent with every other entry here and
+  with there being no November screenshots at all.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 -- Nov 9, all six text-only, no screenshots.
-- Six consecutive weekdays with no gap: Nov 2 to Nov 6 is a full week, the
-  first in the archive since the hospital stay began, and Nov 9 opens the
-  next one. Nov 7 and Nov 8 are the weekend, so they are not a gap.
-- **Nov 10 onward has not been provided yet**, so the archive currently ends
-  at Nov 9.
+- Nov 2 -- Nov 10, all seven text-only, no screenshots.
+- Seven consecutive weekdays with no gap: Nov 2 to Nov 6 is a full week, the
+  first in the archive since the hospital stay began, and Nov 9 and Nov 10
+  open the next one. Nov 7 and Nov 8 are the weekend, so they are not a gap.
+- **Nov 11 onward has not been provided yet**, so the archive currently ends
+  at Nov 10.
 
 *Corrections applied*
 
@@ -1083,6 +1087,12 @@ alongside.
   scripture, prose, scripture, prose. Read as four paragraphs, which is the
   only shape those line breaks can mean. 2026-11-06 arrived the same way, in
   eight lines alternating the same two kinds, and was read the same way.
+- **`1Peter 1:13-16Therefore gird up` on 2026-11-10 needed both fixes at
+  once**: the numbered book spaced, as everywhere else in the archive, and the
+  reference split from the verse it ran into, as with `Ephesians 5:15-16See`
+  on 2026-11-02. The other two references that day came through clean.
+- **Four bullets set from his `·` marks** on 2026-11-10, the same conversion
+  as the two lists on 2026-10-29.
 - **Two more lost spaces restored** on 2026-11-09, both after punctuation
   inside a quotation: "the boundaries of their dwellings,so that they should
   seek the Lord" and "knock, and it will be opened to you.For everyone who
@@ -1156,6 +1166,18 @@ alongside.
 - 2026-11-09's hymn has "stay Thou near by" and "Temptations loose their
   pow'r" (*nearby*, *lose*). Both are his -- see the note below on the same
   couplet appearing differently on 2026-02-12.
+- 2026-11-10 has "And heaven it the object of our hope" (*is*), and "we are to
+  follow the example of our Heavenly Father we are to be holy", which wants a
+  comma or a dash between the two clauses.
+- 2026-11-10's second bullet, "Be sober in thought and purpose", is an
+  imperative where the other three are declarative -- "Preparing our minds",
+  "We are to be obedient children", "And we are to follow the example". The
+  list is his and so is the break in its parallel.
+- **2026-11-10's 1 Peter 1:13-16 quotation ends inside a nested quotation**
+  that is never closed: `because it is written, "Be holy, for I am holy.`
+  Left as he sent it, like the two unclosed quotations on 2026-11-09, and it
+  renders the same way -- a straight `"` where the rest of the page is curly,
+  because markdown-it only curls quotes it can pair.
 
 *Notes*
 
@@ -1237,6 +1259,21 @@ alongside.
   Ending on scripture is not itself a truncation signal -- he closes that way
   often, 2026-10-29 included; what marked Nov 2 was that the quotation itself
   broke off mid-thought.
+- **2026-11-10 sits between three devos already in the archive**, and the
+  title had to step around two of them. 2026-09-14 is *titled* "A Living
+  Hope" and closes on the very 1 Peter 1:3-5 that Nov 10 opens with;
+  2026-10-14 is "Be Holy, For I Am Holy", headlined on 1 Peter 1:13-17
+  against Nov 10's 1:13-16 and ending on the same sentence; and 2026-01-15
+  is headlined on Hebrews 6:10-12 against Nov 10's 6:11-12. "A Necessary
+  Response" is ours, from his own "there is a necessary response to this
+  promised hope", and it names the half of the devo the neighbours do not
+  cover -- the four things the hope asks of us. "What Heaven Is Not", from
+  his best line that day, was the alternative and is still free.
+- `scripture` on 2026-11-10 is **1 Peter 1:3-5**, the passage he opens with
+  and spends the first half on. 1 Peter 1:13-16 is the verse the second half
+  argues from, but taking it would have put this devo's headline a single
+  verse away from 2026-10-14's. It is cited twice now, so it is the 40th
+  verse in the index with more than one devo against it.
 - **The Nov 9 entry arrived headed `## 11-09-2026`**, in US order rather than
   the ISO form this file requires, and was normalised to `## 2026-11-09`. The
   heading is the one field that becomes a filename, so the format is not
