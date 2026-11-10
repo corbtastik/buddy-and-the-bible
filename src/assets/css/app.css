@@ -28,6 +28,7 @@
   --clear-ring:#a8a8ae;
   --day-off:rgb(0 0 0 / .07);
   --day-on:#3987e5;
+  --day-on-text:#fff;
 
   /* iOS Messages renders in SF Pro. On Apple devices -apple-system IS SF Pro,
      so the thread matches the original screenshots exactly. SF Pro cannot be
@@ -69,6 +70,7 @@
     --clear-ring:#636366;
     --day-off:rgb(255 255 255 / .08);
     --day-on:#2a78d6;
+    --day-on-text:#fff;
   }
 }
 :root[data-theme="light"]{color-scheme:light}
@@ -94,6 +96,7 @@
   --clear-ring:#636366;
   --day-off:rgb(255 255 255 / .08);
   --day-on:#2a78d6;
+  --day-on-text:#fff;
 }
 
 *,*::before,*::after{box-sizing:inherit}
@@ -238,6 +241,40 @@ button.day:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){.row-jumped{animation:none;background:var(--control-hover)}}
 
 /* ---------- scripture index ---------- */
+
+/* Book grid, at the top of /scripture/. A group per division of the Bible,
+   a labelled square per book, carrying the same meaning as the activity
+   graph in the same two fills: filled where there is something, empty where
+   there is not. Only a book he has actually cited is coloured.
+
+   These squares hold text, so unlike the calendar they cannot be sized by
+   cutting the column into a fixed number of tracks -- at 17 across, Prophets
+   would leave about 18px to print "Zeph" in. auto-fill with a 38px floor
+   inverts it: the square is first made big enough to read, and the number of
+   columns is whatever then fits. A division with more books than fit wraps
+   onto another line rather than squeezing, and every division resolves the
+   same track width, so the squares are one size across the whole grid. */
+.bgrid{margin:0 4px 18px;display:flex;flex-direction:column;gap:8px}
+.bdiv{display:flex;align-items:flex-start;gap:7px}
+/* Lines the label up with the first row of squares rather than centring it
+   on a group that may have wrapped to two or three rows. */
+.bdiv-name{flex:0 0 52px;padding-top:13px;font-size:10px;line-height:12px;
+  color:var(--meta);text-align:right}
+.bdiv-books{flex:1;min-width:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:3px}
+/* Anchor links, not buttons: the whole interaction is jumping to a section
+   of this same page, which the browser already does. That is why the grid
+   needs no JS and nothing is hidden at first paint -- the activity graph has
+   to hide itself because its buttons do nothing until its script runs. */
+.bsq{aspect-ratio:1;min-width:0;display:grid;place-items:center;
+  padding:0 2px;border:0;border-radius:6px;
+  font-size:10px;line-height:12px;font-weight:600;letter-spacing:-.1px;
+  text-align:center;overflow:hidden;
+  background-color:var(--day-off);color:var(--meta)}
+.bsq-on{background-color:var(--day-on);color:var(--day-on-text)}
+a.bsq:hover{outline:1.5px solid var(--text);outline-offset:1px}
+a.bsq:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
 .crumb{margin:0 0 6px;font-size:15px;line-height:20px;color:var(--accent)}
 .crumb a:hover{text-decoration:underline}
 .index-link{display:flex;align-items:center;gap:8px;margin:0 4px 6px;padding:11px 12px;
@@ -247,7 +284,16 @@ button.day:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .index-link svg{flex:none;color:var(--meta)}
 .index-link .index-link-sub{margin-left:auto;color:var(--meta);font-size:13px}
 
-.book{margin:0 0 18px}
+/* scroll-margin-top so a jump from the grid does not land the sticky
+   heading flush against the top edge of the viewport. */
+.book{margin:0 0 18px;scroll-margin-top:8px}
+/* The counterpart of the activity graph's .row-jumped flash, with no script:
+   :target fires on the hash change the anchor itself causes. */
+.book:target .book-name{animation:bookFlash 1.4s ease-out}
+@keyframes bookFlash{from{color:var(--accent)}to{color:var(--meta)}}
+@media (prefers-reduced-motion:reduce){
+  .book:target .book-name{animation:none;color:var(--accent)}
+}
 .book-name{position:sticky;top:0;z-index:1;margin:0;padding:8px 4px 6px;
   background:var(--bg);font-size:13px;line-height:18px;font-weight:600;
   letter-spacing:.06em;text-transform:uppercase;color:var(--meta)}

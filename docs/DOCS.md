@@ -52,14 +52,18 @@ src/
     base.njk           <head>, meta and social tags
     devo.njk           the Messages thread
     theme-toggle.njk   the appearance button, used by both
+    to-top.njk         the back-to-top button, home and scripture index
   assets/css/app.css   all styles
   assets/js/search.js  list filtering, typed dates, sort, arrow keys
   assets/js/theme.js   the appearance toggle
+  assets/js/to-top.js  the back-to-top button on both long pages
   assets/img/          avatar and group-cluster images
   devos/
     devos.json         layout, tag and permalink for every devo
     *.md               one file per devo
-lib/scripture.js       reference parsing, shared by the linker and the index
+lib/scripture.js       book order, divisions, grid labels and reference
+                       parsing -- shared by the linker, the index and the
+                       book grid
 docs/TEMPLATE.md       starting point for a new devo
 docs/DOCS.md           this file
 references/            source screenshots, by month (see the log below)
@@ -112,7 +116,16 @@ Months-as-rows is at most 31 columns, so `grid-template-columns:
 repeat(31, 1fr)` makes it fit by construction at any width.
 
 A back-to-top button appears bottom right once the page is scrolled past
-320px, on the home page only.
+320px, on the home page and on the scripture index -- the two long scrolling
+pages.
+
+It lives in `src/_includes/to-top.njk` with its own `to-top.js`, rather than
+in `search.js` where it started. That script returns early when the devo
+list is not on the page, so moving the markup to the scripture index without
+moving the behaviour would have shipped a button that did nothing. The
+include takes a `toTopFocus` variable naming an element to put the caret
+back in after the scroll: the home page passes its search box, and the
+scripture index passes nothing and simply scrolls.
 
 ## Scripture
 
@@ -141,6 +154,79 @@ depend on every devo having rendered first.
 Both the linker and the index import their parsing rules from
 `lib/scripture.js`. That is the whole reason the file exists: if they
 drifted, the index would list verses the pages do not link, or the reverse.
+
+### The book grid
+
+The page opens with the scripture counterpart of the home page's activity
+graph: a row per division of the Bible, a column per book, in canonical
+order. Selecting a book jumps to its section further down the page.
+
+**All 66 books are drawn, not just the 42 he has cited.** The empties are
+the point, exactly as they are in the calendar -- which books he returns to
+and which he has never quoted is only legible if the unquoted ones take up
+space. A cited book is a link; an uncited one is an inert square with its
+name and "none" in the tooltip.
+
+Each square carries the book's short label -- `Gen`, `1Th`, `Zeph` -- so
+the grid reads as a list of books rather than as a heat map, and the colour
+is doing one job only: saying whether he has ever cited that book.
+
+It borrows the calendar's `--day-on` / `--day-off` fills so the two graphs
+mean the same thing in the same visual language. The one token it adds is
+`--day-on-text`, the label colour on a filled square; like every other
+colour it is declared in `:root` and in both dark blocks, which is what
+`assertDarkThemesMatch()` checks.
+
+**The squares size themselves to their text, and the rows wrap.** This is
+the one place the grid cannot copy the calendar. Cutting the column into a
+fixed number of tracks is what makes the calendar fit, but at Prophets'
+17 across it would leave about 18px to print "Zeph" in. `auto-fill` with a
+38px floor inverts the two: the square is first made big enough to read,
+and the number of columns is whatever then fits -- eight, in a 408px
+column. A division with more books than that wraps onto a second or third
+line instead of squeezing, and because every division resolves the same
+track width the squares are one size across the whole grid.
+
+The cost is height: the grid runs to roughly 560px, against the calendar's
+130. That is the price of legible labels on 66 books, and it is why the
+grid sits above the index rather than beside it.
+
+**The squares are anchor links, not buttons, and the grid is never hidden.**
+The activity graph has to start `hidden` because its buttons do nothing
+until `search.js` runs. Here the whole interaction is jumping to a section
+of the same page, which the browser does natively, so there is no script at
+all and the grid works with JavaScript off. The flash that marks where you
+landed is `.book:target`, triggered by the hash change the anchor already
+causes -- the CSS counterpart of the calendar's JS `.row-jumped`.
+
+The divisions and the labels both live in `lib/scripture.js` beside
+`BOOK_ORDER`. The divisions are declared as sizes and sliced out of that
+array rather than written out as lists of book names:
+
+| Row | Books | |
+| --- | ----- | - |
+| Law | 5 | Genesis -- Deuteronomy |
+| History | 12 | Joshua -- Esther |
+| Poetry | 5 | Job -- Song of Solomon |
+| Prophets | 17 | Isaiah -- Malachi |
+| Gospels | 5 | Matthew -- Acts |
+| Paul | 13 | Romans -- Philemon |
+| Letters | 8 | Hebrews -- Jude |
+| Revelation | 1 | Revelation |
+
+Sizes rather than lists because a list could name a book that is not in
+`BOOK_ORDER`, repeat one, or fall out of canonical order, and nothing would
+say so. Slicing makes all three impossible by construction; the one mistake
+left is sizes that do not total 66, and the module throws on import if they
+do not.
+
+The labels are a separate map, and deliberately **not** derived from the
+parsing aliases in the same file. Those exist to recognise what he wrote,
+so they are uneven by design -- Psalms carries three of them and Ruth none.
+Display text wants the opposite, one obvious form per book, capped at four
+characters so it fits on one line. The module throws on import if any book
+in `BOOK_ORDER` has no label, so a book added without one fails the build
+rather than the page.
 
 ## Light and dark
 

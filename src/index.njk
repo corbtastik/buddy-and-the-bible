@@ -111,12 +111,6 @@ eleventyExcludeFromCollections: true
 
 {# Appears once the reader has scrolled; hidden by default so no-JS visitors
    never see a control that does nothing. #}
-<button type="button" id="to-top" class="to-top" hidden aria-label="Back to top">
-  {# SF Symbols chevron.up #}
-  <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true">
-    <path d="M4 10.5 8.5 6l4.5 4.5" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
+{% set toTopFocus = "q" %}{% include "to-top.njk" %}
 
 <script src="/assets/js/search.js" defer></script>

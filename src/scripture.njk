@@ -11,13 +11,41 @@ eleventyExcludeFromCollections: true
     <div class="list-head-text">
       <p class="crumb"><a href="/">&larr; All devos</a></p>
       <h1>Scripture</h1>
-      <p class="list-sub">{{ scriptureIndex.refCount }} references from {{ scriptureIndex.bookCount }} books, Genesis to Revelation</p>
+      <p class="list-sub">{{ scriptureIndex.refCount }} references from {{ scriptureIndex.bookCount }} of {{ scriptureIndex.bookTotal }} books, Genesis to Revelation</p>
     </div>
     {% include "theme-toggle.njk" %}
   </header>
 
+  {# Book grid: a group per division of the Bible, a labelled square per
+     book, in canonical order. All 66 are drawn, not just the ones he cites
+     -- the empties are what make the shape of his reading legible, and only
+     a cited book is filled in.
+
+     Unlike the activity graph on the home page this is not hidden until the
+     script takes over, because there is no script: every filled square is a
+     real anchor link to a section of this page, which the browser handles
+     natively and which therefore survives JS being off. #}
+  <nav class="bgrid" aria-label="Books of the Bible. Select a book to jump to its references.">
+    {%- for d in scriptureIndex.divisions %}
+    <div class="bdiv">
+      <span class="bdiv-name" aria-hidden="true">{{ d.name }}</span>
+      <div class="bdiv-books">
+        {%- for b in d.books %}
+        {%- if b.cited %}
+        <a class="bsq bsq-on" href="#{{ b.slug }}"
+           title="{{ b.label }}" aria-label="{{ b.label }}">{{ b.abbr }}</a>
+        {%- else %}
+        <span class="bsq" role="img" title="{{ b.label }}"
+              aria-label="{{ b.label }}">{{ b.abbr }}</span>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+  </nav>
+
   {% for b in scriptureIndex.books %}
-  <section class="book">
+  <section class="book" id="{{ b.slug }}">
     <h2 class="book-name">{{ b.book }}</h2>
     <ul class="refs">
       {% for r in b.refs %}
@@ -44,3 +72,5 @@ eleventyExcludeFromCollections: true
   </section>
   {% endfor %}
 </main>
+
+{% include "to-top.njk" %}

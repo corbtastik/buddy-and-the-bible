@@ -1,0 +1,13 @@
+{# Back to top. Shared by the home page and the scripture index, both of
+   which are long scrolling lists. data-focus names an element to put the
+   caret back in once the scroll finishes; pages with nothing to focus
+   leave it off. #}
+<button type="button" id="to-top" class="to-top" hidden aria-label="Back to top"
+        {%- if toTopFocus %} data-focus="{{ toTopFocus }}"{% endif %}>
+  {# SF Symbols chevron.up #}
+  <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true">
+    <path d="M4 10.5 8.5 6l4.5 4.5" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+<script src="/assets/js/to-top.js" defer></script>
