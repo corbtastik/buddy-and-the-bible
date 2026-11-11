@@ -144,7 +144,7 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 365 references in canonical order, Genesis to
+`/scripture/` lists all 368 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
 for the 40 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
@@ -1031,10 +1031,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 7 devos — `references/manual-devos.md`
+#### November 2026 — 8 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus four devos outside it, and the
-first month with no screenshot folder of its own. All seven were hand-entered,
+The last three of the hospital-bed series plus five devos outside it, and the
+first month with no screenshot folder of its own. All eight were hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
 November batch of screenshots, if one ever arrives, would get its own folder
@@ -1044,25 +1044,25 @@ alongside.
 
 - **Every date came from its own header**, "Mon, Nov 2nd 6:25 AM", "Tue, Nov
   3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM", "Fri,
-  Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM" and "Tue, Nov 10th 5:42 AM". Nov 2
-  2026 *is* a Monday and so on through Nov 10 -- header and calendar agree on
-  all seven, unlike 2026-10-30 in the batch before them. All seven headers drop
-  the "at" the other entries use, and Nov 5's opens with a stray comma and
-  abbreviates the weekday "Thurs"; nothing reads the field, so none of it
-  needed fixing.
-- **The Nov 10 entry omits `source:`**, which the file documents as defaulting
-  to `manual`. Taken as manual, consistent with every other entry here and
-  with there being no November screenshots at all.
+  Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM", "Tue, Nov 10th 5:42 AM" and "Wed,
+  Nov 11th 5:52 AM". Nov 2 2026 *is* a Monday and so on through Nov 11 --
+  header and calendar agree on all eight, unlike 2026-10-30 in the batch
+  before them. All eight headers drop the "at" the other entries use, and Nov
+  5's opens with a stray comma and abbreviates the weekday "Thurs"; nothing
+  reads the field, so none of it needed fixing.
+- **The Nov 10 and Nov 11 entries omit `source:`**, which the file documents
+  as defaulting to `manual`. Taken as manual, consistent with every other
+  entry here and with there being no November screenshots at all.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 -- Nov 10, all seven text-only, no screenshots.
-- Seven consecutive weekdays with no gap: Nov 2 to Nov 6 is a full week, the
-  first in the archive since the hospital stay began, and Nov 9 and Nov 10
-  open the next one. Nov 7 and Nov 8 are the weekend, so they are not a gap.
-- **Nov 11 onward has not been provided yet**, so the archive currently ends
-  at Nov 10.
+- Nov 2 -- Nov 11, all eight text-only, no screenshots.
+- Eight consecutive weekdays with no gap: Nov 2 to Nov 6 is a full week, the
+  first in the archive since the hospital stay began, and Nov 9 to Nov 11 are
+  three more. Nov 7 and Nov 8 are the weekend, so they are not a gap.
+- **Nov 12 onward has not been provided yet**, so the archive currently ends
+  at Nov 11.
 
 *Corrections applied*
 
@@ -1093,6 +1093,13 @@ alongside.
   on 2026-11-02. The other two references that day came through clean.
 - **Four bullets set from his `·` marks** on 2026-11-10, the same conversion
   as the two lists on 2026-10-29.
+- **`1John 5:4-5` spaced** on 2026-11-11, and one more lost space restored
+  after a full stop inside that same quotation: "overcome the world--our
+  faith.Who is he who overcomes". The other two references that day came
+  through clean.
+- 2026-11-11 arrived as six unseparated lines alternating scripture and
+  prose, read as six paragraphs, the same shape as 2026-11-05, 2026-11-06 and
+  2026-11-09.
 - **Two more lost spaces restored** on 2026-11-09, both after punctuation
   inside a quotation: "the boundaries of their dwellings,so that they should
   seek the Lord" and "knock, and it will be opened to you.For everyone who
@@ -1173,6 +1180,12 @@ alongside.
   imperative where the other three are declarative -- "Preparing our minds",
   "We are to be obedient children", "And we are to follow the example". The
   list is his and so is the break in its parallel.
+- 2026-11-11 has "he took his eyes off Jesus and saw the wind and waves the
+  storm and the sea around him", a run of four things with no punctuation
+  between them, and the sentence before it joins two clauses on a comma:
+  "Peter's fear of drowning changed his focus, he took his eyes off Jesus".
+- 2026-11-11 has "a sin filled world" unhyphenated, where 2026-10-30 has
+  "sin-sick world" with one. Both as he wrote them.
 - **2026-11-10's 1 Peter 1:13-16 quotation ends inside a nested quotation**
   that is never closed: `because it is written, "Be holy, for I am holy.`
   Left as he sent it, like the two unclosed quotations on 2026-11-09, and it
@@ -1274,6 +1287,24 @@ alongside.
   argues from, but taking it would have put this devo's headline a single
   verse away from 2026-10-14's. It is cited twice now, so it is the 40th
   verse in the index with more than one devo against it.
+- **2026-11-11's title steps around 2026-06-01**, "Fear and Faith", which
+  argues the same thesis -- that the two are opposites and that faith in
+  Jesus does away with fear -- but from Mark 4:40 and the stilling of the
+  storm, where this one takes Matthew 14 and Peter on the water. "What Fear
+  Focuses On" is ours, from his "All you see is what the fear focuses on",
+  and it names what is actually new here: fear as a thing that narrows
+  perception, not merely the opposite of faith.
+- `scripture` on 2026-11-11 is **Matthew 14:28-31**, the passage the devo
+  works through, rather than the Philippians 1:27-28 it opens with. That is
+  the opposite call from 2026-11-10, and the same reasoning produced both:
+  take the opener unless doing so would sit a headline on top of a
+  neighbour's. Here it would -- Philippians 1:27 is already the headline on
+  2026-01-01 and 2026-09-08, and 2026-09-08 quotes it breaking off exactly
+  where this devo carries on, at "the faith of the gospel,". His extension
+  into verse 28, "not in any way terrified by your adversaries", is the
+  clause the whole devo turns on, so the overlap is deliberate on his part
+  and worth not flattening in the index. All three of its references are new
+  to the archive.
 - **The Nov 9 entry arrived headed `## 11-09-2026`**, in US order rather than
   the ISO form this file requires, and was normalised to `## 2026-11-09`. The
   heading is the one field that becomes a filename, so the format is not
