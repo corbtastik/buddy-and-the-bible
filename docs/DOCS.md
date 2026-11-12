@@ -144,7 +144,7 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 368 references in canonical order, Genesis to
+`/scripture/` lists all 369 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
 for the 40 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
@@ -1031,10 +1031,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 8 devos — `references/manual-devos.md`
+#### November 2026 — 9 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus five devos outside it, and the
-first month with no screenshot folder of its own. All eight were hand-entered,
+The last three of the hospital-bed series plus six devos outside it, and the
+first month with no screenshot folder of its own. All nine were hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
 November batch of screenshots, if one ever arrives, would get its own folder
@@ -1044,25 +1044,26 @@ alongside.
 
 - **Every date came from its own header**, "Mon, Nov 2nd 6:25 AM", "Tue, Nov
   3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM", "Fri,
-  Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM", "Tue, Nov 10th 5:42 AM" and "Wed,
-  Nov 11th 5:52 AM". Nov 2 2026 *is* a Monday and so on through Nov 11 --
-  header and calendar agree on all eight, unlike 2026-10-30 in the batch
-  before them. All eight headers drop the "at" the other entries use, and Nov
-  5's opens with a stray comma and abbreviates the weekday "Thurs"; nothing
-  reads the field, so none of it needed fixing.
-- **The Nov 10 and Nov 11 entries omit `source:`**, which the file documents
-  as defaulting to `manual`. Taken as manual, consistent with every other
-  entry here and with there being no November screenshots at all.
+  Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM", "Tue, Nov 10th 5:42 AM", "Wed,
+  Nov 11th 5:52 AM" and "Thurs, Nov 12th 6:32 AM". Nov 2 2026 *is* a Monday
+  and so on through Nov 12 -- header and calendar agree on all nine, unlike
+  2026-10-30 in the batch before them. All nine headers drop the "at" the
+  other entries use; Nov 5's opens with a stray comma, and it and Nov 12
+  abbreviate the weekday "Thurs". Nothing reads the field, so none of it
+  needed fixing.
+- **The Nov 10, Nov 11 and Nov 12 entries omit `source:`**, which the file
+  documents as defaulting to `manual`. Taken as manual, consistent with every
+  other entry here and with there being no November screenshots at all.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 -- Nov 11, all eight text-only, no screenshots.
-- Eight consecutive weekdays with no gap: Nov 2 to Nov 6 is a full week, the
-  first in the archive since the hospital stay began, and Nov 9 to Nov 11 are
-  three more. Nov 7 and Nov 8 are the weekend, so they are not a gap.
-- **Nov 12 onward has not been provided yet**, so the archive currently ends
-  at Nov 11.
+- Nov 2 -- Nov 12, all nine text-only, no screenshots.
+- Nine consecutive weekdays with no gap: Nov 2 to Nov 6 is a full week, the
+  first in the archive since the hospital stay began, and Nov 9 to Nov 12 are
+  four more. Nov 7 and Nov 8 are the weekend, so they are not a gap.
+- **Nov 13 onward has not been provided yet**, so the archive currently ends
+  at Nov 12.
 
 *Corrections applied*
 
@@ -1100,6 +1101,11 @@ alongside.
 - 2026-11-11 arrived as six unseparated lines alternating scripture and
   prose, read as six paragraphs, the same shape as 2026-11-05, 2026-11-06 and
   2026-11-09.
+- **A ` - ` between the reference and the verse dropped** on 2026-11-12,
+  which opens `James 2:13-20 - What does it profit`. No other entry in the
+  archive separates them that way, and the bold reference at the head of the
+  blockquote is already doing that job. Formatting, so ours to change; his
+  wording is untouched.
 - **Two more lost spaces restored** on 2026-11-09, both after punctuation
   inside a quotation: "the boundaries of their dwellings,so that they should
   seek the Lord" and "knock, and it will be opened to you.For everyone who
@@ -1186,6 +1192,19 @@ alongside.
   "Peter's fear of drowning changed his focus, he took his eyes off Jesus".
 - 2026-11-11 has "a sin filled world" unhyphenated, where 2026-10-30 has
   "sin-sick world" with one. Both as he wrote them.
+- **2026-11-12 cites `James 2:13-20` for a quotation that begins at verse
+  14** -- "What does it profit, my brethren" is v14, where v13 is "judgment
+  is without mercy". An off-by-one at the start of the range rather than the
+  wrong passage, so milder than 2026-11-04's Mark 2:16 or 2026-06-12's
+  Hebrews 12:15-16, but the same call: his citation stands in the bubble and
+  the front matter, and the page links what he wrote.
+- **2026-11-12's boatman story has two unclosed quotations and a garbled
+  one.** `"Now, let's try works' without faith' and see what happens.` wants
+  single quotes around *works* and *faith* and has only the closing halves,
+  and neither that sentence nor the later `"You see, to make a passage across
+  the lake` is ever closed. All left as he sent them.
+- 2026-11-12 has "he makes no progress either across the lake nor as a
+  Christian" (*either ... or*, or *neither ... nor*).
 - **2026-11-10's 1 Peter 1:13-16 quotation ends inside a nested quotation**
   that is never closed: `because it is written, "Be holy, for I am holy.`
   Left as he sent it, like the two unclosed quotations on 2026-11-09, and it
@@ -1287,6 +1306,17 @@ alongside.
   argues from, but taking it would have put this devo's headline a single
   verse away from 2026-10-14's. It is cited twice now, so it is the 40th
   verse in the index with more than one devo against it.
+- **2026-11-12 is "Both Oars"**, ours, from the boatman's "one needs both
+  oars working simultaneously". He gives the devo no title and the
+  illustration is the whole of it; no existing title or scripture came near
+  it. It is also the archive's first citation of **James 2**, and its only
+  reference -- the one devo this month to rest on a single passage.
+- **2026-11-12 is the strongest test so far of the unpaired-quote
+  behaviour**, and it came through clean. Its middle paragraph carries six
+  balanced double-quoted phrases and two unmatched openers, all mixed
+  together; markdown-it curled every pair correctly and left exactly the two
+  openers straight, rather than mis-pairing from the first odd one onward.
+  The rule holds under pressure: only quotes it can pair get curled.
 - **2026-11-11's title steps around 2026-06-01**, "Fear and Faith", which
   argues the same thesis -- that the two are opposites and that faith in
   Jesus does away with fear -- but from Mark 4:40 and the stilling of the
