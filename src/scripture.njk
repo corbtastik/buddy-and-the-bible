@@ -16,31 +16,25 @@ eleventyExcludeFromCollections: true
     {% include "theme-toggle.njk" %}
   </header>
 
-  {# Book grid: a group per division of the Bible, a labelled square per
-     book, in canonical order. All 66 are drawn, not just the ones he cites
-     -- the empties are what make the shape of his reading legible, and only
-     a cited book is filled in.
+  {# Book grid: one labelled square per book of the Bible, in canonical
+     order, as a single even field -- no division grouping, so the spacing
+     between every pair of squares is the same. All 66 are drawn, not just
+     the ones he cites; the empties are what make the shape of his reading
+     legible, and only a cited book is filled in.
 
      Unlike the activity graph on the home page this is not hidden until the
      script takes over, because there is no script: every filled square is a
      real anchor link to a section of this page, which the browser handles
      natively and which therefore survives JS being off. #}
   <nav class="bgrid" aria-label="Books of the Bible. Select a book to jump to its references.">
-    {%- for d in scriptureIndex.divisions %}
-    <div class="bdiv">
-      <span class="bdiv-name" aria-hidden="true">{{ d.name }}</span>
-      <div class="bdiv-books">
-        {%- for b in d.books %}
-        {%- if b.cited %}
-        <a class="bsq bsq-on" href="#{{ b.slug }}"
-           title="{{ b.label }}" aria-label="{{ b.label }}">{{ b.abbr }}</a>
-        {%- else %}
-        <span class="bsq" role="img" title="{{ b.label }}"
-              aria-label="{{ b.label }}">{{ b.abbr }}</span>
-        {%- endif %}
-        {%- endfor %}
-      </div>
-    </div>
+    {%- for b in scriptureIndex.grid %}
+    {%- if b.cited %}
+    <a class="bsq bsq-on" href="#{{ b.slug }}"
+       title="{{ b.label }}" aria-label="{{ b.label }}">{{ b.abbr }}</a>
+    {%- else %}
+    <span class="bsq" role="img" title="{{ b.label }}"
+          aria-label="{{ b.label }}">{{ b.abbr }}</span>
+    {%- endif %}
     {%- endfor %}
   </nav>
 

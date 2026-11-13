@@ -9,7 +9,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {
-  BOOK_ORDER, DIVISIONS, abbrFor, bookSlug,
+  BOOK_ORDER, abbrFor, bookSlug,
   findRefs, passageOf, bibleGatewayUrl,
 } from "../../lib/scripture.js";
 
@@ -74,8 +74,8 @@ export default function () {
 
   const refCount = books.reduce((n, b) => n + b.refs.length, 0);
 
-  /* The book grid at the top of the page: a row per division of the Bible, a
-   * square per book, in canonical order.
+  /* The book grid at the top of the page: one square per book of the Bible,
+   * in canonical order, Genesis to Revelation.
    *
    * Every one of the 66 is here, not just the 42 he has cited, for the same
    * reason the activity graph draws days with no devo: the gaps are the
@@ -83,31 +83,31 @@ export default function () {
    * quoted is readable at a glance only if the unquoted ones take up space.
    * A cited book is a link to its own section; an uncited one is inert.
    *
-   * Each square carries the book's short label, so the rows wrap to fit
-   * rather than sizing themselves to a fixed column count -- see the CSS. */
+   * A flat list rather than one group per division of the Bible, which is
+   * what this was: grouping meant a gap between the groups, and the grid
+   * reads better as one even field of squares. Canonical order already
+   * keeps each division's books together, so nothing about the arrangement
+   * changed -- only the spacing and the row labels went. */
   const counts = new Map(books.map((b) => [b.book, b.refs.length]));
-  const divisions = DIVISIONS.map((d) => ({
-    name: d.name,
-    books: d.books.map((book) => {
-      const n = counts.get(book) || 0;
-      return {
-        book,
-        abbr: abbrFor(book),
-        slug: bookSlug(book),
-        count: n,
-        cited: n > 0,
-        label: n
-          ? `${book} — ${n} reference${n > 1 ? "s" : ""}`
-          : `${book} — none`,
-      };
-    }),
-  }));
+  const grid = BOOK_ORDER.map((book) => {
+    const n = counts.get(book) || 0;
+    return {
+      book,
+      abbr: abbrFor(book),
+      slug: bookSlug(book),
+      count: n,
+      cited: n > 0,
+      label: n
+        ? `${book} — ${n} reference${n > 1 ? "s" : ""}`
+        : `${book} — none`,
+    };
+  });
 
   return {
     books,
     refCount,
     bookCount: books.length,
-    divisions,
+    grid,
     bookTotal: BOOK_ORDER.length,
   };
 }

@@ -61,9 +61,8 @@ src/
   devos/
     devos.json         layout, tag and permalink for every devo
     *.md               one file per devo
-lib/scripture.js       book order, divisions, grid labels and reference
-                       parsing -- shared by the linker, the index and the
-                       book grid
+lib/scripture.js       book order, grid labels and reference parsing,
+                       shared by the linker, the index and the book grid
 docs/TEMPLATE.md       starting point for a new devo
 docs/DOCS.md           this file
 references/            source screenshots, by month (see the log below)
@@ -158,8 +157,8 @@ drifted, the index would list verses the pages do not link, or the reverse.
 ### The book grid
 
 The page opens with the scripture counterpart of the home page's activity
-graph: a row per division of the Bible, a column per book, in canonical
-order. Selecting a book jumps to its section further down the page.
+graph: one square per book of the Bible, in canonical order, Genesis to
+Revelation. Selecting a book jumps to its section further down the page.
 
 **All 66 books are drawn, not just the 42 he has cited.** The empties are
 the point, exactly as they are in the calendar -- which books he returns to
@@ -179,17 +178,20 @@ colour it is declared in `:root` and in both dark blocks, which is what
 
 **The squares size themselves to their text, and the rows wrap.** This is
 the one place the grid cannot copy the calendar. Cutting the column into a
-fixed number of tracks is what makes the calendar fit, but at Prophets'
-17 across it would leave about 18px to print "Zeph" in. `auto-fill` with a
-38px floor inverts the two: the square is first made big enough to read,
-and the number of columns is whatever then fits -- eight, in a 408px
-column. A division with more books than that wraps onto a second or third
-line instead of squeezing, and because every division resolves the same
-track width the squares are one size across the whole grid.
+fixed number of tracks is what makes the calendar fit, but 17 across would
+leave about 18px to print "Zeph" in. `auto-fill` with a 38px floor inverts
+the two: the square is first made big enough to read, and the number of
+columns is whatever then fits -- nine, in a 408px column, so the 66 run to
+eight rows.
 
-The cost is height: the grid runs to roughly 560px, against the calendar's
-130. That is the price of legible labels on 66 books, and it is why the
-grid sits above the index rather than beside it.
+**It is one flat grid, not a group per division of the Bible.** It began as
+the latter, a labelled row each for Law, History, Poetry, Prophets, Gospels,
+Paul, Letters and Revelation. That put a wider gap between the groups than
+between the squares inside them, and the grid reads better as one even
+field. Nothing about the arrangement was lost: canonical order already keeps
+each division's books adjacent, so the grouping was only ever contributing
+the labels and the gaps. Dropping it also took the grid from roughly 560px
+tall to 365.
 
 **The squares are anchor links, not buttons, and the grid is never hidden.**
 The activity graph has to start `hidden` because its buttons do nothing
@@ -199,34 +201,13 @@ all and the grid works with JavaScript off. The flash that marks where you
 landed is `.book:target`, triggered by the hash change the anchor already
 causes -- the CSS counterpart of the calendar's JS `.row-jumped`.
 
-The divisions and the labels both live in `lib/scripture.js` beside
-`BOOK_ORDER`. The divisions are declared as sizes and sliced out of that
-array rather than written out as lists of book names:
-
-| Row | Books | |
-| --- | ----- | - |
-| Law | 5 | Genesis -- Deuteronomy |
-| History | 12 | Joshua -- Esther |
-| Poetry | 5 | Job -- Song of Solomon |
-| Prophets | 17 | Isaiah -- Malachi |
-| Gospels | 5 | Matthew -- Acts |
-| Paul | 13 | Romans -- Philemon |
-| Letters | 8 | Hebrews -- Jude |
-| Revelation | 1 | Revelation |
-
-Sizes rather than lists because a list could name a book that is not in
-`BOOK_ORDER`, repeat one, or fall out of canonical order, and nothing would
-say so. Slicing makes all three impossible by construction; the one mistake
-left is sizes that do not total 66, and the module throws on import if they
-do not.
-
-The labels are a separate map, and deliberately **not** derived from the
-parsing aliases in the same file. Those exist to recognise what he wrote,
-so they are uneven by design -- Psalms carries three of them and Ruth none.
-Display text wants the opposite, one obvious form per book, capped at four
-characters so it fits on one line. The module throws on import if any book
-in `BOOK_ORDER` has no label, so a book added without one fails the build
-rather than the page.
+The labels live in `lib/scripture.js` beside `BOOK_ORDER`, and are
+deliberately **not** derived from the parsing aliases in the same file.
+Those exist to recognise what he wrote, so they are uneven by design --
+Psalms carries three of them and Ruth none. Display text wants the opposite,
+one obvious form per book, capped at four characters so it fits on one line.
+The module throws on import if any book in `BOOK_ORDER` has no label, so a
+book added without one fails the build rather than the page.
 
 ## Light and dark
 

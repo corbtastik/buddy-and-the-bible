@@ -242,25 +242,23 @@ button.day:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 /* ---------- scripture index ---------- */
 
-/* Book grid, at the top of /scripture/. A group per division of the Bible,
-   a labelled square per book, carrying the same meaning as the activity
-   graph in the same two fills: filled where there is something, empty where
-   there is not. Only a book he has actually cited is coloured.
+/* Book grid, at the top of /scripture/. One labelled square per book of the
+   Bible, in canonical order, carrying the same meaning as the activity graph
+   in the same two fills: filled where there is something, empty where there
+   is not. Only a book he has actually cited is coloured.
 
    These squares hold text, so unlike the calendar they cannot be sized by
-   cutting the column into a fixed number of tracks -- at 17 across, Prophets
-   would leave about 18px to print "Zeph" in. auto-fill with a 38px floor
-   inverts it: the square is first made big enough to read, and the number of
-   columns is whatever then fits. A division with more books than fit wraps
-   onto another line rather than squeezing, and every division resolves the
-   same track width, so the squares are one size across the whole grid. */
-.bgrid{margin:0 4px 18px;display:flex;flex-direction:column;gap:8px}
-.bdiv{display:flex;align-items:flex-start;gap:7px}
-/* Lines the label up with the first row of squares rather than centring it
-   on a group that may have wrapped to two or three rows. */
-.bdiv-name{flex:0 0 52px;padding-top:13px;font-size:10px;line-height:12px;
-  color:var(--meta);text-align:right}
-.bdiv-books{flex:1;min-width:0;display:grid;
+   cutting the column into a fixed number of tracks -- 17 across would leave
+   about 18px to print "Zeph" in. auto-fill with a 38px floor inverts it: the
+   square is first made big enough to read, and the number of columns is
+   whatever then fits, nine in a 408px column.
+
+   One grid for all 66 rather than one per division of the Bible. Grouping
+   put a wider gap between the groups and a label beside each; as a single
+   field every square and every gap is the same, which is what it should
+   have been -- canonical order keeps each division's books adjacent anyway,
+   so only the spacing and the labels were doing any work. */
+.bgrid{margin:0 4px 18px;display:grid;
   grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:3px}
 /* Anchor links, not buttons: the whole interaction is jumping to a section
    of this same page, which the browser already does. That is why the grid
