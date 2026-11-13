@@ -143,9 +143,9 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 369 references in canonical order, Genesis to
+`/scripture/` lists all 370 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
-for the 40 verses cited more than once. It is linked from the home page
+for the 41 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
 Markdown directly rather than going through collections so it does not
 depend on every devo having rendered first.
@@ -1012,10 +1012,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 9 devos — `references/manual-devos.md`
+#### November 2026 — 10 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus six devos outside it, and the
-first month with no screenshot folder of its own. All nine were hand-entered,
+The last three of the hospital-bed series plus seven devos outside it, and the
+first month with no screenshot folder of its own. All ten were hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
 November batch of screenshots, if one ever arrives, would get its own folder
@@ -1026,25 +1026,26 @@ alongside.
 - **Every date came from its own header**, "Mon, Nov 2nd 6:25 AM", "Tue, Nov
   3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM", "Fri,
   Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM", "Tue, Nov 10th 5:42 AM", "Wed,
-  Nov 11th 5:52 AM" and "Thurs, Nov 12th 6:32 AM". Nov 2 2026 *is* a Monday
-  and so on through Nov 12 -- header and calendar agree on all nine, unlike
-  2026-10-30 in the batch before them. All nine headers drop the "at" the
-  other entries use; Nov 5's opens with a stray comma, and it and Nov 12
-  abbreviate the weekday "Thurs". Nothing reads the field, so none of it
-  needed fixing.
-- **The Nov 10, Nov 11 and Nov 12 entries omit `source:`**, which the file
-  documents as defaulting to `manual`. Taken as manual, consistent with every
-  other entry here and with there being no November screenshots at all.
+  Nov 11th 5:52 AM", "Thurs, Nov 12th 6:32 AM" and "Fri, Nov 13th 5:55 AM".
+  Nov 2 2026 *is* a Monday and so on through Nov 13 -- header and calendar
+  agree on all ten, unlike 2026-10-30 in the batch before them. All ten
+  headers drop the "at" the other entries use; Nov 5's opens with a stray
+  comma, and it and Nov 12 abbreviate the weekday "Thurs". Nothing reads the
+  field, so none of it needed fixing.
+- **The Nov 10 to Nov 13 entries omit `source:`**, which the file documents
+  as defaulting to `manual`. Taken as manual, consistent with every other
+  entry here and with there being no November screenshots at all.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 -- Nov 12, all nine text-only, no screenshots.
-- Nine consecutive weekdays with no gap: Nov 2 to Nov 6 is a full week, the
-  first in the archive since the hospital stay began, and Nov 9 to Nov 12 are
-  four more. Nov 7 and Nov 8 are the weekend, so they are not a gap.
-- **Nov 13 onward has not been provided yet**, so the archive currently ends
-  at Nov 12.
+- Nov 2 -- Nov 13, all ten text-only, no screenshots.
+- Ten consecutive weekdays with no gap -- two complete weeks, Nov 2 to Nov 6
+  and Nov 9 to Nov 13. The first unbroken fortnight in the archive, and the
+  first since the hospital stay began. Nov 7 and Nov 8 are the weekend, so
+  they are not a gap.
+- **Nov 16 onward has not been provided yet**, so the archive currently ends
+  at Nov 13.
 
 *Corrections applied*
 
@@ -1082,6 +1083,9 @@ alongside.
 - 2026-11-11 arrived as six unseparated lines alternating scripture and
   prose, read as six paragraphs, the same shape as 2026-11-05, 2026-11-06 and
   2026-11-09.
+- **Nothing on 2026-11-13.** It arrived with blank lines already between its
+  three paragraphs -- the first entry since 2026-11-04 not to need the
+  paragraph breaks inferred -- and both its references came through spaced.
 - **A ` - ` between the reference and the verse dropped** on 2026-11-12,
   which opens `James 2:13-20 - What does it profit`. No other entry in the
   archive separates them that way, and the bold reference at the head of the
@@ -1186,6 +1190,18 @@ alongside.
   the lake` is ever closed. All left as he sent them.
 - 2026-11-12 has "he makes no progress either across the lake nor as a
   Christian" (*either ... or*, or *neither ... nor*).
+- **2026-11-13 shouts four times** -- "I'M NO DIFFERENT THAN THAT PERSON
+  CERTAINLY NO BETTER", and MINIMAL, WELLBEING and RETALIATE in the closing
+  sentence. Kept as capitals, which is the standing treatment of his
+  emphasis; OMNIPOTENT on 2026-11-03 is the same call. The first of them also
+  runs two sentences together without punctuation, and that is left too.
+- 2026-11-13 quotes the saying as "there, except for the grace of God, go I",
+  where the usual form is *there but for*. His version, kept.
+- 2026-11-13's John 8:3-7 opens a quotation at "Teacher" that is never
+  closed, because the passage re-opens one at "Now Moses" in the NKJV manner
+  for speech continuing across verses. Three of the five marks pair and curl;
+  the odd one stays straight, the same behaviour recorded for 2026-10-30,
+  2026-11-09, 2026-11-10 and 2026-11-12.
 - **2026-11-10's 1 Peter 1:13-16 quotation ends inside a nested quotation**
   that is never closed: `because it is written, "Be holy, for I am holy.`
   Left as he sent it, like the two unclosed quotations on 2026-11-09, and it
@@ -1286,6 +1302,17 @@ alongside.
   and spends the first half on. 1 Peter 1:13-16 is the verse the second half
   argues from, but taking it would have put this devo's headline a single
   verse away from 2026-10-14's. It is cited twice now, so it is the 40th
+  verse in the index with more than one devo against it.
+- **2026-11-13 is "No Different, No Better"**, ours, from the line he puts
+  in capitals. The devo's own subject is the saying "there, except for the
+  grace of God, go I", but a grace-shaped title would have sat on top of
+  2026-04-08, "The Difference Is Grace" -- which argues the neighbouring
+  point, that nothing but grace separates a Christian from anyone else, and
+  quotes R.C. Sproul's "Christians have nothing to be smug about". Worth
+  reading the two together.
+- `scripture` on 2026-11-13 is **John 8:3-7**, the woman caught in adultery,
+  new to the archive and the passage the whole devo rests on. Its other
+  reference, John 8:12, is already quoted on 2026-08-18 and becomes the 41st
   verse in the index with more than one devo against it.
 - **2026-11-12 is "Both Oars"**, ours, from the boatman's "one needs both
   oars working simultaneously". He gives the devo no title and the
