@@ -143,7 +143,7 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 370 references in canonical order, Genesis to
+`/scripture/` lists all 378 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
 for the 41 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
@@ -1012,10 +1012,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 10 devos — `references/manual-devos.md`
+#### November 2026 — 12 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus seven devos outside it, and the
-first month with no screenshot folder of its own. All ten were hand-entered,
+The last three of the hospital-bed series plus nine devos outside it, and the
+first month with no screenshot folder of its own. All twelve were hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
 November batch of screenshots, if one ever arrives, would get its own folder
@@ -1026,26 +1026,29 @@ alongside.
 - **Every date came from its own header**, "Mon, Nov 2nd 6:25 AM", "Tue, Nov
   3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM", "Fri,
   Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM", "Tue, Nov 10th 5:42 AM", "Wed,
-  Nov 11th 5:52 AM", "Thurs, Nov 12th 6:32 AM" and "Fri, Nov 13th 5:55 AM".
-  Nov 2 2026 *is* a Monday and so on through Nov 13 -- header and calendar
-  agree on all ten, unlike 2026-10-30 in the batch before them. All ten
-  headers drop the "at" the other entries use; Nov 5's opens with a stray
-  comma, and it and Nov 12 abbreviate the weekday "Thurs". Nothing reads the
-  field, so none of it needed fixing.
-- **The Nov 10 to Nov 13 entries omit `source:`**, which the file documents
+  Nov 11th 5:52 AM", "Thurs, Nov 12th 6:32 AM", "Fri, Nov 13th 5:55 AM",
+  "Mon, Nov 16th 6:56 AM" and "Tue, Nov 17th 7:19 AM". Nov 2 2026 *is* a
+  Monday and so on through Nov 17 -- header and calendar agree on all twelve,
+  unlike 2026-10-30 in the batch before them. All twelve headers drop the "at"
+  the other entries use; Nov 5's opens with a stray comma, and it and Nov 12
+  abbreviate the weekday "Thurs". Nothing reads the field, so none of it
+  needed fixing.
+- **The Nov 10 to Nov 17 entries omit `source:`**, which the file documents
   as defaulting to `manual`. Taken as manual, consistent with every other
   entry here and with there being no November screenshots at all.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 -- Nov 13, all ten text-only, no screenshots.
-- Ten consecutive weekdays with no gap -- two complete weeks, Nov 2 to Nov 6
-  and Nov 9 to Nov 13. The first unbroken fortnight in the archive, and the
-  first since the hospital stay began. Nov 7 and Nov 8 are the weekend, so
-  they are not a gap.
-- **Nov 16 onward has not been provided yet**, so the archive currently ends
-  at Nov 13.
+- Nov 2 -- Nov 17, all twelve text-only, no screenshots.
+- Twelve consecutive weekdays with no gap: Nov 2-6, Nov 9-13 and Nov 16-17.
+  The two complete weeks are the first unbroken fortnight in the archive, and
+  the first since the hospital stay began. Every weekend in between -- Nov
+  7-8 and Nov 14-15 -- is a weekend, not a gap.
+- **Nov 18 onward has not been provided yet**, so the archive currently ends
+  at Nov 17.
+- **2 Chronicles enters the archive** on 2026-11-16, its first citation in
+  216 devos, which adds the 43rd filled square to the book grid.
 
 *Corrections applied*
 
@@ -1083,6 +1086,17 @@ alongside.
 - 2026-11-11 arrived as six unseparated lines alternating scripture and
   prose, read as six paragraphs, the same shape as 2026-11-05, 2026-11-06 and
   2026-11-09.
+- **`2Chronicles 16:9` spaced and `Ephesians 6:13-14aTherefore` split** on
+  2026-11-16, the numbered book and the run-together reference, both standing
+  practice. His `14a` is kept in the bold reference -- the linker drops the
+  trailing letter from the BibleGateway URL on its own, as it does for his
+  `ff`.
+- **A poetic line break closed up** on 2026-11-16: his Psalm 18:2-3 runs the
+  quotation across two lines, breaking after "my deliverer;" the way a psalm
+  is set. Every other scripture quotation in the archive is one paragraph in
+  the bubble, so this follows them.
+- **Nothing on 2026-11-17** beyond setting the hymn. It arrived with its
+  paragraphs already separated and all four references properly spaced.
 - **Nothing on 2026-11-13.** It arrived with blank lines already between its
   three paragraphs -- the first entry since 2026-11-04 not to need the
   paragraph breaks inferred -- and both its references came through spaced.
@@ -1195,6 +1209,23 @@ alongside.
   sentence. Kept as capitals, which is the standing treatment of his
   emphasis; OMNIPOTENT on 2026-11-03 is the same call. The first of them also
   runs two sentences together without punctuation, and that is left too.
+- **2026-11-16 opens "In In the last scene of The Movie"** -- the word
+  doubled. Left as written: the capture artifacts in this archive are lost
+  spaces and run-together references, mechanical dropouts, and a repeated
+  word is not that shape. Worth a look at the original, though, since it is
+  the first word of the devo.
+- 2026-11-16 has "the last throws of life" (*throes*), "the tanks explodes"
+  (*tank*), and "David with just 5 stones faced Goliath, confidence that with
+  God's help he would be victorious" (*with the confidence*). It also mixes
+  "five bullets" with "5 stones" two sentences apart.
+- 2026-11-16 ends on "Stand therefore..," -- two dots and a comma. He writes
+  `..` as an ellipsis elsewhere, 2026-02-12 included, so it is kept.
+- **2026-11-17 shouts OVERWRITING twice** and lower-cases the same word three
+  times in the same paragraph, twice inside quotation marks. All four forms
+  are his and all four are kept, as with the capitals on 2026-11-13.
+- 2026-11-17 cites `Ephesians 4:23,24` with a comma, where the archive's
+  other ranges use a hyphen. The linker reads and links 4:23 and leaves the
+  `,24` as plain text; the alternative was to rewrite his citation.
 - 2026-11-13 quotes the saying as "there, except for the grace of God, go I",
   where the usual form is *there but for*. His version, kept.
 - 2026-11-13's John 8:3-7 opens a quotation at "Teacher" that is never
@@ -1303,6 +1334,30 @@ alongside.
   argues from, but taking it would have put this devo's headline a single
   verse away from 2026-10-14's. It is cited twice now, so it is the 40th
   verse in the index with more than one devo against it.
+- **2026-11-16 is "It Took Five Bullets"**, ours, from the line he gives the
+  dying lieutenant. The devo pairs that scene with David's five stones, and
+  the number doing double duty is the whole of its argument -- confidence
+  resting on something other than the size of the weapon. `scripture` is
+  **Psalm 18:2-3**, which he opens with; all four of its references are new
+  to the archive, and 2 Chronicles 16:9 brings a 66th-of-the-canon book in
+  for the first time.
+- **2026-11-17 is "The Overwriting"**, his own image: the teacher's model
+  line at the top of a child's writing paper, which he offers as a
+  translation of *example* in 1 Peter 2:21.
+- `scripture` on 2026-11-17 is **1 Peter 2:21**, and this one is worth
+  recording because it sits one verse from a neighbour. 2026-08-07, "Chase
+  Perfection", is headlined on **1 Peter 2:21-22**. The overlap is allowed to
+  stand here, where 2026-11-11's was not, because the two devos are doing
+  different things with the passage: Chase Perfection quotes it in a
+  different translation and argues about striving after failure, while this
+  one is an exposition of the single word *example* in verse 21, which is
+  where its whole analogy comes from. Taking Matthew 16:24-26 instead would
+  have headlined the devo on its closing call rather than its argument.
+- **The summaries on both are verbatim**, per the standing preference:
+  2026-11-16 trims "A Christian's confidence doesn't come from one's own
+  strength, ability or craft, but from God" off the front of his sentence,
+  and 2026-11-17 takes "The closer the child writes to the OVERWRITING the
+  more accurate their letters will be." with only his leading "And" removed.
 - **2026-11-13 is "No Different, No Better"**, ours, from the line he puts
   in capitals. The devo's own subject is the saying "there, except for the
   grace of God, go I", but a grace-shaped title would have sat on top of
