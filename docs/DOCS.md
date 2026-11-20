@@ -143,7 +143,7 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 379 references in canonical order, Genesis to
+`/scripture/` lists all 381 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
 for the 42 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
@@ -1012,10 +1012,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 13 devos — `references/manual-devos.md`
+#### November 2026 — 14 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus ten devos outside it, and the
-first month with no screenshot folder of its own. All thirteen were
+The last three of the hospital-bed series plus eleven devos outside it, and
+the first month with no screenshot folder of its own. All fourteen were
 hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
@@ -1028,26 +1028,33 @@ alongside.
   3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM", "Fri,
   Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM", "Tue, Nov 10th 5:42 AM", "Wed,
   Nov 11th 5:52 AM", "Thurs, Nov 12th 6:32 AM", "Fri, Nov 13th 5:55 AM",
-  "Mon, Nov 16th 6:56 AM", "Tue, Nov 17th 7:19 AM" and "Wed, Nov 18th
-  6:26 AM". Nov 2 2026 *is* a Monday and so on through Nov 18 -- header and
-  calendar agree on all thirteen, unlike 2026-10-30 in the batch before them.
-  All thirteen headers drop the "at" the other entries use; Nov 5's opens with
-  a stray comma, and it and Nov 12 abbreviate the weekday "Thurs". Nothing
-  reads the field, so none of it needed fixing.
-- **The Nov 10 to Nov 18 entries omit `source:`**, which the file documents
+  "Mon, Nov 16th 6:56 AM", "Tue, Nov 17th 7:19 AM", "Wed, Nov 18th 6:26 AM"
+  and "Fri, Nov 20th 9:24 AM". Nov 2 2026 *is* a Monday and so on through Nov
+  20 -- header and calendar agree on all fourteen, unlike 2026-10-30 in the
+  batch before them. All fourteen headers drop the "at" the other entries
+  use; Nov 5's opens with a stray comma, and it and Nov 12 abbreviate the
+  weekday "Thurs". Nothing reads the field, so none of it needed fixing.
+- **The Nov 10 to Nov 20 entries omit `source:`**, which the file documents
   as defaulting to `manual`. Taken as manual, consistent with every other
   entry here and with there being no November screenshots at all.
+- **Nothing was assumed about the Nov 19 gap**, because he explains it
+  himself -- see *Coverage*.
 - **The year is absent** from the text, as always; taken as 2026.
 
 *Coverage*
 
-- Nov 2 -- Nov 18, all thirteen text-only, no screenshots.
-- Thirteen consecutive weekdays with no gap: Nov 2-6, Nov 9-13 and Nov 16-18.
+- Nov 2 -- Nov 20, all fourteen text-only, no screenshots.
+- Thirteen consecutive weekdays to Nov 18: Nov 2-6, Nov 9-13 and Nov 16-18.
   The two complete weeks are the first unbroken fortnight in the archive, and
   the first since the hospital stay began. Every weekend in between -- Nov
   7-8 and Nov 14-15 -- is a weekend, not a gap.
-- **Nov 19 onward has not been provided yet**, so the archive currently ends
-  at Nov 18.
+- **No devo on Nov 19 (Thu), and for once the reason is on the record.**
+  2026-11-20 opens "I apologize for missing the morning devotion yesterday,
+  our internet was down." Every other gap in this archive is inferred from an
+  absence; this is the only one he accounts for himself, so it needs no
+  assumption at all.
+- **Nov 23 onward has not been provided yet**, so the archive currently ends
+  at Nov 20.
 - **2 Chronicles enters the archive** on 2026-11-16, its first citation in
   216 devos, which adds the 43rd filled square to the book grid.
 
@@ -1096,6 +1103,9 @@ alongside.
   quotation across two lines, breaking after "my deliverer;" the way a psalm
   is set. Every other scripture quotation in the archive is one paragraph in
   the bubble, so this follows them.
+- **Nothing on 2026-11-20.** Its paragraphs arrived already separated and
+  both references came through spaced -- the third day running that needed
+  no corrections at all.
 - **Nothing on 2026-11-18.** Its paragraphs arrived already separated and
   both references came through spaced.
 - **Nothing on 2026-11-17** beyond setting the hymn. It arrived with its
@@ -1212,6 +1222,12 @@ alongside.
   sentence. Kept as capitals, which is the standing treatment of his
   emphasis; OMNIPOTENT on 2026-11-03 is the same call. The first of them also
   runs two sentences together without punctuation, and that is left too.
+- 2026-11-20 has "There is nothing that gives comfort and peace of mind or
+  security to mankind than knowing", which wants a *more* before *than*, and
+  "the feeling each have toward the other" (*each has*).
+- 2026-11-20 drops to a lower-case "he" for Jesus -- "he speaks to one of
+  man's most fundamental needs" -- in a devo that capitalises His and He
+  everywhere else, the same slip as 2026-11-09's "He speaks of God" for Paul.
 - **2026-11-18 calls the book "Flag Of Our Fathers"**; James Bradley's title
   is *Flags of Our Fathers*, plural, and lower-case *of*. His form, kept.
 - 2026-11-18 has "took pen to hand", where 2026-10-19 has "takes pen in hand"
@@ -1345,6 +1361,19 @@ alongside.
   argues from, but taking it would have put this devo's headline a single
   verse away from 2026-10-14's. It is cited twice now, so it is the 40th
   verse in the index with more than one devo against it.
+- **2026-11-20 is "Jesus Has Not Changed"**, which is his own sentence,
+  lifted whole from the hinge of the devo. `scripture` is **Hebrews 13:8**,
+  the verse he opens with and expounds; both it and Hebrews 5:9 are new to
+  the archive. Its summary is verbatim and untrimmed.
+- **2026-11-20 keeps his apology**, "I apologize for missing the morning
+  devotion yesterday, our internet was down", as its own opening paragraph
+  above the first quotation. That is the standing treatment of his own
+  remarks and follows 2026-08-31, which opens "I apologize for the late
+  posting. b." in exactly that position. As there, the summary describes the
+  devo rather than the apology.
+- **2026-11-20 was sent at 9:24 AM**, two to three hours later than the rest
+  of the month, which runs 5:42 to 7:44. The entry records the time it was
+  sent, as always, and in this case the devo itself explains the morning.
 - **2026-11-18 is "Not Yet Marines"**, ours, from the distinction the devo
   turns on -- that a recruit is not called a Marine until he has earned the
   title. It is the eleventh devo in the archive to open with prose rather
