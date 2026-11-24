@@ -143,9 +143,9 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 381 references in canonical order, Genesis to
+`/scripture/` lists all 383 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
-for the 42 verses cited more than once. It is linked from the home page
+for the 43 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
 Markdown directly rather than going through collections so it does not
 depend on every devo having rendered first.
@@ -1012,10 +1012,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 14 devos — `references/manual-devos.md`
+#### November 2026 — 16 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus eleven devos outside it, and
-the first month with no screenshot folder of its own. All fourteen were
+The last three of the hospital-bed series plus thirteen devos outside it, and
+the first month with no screenshot folder of its own. All sixteen were
 hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
@@ -1028,13 +1028,17 @@ alongside.
   3rd 6:43 AM", "Wed, Nov 4th 7:44 AM", ", Thurs, Nov 5th 7:35 AM", "Fri,
   Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM", "Tue, Nov 10th 5:42 AM", "Wed,
   Nov 11th 5:52 AM", "Thurs, Nov 12th 6:32 AM", "Fri, Nov 13th 5:55 AM",
-  "Mon, Nov 16th 6:56 AM", "Tue, Nov 17th 7:19 AM", "Wed, Nov 18th 6:26 AM"
-  and "Fri, Nov 20th 9:24 AM". Nov 2 2026 *is* a Monday and so on through Nov
-  20 -- header and calendar agree on all fourteen, unlike 2026-10-30 in the
-  batch before them. All fourteen headers drop the "at" the other entries
-  use; Nov 5's opens with a stray comma, and it and Nov 12 abbreviate the
-  weekday "Thurs". Nothing reads the field, so none of it needed fixing.
-- **The Nov 10 to Nov 20 entries omit `source:`**, which the file documents
+  "Mon, Nov 16th 6:56 AM", "Tue, Nov 17th 7:19 AM", "Wed, Nov 18th 6:26 AM",
+  "Fri, Nov 20th 9:24 AM", "Sun, Nov 22th 8:40 PM" and "Tue, Nov 24th
+  7:36 AM". Nov 2 2026 *is* a Monday and so on through Nov 24 -- header and
+  calendar agree on all sixteen, unlike 2026-10-30 in the batch before them.
+  All sixteen headers drop the "at" the other entries use; Nov 5's opens with
+  a stray comma, and it and Nov 12 abbreviate the weekday "Thurs". Nothing
+  reads the field, so none of it needed fixing.
+- **Nov 22's header writes "22th" for 22nd.** The weekday still checks out --
+  Nov 22 2026 is a Sunday -- so the date is not in doubt and the ordinal is
+  left as he typed it.
+- **The Nov 10 to Nov 24 entries omit `source:`**, which the file documents
   as defaulting to `manual`. Taken as manual, consistent with every other
   entry here and with there being no November screenshots at all.
 - **Nothing was assumed about the Nov 19 gap**, because he explains it
@@ -1043,7 +1047,14 @@ alongside.
 
 *Coverage*
 
-- Nov 2 -- Nov 20, all fourteen text-only, no screenshots.
+- Nov 2 -- Nov 24, all sixteen text-only, no screenshots.
+- **Nov 22 is the archive's first Sunday devo**, and at 8:40 PM the latest
+  hour of any devo in it -- the previous latest was 4:54 PM on 2026-04-03.
+  Only one other weekend day carries a devo at all, Saturday 2026-03-28,
+  which has two. Weekend and evening are both unusual but neither is an
+  error; `time` records what he sent.
+- **No devo on Nov 23 (Mon)**, and nothing explains it this time, unlike the
+  Nov 19 gap below.
 - Thirteen consecutive weekdays to Nov 18: Nov 2-6, Nov 9-13 and Nov 16-18.
   The two complete weeks are the first unbroken fortnight in the archive, and
   the first since the hospital stay began. Every weekend in between -- Nov
@@ -1053,8 +1064,8 @@ alongside.
   our internet was down." Every other gap in this archive is inferred from an
   absence; this is the only one he accounts for himself, so it needs no
   assumption at all.
-- **Nov 23 onward has not been provided yet**, so the archive currently ends
-  at Nov 20.
+- **Nov 25 onward has not been provided yet**, so the archive currently ends
+  at Nov 24.
 - **2 Chronicles enters the archive** on 2026-11-16, its first citation in
   216 devos, which adds the 43rd filled square to the book grid.
 
@@ -1103,6 +1114,21 @@ alongside.
   quotation across two lines, breaking after "my deliverer;" the way a psalm
   is set. Every other scripture quotation in the archive is one paragraph in
   the bubble, so this follows them.
+- **Three bullets set from his `·` marks** on 2026-11-22, as on 2026-10-29
+  and 2026-11-10, and his spaced en dash in the definition line written the
+  typewriter way so the build makes it.
+- **2026-11-24's leading `*` escaped.** He opens with `* This is an excerpt
+  from Charles Payne's daily devotion`, using the asterisk as his own note
+  mark. In Markdown a line beginning `* ` is a bullet, so it is written `\*`
+  to come out as the character he typed. Nothing else about the line changed.
+- **His quotation marks around the 2026-11-24 excerpt dropped**, and this one
+  is a judgment call. He wraps the whole excerpt in one opening and one
+  closing mark across three paragraphs. The post sets it as a blockquote
+  instead, which says the same thing and follows 2026-06-15; keeping both
+  would have left an unpaired mark in two separate paragraphs, and markdown-it
+  can only curl quotes it can pair, so they would have rendered straight and
+  looked like an error. Formatting is ours, so this is ours; his words are
+  untouched.
 - **Nothing on 2026-11-20.** Its paragraphs arrived already separated and
   both references came through spaced -- the third day running that needed
   no corrections at all.
@@ -1222,6 +1248,17 @@ alongside.
   sentence. Kept as capitals, which is the standing treatment of his
   emphasis; OMNIPOTENT on 2026-11-03 is the same call. The first of them also
   runs two sentences together without punctuation, and that is left too.
+- 2026-11-22 has "a conjunction that sometimes needs to be replaced a
+  period" (*replaced with*), and in the second bullet "it shouldn't hurt to
+  do I just this one time", which looks like *to do it just this one time*.
+- 2026-11-22 puts words in Jesus' mouth that are not scripture -- "Jesus
+  said, 'there are no buts in following Me, I must always be first, with no
+  exceptions.'" He is dramatising rather than quoting, and the sentence is
+  his, so it stands as written and the scripture linker finds nothing in it
+  to link.
+- 2026-11-24's excerpt has "Sometimes I should let my troubles determine how
+  much gratitude I express", where the sense wants *Sometimes I let*. Not
+  Buddy's sentence to fix, and not ours either.
 - 2026-11-20 has "There is nothing that gives comfort and peace of mind or
   security to mankind than knowing", which wants a *more* before *than*, and
   "the feeling each have toward the other" (*each has*).
@@ -1361,6 +1398,27 @@ alongside.
   argues from, but taking it would have put this devo's headline a single
   verse away from 2026-10-14's. It is cited twice now, so it is the 40th
   verse in the index with more than one devo against it.
+- **2026-11-22 is "There Are No Buts"**, ours, from his closing line.
+  "But If Not" (2026-03-17) is the only other title in the archive built on
+  the word, and that one is Daniel 3, so they do not collide. `scripture` is
+  **Luke 9:59-62**, new to the archive and the passage the whole devo
+  expounds; Matthew 22:37-38 was not an option, since 2026-01-23 already
+  headlines it and 2026-03-03 headlines the longer 22:37-39.
+- **2026-11-24 is not his own writing**, and the post says so in his words
+  before anything else: "This is an excerpt from Charles Payne's daily
+  devotion written this past Sunday." The excerpt is set as a blockquote so
+  the two voices stay distinct, which is the treatment his son Brad's story
+  gets on 2026-06-15. No second attribution was added at the foot of the
+  quotation, as there, because his own opening line already names the author
+  immediately above it.
+- `scripture` on 2026-11-24 is **Luke 22:19**, which he places between his
+  note and the excerpt, and which the excerpt then expounds. It is new to the
+  archive; Philippians 4:6-7 is already on 2026-02-09, so it becomes the 43rd
+  verse in the index with more than one devo against it.
+- **2026-11-24's summary is verbatim but not Buddy's.** "His sorrow was real.
+  So was His thanksgiving." is Charles Payne's sentence, taken from the body
+  of the devo as published. The rule is that the summary comes from the devo
+  rather than being composed, and it does.
 - **2026-11-20 is "Jesus Has Not Changed"**, which is his own sentence,
   lifted whole from the hinge of the devo. `scripture` is **Hebrews 13:8**,
   the verse he opens with and expounds; both it and Hebrews 5:9 are new to
