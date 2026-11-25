@@ -143,9 +143,9 @@ Two kinds of reference are deliberately left as plain text rather than
 guessed at: `Peter 1:6-7` on 2026-07-07, which is missing its book number,
 and `Psalms 119: (18)`, whose shape is too irregular to parse.
 
-`/scripture/` lists all 383 references in canonical order, Genesis to
+`/scripture/` lists all 384 references in canonical order, Genesis to
 Revelation, each linking to the devo that quotes it -- or to each of them,
-for the 43 verses cited more than once. It is linked from the home page
+for the 44 verses cited more than once. It is linked from the home page
 only. The page is built by `src/_data/scriptureIndex.js`, which reads the
 Markdown directly rather than going through collections so it does not
 depend on every devo having rendered first.
@@ -1012,10 +1012,10 @@ with the rest of the hand-entered devos, headers and bodies verbatim, so
 
 ---
 
-#### November 2026 — 16 devos — `references/manual-devos.md`
+#### November 2026 — 17 devos — `references/manual-devos.md`
 
-The last three of the hospital-bed series plus thirteen devos outside it, and
-the first month with no screenshot folder of its own. All sixteen were
+The last three of the hospital-bed series plus fourteen devos outside it, and
+the first month with no screenshot folder of its own. All seventeen were
 hand-entered,
 so there is nothing to capture and no `references/nov-2026/` to create -- they
 are entries in `references/manual-devos.md` like every other pasted devo. A
@@ -1029,16 +1029,16 @@ alongside.
   Nov 6th 5:58 AM", "Mon, Nov 9th 7:04 AM", "Tue, Nov 10th 5:42 AM", "Wed,
   Nov 11th 5:52 AM", "Thurs, Nov 12th 6:32 AM", "Fri, Nov 13th 5:55 AM",
   "Mon, Nov 16th 6:56 AM", "Tue, Nov 17th 7:19 AM", "Wed, Nov 18th 6:26 AM",
-  "Fri, Nov 20th 9:24 AM", "Sun, Nov 22th 8:40 PM" and "Tue, Nov 24th
-  7:36 AM". Nov 2 2026 *is* a Monday and so on through Nov 24 -- header and
-  calendar agree on all sixteen, unlike 2026-10-30 in the batch before them.
-  All sixteen headers drop the "at" the other entries use; Nov 5's opens with
-  a stray comma, and it and Nov 12 abbreviate the weekday "Thurs". Nothing
-  reads the field, so none of it needed fixing.
+  "Fri, Nov 20th 9:24 AM", "Sun, Nov 22th 8:40 PM", "Tue, Nov 24th 7:36 AM"
+  and "Wed, Nov 25th 8:21 AM". Nov 2 2026 *is* a Monday and so on through Nov
+  25 -- header and calendar agree on all seventeen, unlike 2026-10-30 in the
+  batch before them. All seventeen headers drop the "at" the other entries
+  use; Nov 5's opens with a stray comma, and it and Nov 12 abbreviate the
+  weekday "Thurs". Nothing reads the field, so none of it needed fixing.
 - **Nov 22's header writes "22th" for 22nd.** The weekday still checks out --
   Nov 22 2026 is a Sunday -- so the date is not in doubt and the ordinal is
   left as he typed it.
-- **The Nov 10 to Nov 24 entries omit `source:`**, which the file documents
+- **The Nov 10 to Nov 25 entries omit `source:`**, which the file documents
   as defaulting to `manual`. Taken as manual, consistent with every other
   entry here and with there being no November screenshots at all.
 - **Nothing was assumed about the Nov 19 gap**, because he explains it
@@ -1047,7 +1047,7 @@ alongside.
 
 *Coverage*
 
-- Nov 2 -- Nov 24, all sixteen text-only, no screenshots.
+- Nov 2 -- Nov 25, all seventeen text-only, no screenshots.
 - **Nov 22 is the archive's first Sunday devo**, and at 8:40 PM the latest
   hour of any devo in it -- the previous latest was 4:54 PM on 2026-04-03.
   Only one other weekend day carries a devo at all, Saturday 2026-03-28,
@@ -1064,8 +1064,9 @@ alongside.
   our internet was down." Every other gap in this archive is inferred from an
   absence; this is the only one he accounts for himself, so it needs no
   assumption at all.
-- **Nov 25 onward has not been provided yet**, so the archive currently ends
-  at Nov 24.
+- **Nov 26 onward has not been provided yet**, so the archive currently ends
+  at Nov 25. Nov 26 is Thanksgiving, which 2026-11-24's excerpt looks ahead
+  to.
 - **2 Chronicles enters the archive** on 2026-11-16, its first citation in
   216 devos, which adds the 43rd filled square to the book grid.
 
@@ -1114,6 +1115,8 @@ alongside.
   quotation across two lines, breaking after "my deliverer;" the way a psalm
   is set. Every other scripture quotation in the archive is one paragraph in
   the bubble, so this follows them.
+- **Nothing on 2026-11-25.** Its paragraphs arrived already separated and
+  all three references came through spaced, `Heb. 6:4-6` included.
 - **Three bullets set from his `·` marks** on 2026-11-22, as on 2026-10-29
   and 2026-11-10, and his spaced en dash in the definition line written the
   typewriter way so the build makes it.
@@ -1248,6 +1251,17 @@ alongside.
   sentence. Kept as capitals, which is the standing treatment of his
   emphasis; OMNIPOTENT on 2026-11-03 is the same call. The first of them also
   runs two sentences together without punctuation, and that is left too.
+- 2026-11-25 has "he's the fella that going to get you" (*that's going to*),
+  and a question that never gets its mark: "What happens if the navigator
+  fails to read the GPS correctly & pay close attention to the wind, or the
+  currents, if he doesn't take these readings regularly it's not long until
+  the ship is off course". It also opens the next paragraph "So it is with
+  Christians we are traveling a course", which wants a comma or colon after
+  *Christians*.
+- 2026-11-25 writes the cross-reference as `(c.f. Heb. 6:4-6)`, where the
+  abbreviation is *cf.* His form, kept. It is the first parenthetical
+  cross-reference of that kind in the archive; the ampersand in the same
+  paragraph is his usual shorthand, as on 2026-11-03.
 - 2026-11-22 has "a conjunction that sometimes needs to be replaced a
   period" (*replaced with*), and in the second bullet "it shouldn't hurt to
   do I just this one time", which looks like *to do it just this one time*.
@@ -1398,6 +1412,20 @@ alongside.
   argues from, but taking it would have put this devo's headline a single
   verse away from 2026-10-14's. It is cited twice now, so it is the 40th
   verse in the index with more than one devo against it.
+- **2026-11-25 is "Lest We Drift Away"**, taken from Hebrews 2:1 itself,
+  which is both the phrase the devo expounds and its subject. `scripture` is
+  **Hebrews 2:1-3**, new to the archive. Its other two references are not:
+  Hebrews 3:12 is on 2026-03-19 and becomes the 44th verse in the index with
+  more than one devo against it, and Hebrews 6:4-6 now has three devos
+  against it, after 2026-08-25 and 2026-09-28.
+- **`Heb. 6:4-6` on 2026-11-25 is a good demonstration of the linker's
+  rule.** His abbreviation is kept exactly as he wrote it in the bubble while
+  the BibleGateway URL normalises to `Hebrews 6:4-6`, which is the whole
+  point of keeping link text and URL separate.
+- 2026-11-25 is the fourth devo to work from Hebrews' nautical language and
+  reads alongside **2026-07-28, "An Anchor for the Soul"** (Hebrews 6:17-19),
+  which takes the other half of the same metaphor -- that one on what holds a
+  vessel still, this one on what happens when nothing does.
 - **2026-11-22 is "There Are No Buts"**, ours, from his closing line.
   "But If Not" (2026-03-17) is the only other title in the archive built on
   the word, and that one is Daniel 3, so they do not collide. `scripture` is
